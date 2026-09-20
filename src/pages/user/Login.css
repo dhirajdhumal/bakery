@@ -1,0 +1,6 @@
+.form-size{
+    display: flex;
+    justify-content: center;
+    min-height: 90vh;
+    align-items: center;
+}
