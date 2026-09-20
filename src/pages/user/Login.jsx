@@ -32,7 +32,7 @@ const Login = () => {
             </button>
 
             <p className="text-center mt-3">
-              New user?{" "}
+              New User?{" "}
               <Link
                 className="text-decoration-none text-danger"
                 to={"/register"}
