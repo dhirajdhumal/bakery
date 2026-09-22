@@ -1,8 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 const Login = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="container form-size">
@@ -12,26 +14,27 @@ const Login = () => {
             <h2>Bakery-cakery</h2>
           </div>
           <form className="mt-4">
-          
-              <div className="">
-                <label htmlFor="email">Email</label>
-                <input type="email" id="email" className="form-control" />
-              </div>
+            <div className="">
+              <label htmlFor="email">Email</label>
+              <input type="email" id="email" className="form-control" />
+            </div>
 
-              <div className="mt-3">
-                <label htmlFor="pass">Password</label>
-                <input type="password" id="pass" className="form-control" />
-              </div>
-      
+            <div className="mt-3">
+              <label htmlFor="pass">Password</label>
+              <input type="password" id="pass" className="form-control" />
+            </div>
 
             <button
               className="btn btn-success w-100 mt-3 fs-2 fw-bold"
-              type="submit"
-            >
+              type="submit">
               Login
             </button>
 
-            <p className="text-center mt-3">
+            <div className="d-flex justify-content-center">
+              <button className="btn btn-warning mt-3 fw-bold" onClick={()=> navigate('/admin/admin-login')}>Admin Login</button>
+            </div>
+
+            <p className="text-center mt-2">
               New User?{" "}
               <Link
                 className="text-decoration-none text-danger"

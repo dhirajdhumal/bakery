@@ -14,6 +14,9 @@ import Dashboard from './pages/admin/Dashboard'
 import About from './pages/user/About';
 import Contacts from './pages/user/Contacts';
 import Gallery from './pages/user/Gallery';
+import AdminLogin from './pages/admin/AdminLogin';
+import AdminOrders from './pages/admin/AdminOrders';
+
 
 
 
@@ -85,6 +88,14 @@ const router = createBrowserRouter([
             {
                 index: true,
                 element: <Dashboard />
+            },
+            {
+                path: 'admin-login',
+                element: <AdminLogin />
+            },
+            {
+                path: 'orders',
+                element: <AdminOrders /> 
             }
         ]
     }
