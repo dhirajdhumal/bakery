@@ -152,8 +152,6 @@ const Profile = () => {
               <p style={{width: "70%",borderTop: "3px solid black"}} className="d-none d-lg-block w-100"></p>
             </div>
           </div>
-    
-      
         </div>
       </div>
     </>
