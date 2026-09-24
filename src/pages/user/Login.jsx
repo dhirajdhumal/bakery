@@ -1,9 +1,37 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 
 const Login = () => {
   const navigate = useNavigate();
+
+  const emailRef = useRef();
+  const passRef = useRef(); 
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    const email = emailRef.current.value;
+    const password = passRef.current.value;
+
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+
+    const user = users.find((u)=>(
+      u.email === email && u.password === password
+    ))
+
+    if(user){
+      alert("Login Successfull");
+      localStorage.setItem("LoggedInUser", JSON.stringify(user))
+      window.location.href = "/";
+    }else{
+      alert("Invalid EmailID and Password");
+    }
+
+  }
+
+
+
 
   return (
     <>
@@ -13,15 +41,15 @@ const Login = () => {
             <h1 className="fw-bold">Login</h1>
             <h2>Bakery-cakery</h2>
           </div>
-          <form className="mt-4">
+          <form className="mt-4" onSubmit={handleSubmit}>
             <div className="">
               <label htmlFor="email">Email</label>
-              <input type="email" id="email" className="form-control" />
+              <input type="email" id="email" className="form-control" ref={emailRef}/>
             </div>
 
             <div className="mt-3">
               <label htmlFor="pass">Password</label>
-              <input type="password" id="pass" className="form-control" />
+              <input type="password" id="pass" className="form-control" ref={passRef}/>
             </div>
 
             <button
