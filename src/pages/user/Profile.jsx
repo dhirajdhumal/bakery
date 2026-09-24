@@ -50,26 +50,24 @@ const Profile = () => {
   return (
     <>
       <div className="container-fluid">
-        <div className="container">
-          <div className="row mt-5">
-            <div className="col-md-12 col-lg-6">
-              <h1>Website-Data</h1>
-            </div>
+        <div className="container rounded p-3 mt-5">
+          <div className="row">
+            
             <div className="col-md-12 col-lg-6 d-flex justify-content-center">
-              <div className="shadow rounded border-0 p-3 col-lg-12">
+              <div className="shadow rounded border-0 p-3 col-md-12 col-lg-12">
               
                 <h1 className="text-center bg-light p-1 rounded fw-bold position-relative">
                   User-Info 
-                  <button className="btn btn-success btn-sm fs-6 position-absolute top-50 end-0 translate-middle-y me-2" data-bs-toggle="modal" data-bs-target="#personalInfo">
+                  <button className="btn btn-warning btn-sm fs-6 position-absolute top-50 end-0 translate-middle-y me-2" data-bs-toggle="modal" data-bs-target="#personalInfo">
                   Edit-info     
                   </button>
                 </h1>
 
                 <hr />
-                <p className="fs-4"><b>Name: </b> <span className="text-muted">{user.name}</span> </p>
-                <p className="fs-4"><b>Email: </b> <span className="text-muted">{user.email}</span> </p>
-                <p className="fs-4"><b>Contact-No: </b> <span className="text-muted">{user.phone}</span> </p>
-                <p className="fs-4"><b>Address: </b> <span className="text-muted">{user.address}</span> </p>
+                <p className="fs-5"><b>Name: </b> <span className="text-muted">{user.name}</span> </p>
+                <p className="fs-5"><b>Email: </b> <span className="text-muted">{user.email}</span> </p>
+                <p className="fs-5"><b>Contact-No: </b> <span className="text-muted">{user.phone}</span> </p>
+                <p className="fs-5"><b>Address: </b> <span className="text-muted">{user.address}</span> </p>
 
                 {/* Edit Info Model */}
                 <div className="modal" id="personalInfo">
@@ -100,7 +98,62 @@ const Profile = () => {
 
               </div>
             </div>
+            <div className="col-md-12 col-lg-6 mt-sm-4 mt-4 mt-lg-0 d-flex justify-content-center">
+              <div className="shadow rounded p-3 border-0 col-md-12 col-lg-12">
+                <h1 className="text-center bg-light p-1 rounded fw-bold">Change Password</h1>
+                <hr />  
+                <form >
+                  <div className="row">
+                    <div className="col-md-6 col-sm-12">
+                      <label htmlFor="pass" className="form-label fs-5">Last Pass</label>
+                      <input type="password" className="form-control mb-2"/>
+                      
+                      <label htmlFor="rpass" className="form-label fs-5">Re-enter Last Pass</label>
+                      <input type="password" className="form-control"/>
+
+                      <button className="mt-4 btn btn-warning">Change Password</button>
+                    </div>
+
+                  
+                    <div className="col-md-6 col-sm-12 mt-3 mt-sm-3 mt-md-0">
+                      <div className="shadow bg-dark text-white p-4 rounded">
+                          <h5 className="text-warning fw-bold">Steps to change password</h5>
+                          <p>Step 1: Enter your last password</p>
+                          <p>Step 2: Re-enter your last password</p>
+                          <p>Step 3: Click on Change / Update password button</p>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            
+            </div>
           </div>
+    
+
+          <div className="row mt-4">
+
+            <div className="col-4 d-flex align-items-center">
+              <p style={{width: "70%",borderTop: "3px solid black"}} className=" w-100"></p>
+            </div>
+
+          
+            <div className="col-4 d-flex justify-content-center">
+              <div className="shadow rounded p-3 bg-secondary">
+                <h4 className="fw-bold text-warning">Bakery-Cakery Offers</h4>
+                <p className="border-top border-warning"></p>
+                <p className="text-white">Offer Starting Date- 10/10/2026</p>
+                <p className="text-white" style={{"margin-top": "-10px"}}>Offer Ending Date- 12/10/2026</p>
+                <p className="text-center text-white fs-4 fw-bold" style={{"margin-top": "-10px","margin-bottom": "-10px"}}>Time: 10am to 10pm</p>
+              </div>
+            </div>
+
+            <div className="col-4 d-flex align-items-center">
+              <p style={{width: "70%",borderTop: "3px solid black"}} className=" w-100"></p>
+            </div>
+          </div>
+    
+      
         </div>
       </div>
     </>
