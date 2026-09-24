@@ -134,11 +134,11 @@ const Profile = () => {
           <div className="row mt-4">
 
             <div className="col-4 d-flex align-items-center">
-              <p style={{width: "70%",borderTop: "3px solid black"}} className=" w-100"></p>
+              <p style={{width: "70%",borderTop: "3px solid black"}} className="d-none d-lg-block w-100"></p>
             </div>
 
           
-            <div className="col-4 d-flex justify-content-center">
+            <div className="col-lg-4 d-flex justify-content-center">
               <div className="shadow rounded p-3 bg-secondary">
                 <h4 className="fw-bold text-warning">Bakery-Cakery Offers</h4>
                 <p className="border-top border-warning"></p>
@@ -149,7 +149,7 @@ const Profile = () => {
             </div>
 
             <div className="col-4 d-flex align-items-center">
-              <p style={{width: "70%",borderTop: "3px solid black"}} className=" w-100"></p>
+              <p style={{width: "70%",borderTop: "3px solid black"}} className="d-none d-lg-block w-100"></p>
             </div>
           </div>
     
