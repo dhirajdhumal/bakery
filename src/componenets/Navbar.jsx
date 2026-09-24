@@ -4,9 +4,10 @@ import '././Navbar.css'
 
 const Navbar = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("LoggedInUser")))
-  const navigate = useNavigate;
+  const navigate = useNavigate();
 
   function handleLogout(){
+    alert("Logout Successfull");
     localStorage.removeItem("LoggedInUser");
     setUser(null);
     navigate('/login');
@@ -20,7 +21,10 @@ const Navbar = () => {
         <Link className='text-decoration-none text-white nav-items' to={'/orders'}>Orders</Link>
         <Link className='text-decoration-none text-white nav-items' to={'/cart'}>Cart</Link>
         <Link className='text-decoration-none text-white nav-items' to={'about-us'}>AboutUs</Link>
-
+        {
+          user && <Link className='text-decoration-none text-white nav-items' to={'profile'}>Profile</Link>
+        }
+        
         {
           user ? (
             <>

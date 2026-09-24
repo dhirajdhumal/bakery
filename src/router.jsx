@@ -16,6 +16,7 @@ import Contacts from './pages/user/Contacts';
 import Gallery from './pages/user/Gallery';
 import AdminLogin from './pages/admin/AdminLogin';
 import AdminOrders from './pages/admin/AdminOrders';
+import Profile from './pages/user/Profile';
 
 
 
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
             {
                 path: '/checkout',
                 element: <Checkout />
+            },
+            {
+                path: '/profile',
+                element: <Profile />
             },
             {
                 path: '/login',
