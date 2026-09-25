@@ -1,5 +1,8 @@
-import React, { useRef } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useRef, useState } from "react";
+import { Link, useNavigate, } from "react-router-dom";
+import {toast} from "react-toastify";
+import {useEffect} from "react";
+
 
 
 const Login = () => {
@@ -7,6 +10,15 @@ const Login = () => {
 
   const emailRef = useRef();
   const passRef = useRef(); 
+
+
+  useState(()=>{
+    const registeredSuccess = localStorage.getItem("RegisteredSuccess");
+    if(registeredSuccess === "true"){ 
+      toast.success("Registration Successful!");
+      localStorage.removeItem("RegisteredSuccess");
+    }
+  },[])
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,18 +33,14 @@ const Login = () => {
     ))
 
     if(user){
-      alert("Login Successfull");
+      localStorage.setItem("LoggedInSuccess","true")
       localStorage.setItem("LoggedInUser", JSON.stringify(user))
       window.location.href = "/";
     }else{
-      alert("Invalid EmailID and Password");
+      toast.error("Invalid Credentials!");
     }
 
   }
-
-
-
-
   return (
     <>
       <div className="container form-size">

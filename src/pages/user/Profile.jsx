@@ -1,12 +1,23 @@
 import React, { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Profile = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("LoggedInUser")));
+  const [createPassModal, setCreatePassModal] =useState(false);
 
   const nameRef = useRef();
   const emailRef = useRef();
   const contactRef = useRef();
   const addRef = useRef();
+
+  const cpassRef = useRef();
+  const ccpassRef = useRef();
+
+  const newpassRef = useRef();
+  const cnewpassRef = useRef();
+
+  const navigate = useNavigate();
 
   function handleUpdate(e) {
     e.preventDefault();
@@ -42,9 +53,58 @@ const Profile = () => {
 
     setUser(updatedUser);
 
-    alert("Profile Updated Successfully");
+    toast.success("Profile Updated Successfully");
+  }
 
 
+  function changePassword(e){
+    e.preventDefault();
+    const pass = cpassRef.current.value;
+    const cpass = ccpassRef.current.value;
+
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+
+    const user = users.find((u)=>(
+      u.password === pass && u.password === cpass
+    ))
+
+    if(user){
+      setCreatePassModal(true);
+    }else{
+      toast.error("Please enter correct password");
+    }
+  }
+
+  function createNewPassword(e){
+    e.preventDefault();
+
+    const newpass = newpassRef.current.value;
+    const cnewpass = cnewpassRef.current.value;
+
+    if(newpass != cnewpass){
+      alert("Plz enter same pass");
+      return
+    }
+
+    const updatedPass = {
+      ...user,
+      password: newpass
+    }
+
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    
+    const updatePass = users.map((u)=>{
+      if(u.email === user.email){
+        return updatedPass;
+      }
+      return u;
+    })
+
+    localStorage.setItem("users", JSON.stringify(updatePass))
+    
+    setCreatePassModal(false);
+
+    toast.success("New Password Created Successfully");
   }
 
   return (
@@ -87,8 +147,7 @@ const Profile = () => {
                           <input type="number" name="" id="mo" className="form-control" ref={contactRef} defaultValue={user.phone}/>
                           <label htmlFor="add" className="form-label">Address</label>
                           <textarea name="" id="" className="form-control" ref={addRef} defaultValue={user.address}></textarea>
-                          <button className="btn btn-success mt-3 w-100 fw-bold fs-3">Save-Details</button>
-
+                          <button className="btn btn-success mt-3 w-100 fw-bold fs-3" data-bs-dismiss="modal">Save-Details</button>
                         </form>
                       </div>
                     </div>
@@ -102,14 +161,14 @@ const Profile = () => {
               <div className="shadow rounded p-3 border-0 col-md-12 col-lg-12">
                 <h1 className="text-center bg-light p-1 rounded fw-bold">Change Password</h1>
                 <hr />  
-                <form >
+                <form onSubmit={changePassword}>
                   <div className="row">
                     <div className="col-md-6 col-sm-12">
                       <label htmlFor="pass" className="form-label fs-5">Last Pass</label>
-                      <input type="password" className="form-control mb-2"/>
+                      <input type="password" className="form-control mb-2" ref={cpassRef}/>
                       
                       <label htmlFor="rpass" className="form-label fs-5">Re-enter Last Pass</label>
-                      <input type="password" className="form-control"/>
+                      <input type="password" className="form-control" ref={ccpassRef}/>
 
                       <button className="mt-4 btn btn-warning">Change Password</button>
                     </div>
@@ -127,6 +186,70 @@ const Profile = () => {
                 </form>
               </div>
             
+              {/* New Password Modal */}
+
+              {createPassModal && (
+                <div
+                  className="modal d-block"
+                  id="newPasswordModal"
+                  tabIndex="-1"
+                  style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
+                >
+                  <div className="modal-dialog">
+                    <div className="modal-content">
+
+                      <div className="modal-header">
+                        <h5 className="modal-title fw-bold">
+                          Create New Password
+                        </h5>
+
+                        <button
+                          type="button"
+                          className="btn-close"
+                          onClick={() => setCreatePassModal(false)}
+                        ></button>
+                      </div>
+
+                      <div className="modal-body">
+
+                        <form onSubmit={createNewPassword}>
+
+                          <label className="form-label">
+                            New Password
+                          </label>
+
+                          <input
+                            type="password"
+                            className="form-control mb-3" ref={newpassRef}
+                          />
+
+                          <label className="form-label">
+                            Confirm New Password
+                          </label>
+
+                          <input
+                            type="password"
+                            className="form-control mb-3"
+                            ref={cnewpassRef}
+                          />
+
+                          <button
+                            type="submit"
+                            className="btn btn-success w-100 fw-bold"
+                          >
+                            Update Password
+                          </button>
+
+                        </form>
+
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              )}
+               
+              {/* New Password Modal end */}
             </div>
           </div>
     

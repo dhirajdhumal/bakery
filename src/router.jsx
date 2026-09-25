@@ -17,6 +17,7 @@ import Gallery from './pages/user/Gallery';
 import AdminLogin from './pages/admin/AdminLogin';
 import AdminOrders from './pages/admin/AdminOrders';
 import Profile from './pages/user/Profile';
+import ChangePassModel from './pages/user/ChangePassModel';
 
 
 
@@ -72,6 +73,10 @@ const router = createBrowserRouter([
             {
                 path: '/profile',
                 element: <Profile />
+            },
+            {
+                path: '/change-password',
+                element: <ChangePassModel />
             },
             {
                 path: '/login',

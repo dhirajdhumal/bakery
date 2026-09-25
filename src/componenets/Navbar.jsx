@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 import '././Navbar.css'
+import {toast} from "react-toastify";
 
 const Navbar = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("LoggedInUser")))
   const navigate = useNavigate();
 
   function handleLogout(){
-    alert("Logout Successfull");
+    toast.success("Logout Successful!");
     localStorage.removeItem("LoggedInUser");
     setUser(null);
     navigate('/login');

@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "././Login.css";
+import { toast } from "react-toastify";
 const Register = () => {
   const navigate = useNavigate();
 
@@ -22,13 +23,17 @@ const Register = () => {
 
     const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
 
+    if(existingUsers.some((u) => u.email === user.email)){
+      toast.error("User with this email already exists!");
+      return;
+    }
+    
     existingUsers.push(user);
     
+    localStorage.setItem("RegisteredSuccess", "true");
     localStorage.setItem("users", JSON.stringify(existingUsers));
 
-    alert("Registration Successfull!");
-
-    navigate('/');
+    window.location.href = "/login";
 
     nameRef.current.value = "";
     emailRef.current.value = "",
