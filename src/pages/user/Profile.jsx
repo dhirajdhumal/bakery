@@ -62,14 +62,22 @@ const Profile = () => {
     const pass = cpassRef.current.value;
     const cpass = ccpassRef.current.value;
 
+    if(pass === "" || cpass === ""){
+      toast.error("Please enter your last password");
+      return;
+    }
+
     const users = JSON.parse(localStorage.getItem("users")) || [];
 
     const user = users.find((u)=>(
       u.password === pass && u.password === cpass
     ))
 
+
     if(user){
       setCreatePassModal(true);
+      cpassRef.current.value = "";
+      ccpassRef.current.value = "";
     }else{
       toast.error("Please enter correct password");
     }
@@ -126,27 +134,27 @@ const Profile = () => {
                 <hr />
                 <p className="fs-5"><b>Name: </b> <span className="text-muted">{user.name}</span> </p>
                 <p className="fs-5"><b>Email: </b> <span className="text-muted">{user.email}</span> </p>
-                <p className="fs-5"><b>Contact-No: </b> <span className="text-muted">{user.phone}</span> </p>
-                <p className="fs-5"><b>Address: </b> <span className="text-muted">{user.address}</span> </p>
+                <p className="fs-5"><b>Contact-No: </b> <span className="text-muted">{user.phone || "Not provided"}</span> </p>
+                <p className="fs-5"><b>Address: </b> <span className="text-muted">{user.address ? user.address : "Not provided"}</span> </p>
 
                 {/* Edit Info Model */}
                 <div className="modal" id="personalInfo">
                   <div className="modal-dialog">
                     <div className="modal-content">
                       <div className="modal-header">
-                        <h5 className="modal-title text-center w-100 fw-bold">Edit Personal Informatifvfon</h5>
+                        <h5 className="modal-title text-center w-100 fw-bold">Edit Your Personal Information</h5>
                         <button type="button" className="btn-close btn btn-dark" data-bs-dismiss="modal"></button>
                       </div>
                       <div className="modal-body">
                         <form onSubmit={handleUpdate}>
                           <label htmlFor="name" className="form-label">Name</label>
-                          <input type="text" name="" id="name" className="form-control" ref={nameRef} defaultValue={user.name}/>
+                          <input type="text" name="" id="name" className="form-control" placeholder="Enter your updated name" ref={nameRef} defaultValue={user.name}/>
                           <label htmlFor="email" className="form-label">Email</label>
-                          <input type="email" name="" id="email" className="form-control" ref={emailRef} defaultValue={user.email}/>
+                          <input type="email" name="" id="email" className="form-control" placeholder="Enter your updated email" ref={emailRef} defaultValue={user.email}/>
                           <label htmlFor="mo" className="form-label">Contact-No</label>
-                          <input type="number" name="" id="mo" className="form-control" ref={contactRef} defaultValue={user.phone}/>
+                          <input type="number" name="" id="mo" className="form-control" placeholder="Enter your contact number" ref={contactRef} defaultValue={user.phone}/>
                           <label htmlFor="add" className="form-label">Address</label>
-                          <textarea name="" id="" className="form-control" ref={addRef} defaultValue={user.address}></textarea>
+                          <textarea name="" id="" className="form-control" placeholder="Enter your address" ref={addRef} defaultValue={user.address}></textarea>
                           <button className="btn btn-success mt-3 w-100 fw-bold fs-3" data-bs-dismiss="modal">Save-Details</button>
                         </form>
                       </div>
@@ -165,10 +173,10 @@ const Profile = () => {
                   <div className="row">
                     <div className="col-md-6 col-sm-12">
                       <label htmlFor="pass" className="form-label fs-5">Last Pass</label>
-                      <input type="password" className="form-control mb-2" ref={cpassRef}/>
+                      <input type="password" className="form-control mb-2" placeholder="Enter your last pass" ref={cpassRef}/>
                       
                       <label htmlFor="rpass" className="form-label fs-5">Re-enter Last Pass</label>
-                      <input type="password" className="form-control" ref={ccpassRef}/>
+                      <input type="password" className="form-control" placeholder="Re-enter your last pass" ref={ccpassRef}/>
 
                       <button className="mt-4 btn btn-warning">Change Password</button>
                     </div>
@@ -220,7 +228,9 @@ const Profile = () => {
 
                           <input
                             type="password"
-                            className="form-control mb-3" ref={newpassRef}
+                            className="form-control mb-3" 
+                            placeholder="Enter new password"
+                            ref={newpassRef}
                           />
 
                           <label className="form-label">
@@ -230,6 +240,7 @@ const Profile = () => {
                           <input
                             type="password"
                             className="form-control mb-3"
+                            placeholder="Confirm New Password"
                             ref={cnewpassRef}
                           />
 

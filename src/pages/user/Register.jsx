@@ -51,17 +51,17 @@ const Register = () => {
           <form className="mt-4" onSubmit={handleSubmit}>
             <div className="">
               <label htmlFor="name">Name</label>
-              <input type="text" id="name" className="form-control" ref={nameRef}/>
+              <input type="text" id="name" className="form-control" placeholder="Enter your name" ref={nameRef} required/>
             </div>
 
             <div className="mt-3">
               <label htmlFor="email">Email</label>
-              <input type="email" id="email" className="form-control" ref={emailRef}/>
+              <input type="email" id="email" className="form-control" placeholder="Enter your email" ref={emailRef} required/>
             </div>
 
             <div className="mt-3">
               <label htmlFor="pass">Password</label>
-              <input type="password" id="pass" className="form-control" ref={passRef}/>
+              <input type="password" id="pass" className="form-control" placeholder="Enter your password" ref={passRef} required/>
             </div>
 
             <button
