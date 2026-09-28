@@ -14,8 +14,9 @@
 
 /* Categories Section */
 .categories-section {
-    background-color: #fff5ea;
+    background-color: #fff;
     padding-top: 10px; 
+    padding-bottom: 30px
 }
 
 .category-cards{
@@ -24,21 +25,81 @@
 }
 
 .category-title{
-    color:#4b2e1e
+    color:#4b2e1e;
+    margin-top: -8px;
 }
 
 .headingColor {
     color: #4b2e1e ;
 }
 
+/* Featured Section */
+.featured-section {
+    background-color: #fff5ea;
+    padding-top: 10px; 
+    padding-bottom: 30px;
+}
+
+.featured-cards{
+    width: 270px;
+}
+
+.add-to-cart{
+    background-color: rgb(205, 146, 72);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold; 
+}
+
+.featured-title{
+    color:#4b2e1e;
+}
+
+.add-to-cart:hover{
+    background-color: rgb(65, 46, 22);
+    color: white
+}
+
+/* Custom cake section */
+.custom-cake-section{
+    background-color: #fff;
+}
+
+.custom-cake-container{
+    background-color: #f5dfc5; 
+}
+
+.custom-left{
+    margin: 40px 4%;
+    color: #666;
+    max-width: 750px;
+}
+
+.custom-right{
+    margin: 40px 4%;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.custom-right-icon{
+    width: 150px;
+    height: 150px;
+    font-size: 75px;
+    min-width: 150px;
+}
+
+
 /*  Mobile */
 @media (max-width: 480px) {
+    /* Hero Section */
     .background-img {
         height: 722px;
         background-size: cover;
         background-position: center;
     }
 
+    /* Categories Section */
     .category-cards{
         width: 100px;
         height: 110px;
@@ -48,4 +109,25 @@
         font-size: small;
         margin-top: -7px;
     }
+
+    /* Featured Section */
+    .featured-cards{
+        width: 160px;
+    }
+
+    .featured-title{
+        font-size: 11px;
+        margin-top: -6px;
+    }
+
+    .add-to-cart{
+        margin-top: -9px;
+        font-size: small;
+    }
+
+    /* Custom cake section */
+    .custom-left{
+        margin: 10px 0%;
+    }
+    
 }
