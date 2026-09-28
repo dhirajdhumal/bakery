@@ -19,9 +19,6 @@ import AdminOrders from './pages/admin/AdminOrders';
 import Profile from './pages/user/Profile';
 import ChangePassModel from './pages/user/ChangePassModel';
 
-
-
-
 const router = createBrowserRouter([
 
     // User Routes
