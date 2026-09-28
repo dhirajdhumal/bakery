@@ -122,12 +122,12 @@ const Profile = () => {
           <div className="row">
             
             <div className="col-md-12 col-lg-6 d-flex justify-content-center">
-              <div className="shadow rounded border-0 p-3 col-md-12 col-lg-12">
+              <div className="shadow col-12 rounded border-0 p-3 col-md-12 col-lg-12">
               
-                <h1 className="text-center bg-light p-1 rounded fw-bold position-relative">
+                <h1 className="text-lg-center bg-light p-1 rounded fw-bold position-relative">
                   User-Info 
                   <button className="btn btn-warning btn-sm fs-6 position-absolute top-50 end-0 translate-middle-y me-2" data-bs-toggle="modal" data-bs-target="#personalInfo">
-                  Edit-info     
+                  Edit-Info     
                   </button>
                 </h1>
 
@@ -272,7 +272,7 @@ const Profile = () => {
             </div>
 
           
-            <div className="col-lg-4 d-flex justify-content-center">
+            <div className="col-lg-4 d-none d-lg-block d-md-block d-sm-block d-flex justify-content-center">
               <div className="shadow rounded p-3 bg-secondary">
                 <h4 className="fw-bold text-warning">Bakery-Cakery Offers</h4>
                 <p className="border-top border-warning"></p>

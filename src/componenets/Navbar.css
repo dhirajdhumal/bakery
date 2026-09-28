@@ -1,3 +1,21 @@
 .nav-items:hover{
     color: red !important;
 }
+
+.nav-items{
+    color: black;
+    font-weight: bold;
+}
+
+.navbar-logo{
+    transform: scale(1.5);
+    margin-left: 5px;
+}
+
+
+
+@media (max-width: 480px) {
+    .collapse-menu{
+        background-color: #f5e4d0;
+    }
+}
