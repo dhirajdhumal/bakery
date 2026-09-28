@@ -18,6 +18,8 @@ import AdminLogin from './pages/admin/AdminLogin';
 import AdminOrders from './pages/admin/AdminOrders';
 import Profile from './pages/user/Profile';
 import ChangePassModel from './pages/user/ChangePassModel';
+import Cake from './pages/user/menupages/Cake';
+import Donuts from './pages/user/menupages/Donuts';
 
 
 
@@ -85,7 +87,7 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register />
-            }
+            },
         ]
     },
 

@@ -11,10 +11,41 @@
     background-position: center;
 }
 
+
+/* Categories Section */
+.categories-section {
+    background-color: #fff5ea;
+    padding-top: 10px; 
+}
+
+.category-cards{
+    width: 200px;
+    height: 200px;
+}
+
+.category-title{
+    color:#4b2e1e
+}
+
+.headingColor {
+    color: #4b2e1e ;
+}
+
+/*  Mobile */
 @media (max-width: 480px) {
     .background-img {
         height: 722px;
         background-size: cover;
         background-position: center;
+    }
+
+    .category-cards{
+        width: 100px;
+        height: 110px;
+    }
+
+    .category-title{
+        font-size: small;
+        margin-top: -7px;
     }
 }
