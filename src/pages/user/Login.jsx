@@ -66,10 +66,6 @@ const Login = () => {
               Login
             </button>
 
-            <div className="d-flex justify-content-center">
-              <button className="btn btn-warning mt-3 fw-bold" onClick={()=> navigate('/admin/admin-login')}>Admin Login</button>
-            </div>
-
             <p className="text-center mt-2">
               New User?{" "}
               <Link
@@ -80,6 +76,10 @@ const Login = () => {
               </Link>
             </p>
           </form>
+            <div className="d-flex justify-content-center">
+              <button className="btn btn-warning mt-3 fw-bold" onClick={()=> navigate('/admin/admin-login')}>Admin Login</button>
+            </div>
+
         </div>
       </div>
     </>
