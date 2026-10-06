@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { categories, featuredProducts } from '../../data/data'
 import './Home.css';
 import {Link} from 'react-router-dom';
+import { whyChooseUs } from '../../data/homePage';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -34,7 +35,7 @@ const Home = () => {
 
       {/* Categories Section */}
       <section className='container-fluid categories-section'> 
-        <div className="container d-flex flex-column justify-content-center align-items-center text-center mt-3">
+        <div className="container d-flex flex-column justify-content-center align-items-center text-center">
           <h2 className="fw-bold headingColor">Explore Our Categories</h2>
           <p className="text-muted">Discover something delicious for every occasion.</p>
         </div>
@@ -80,7 +81,7 @@ const Home = () => {
       </section>
 
       {/* Custom cake Section */}
-      <section className='container-fluid custom-cake-section mt-sm-5 mt-2 mb-sm-5 mb-2 pb-sm-1 pb-0'>
+      <section className='container-fluid custom-cake-section mt-sm-5 mt-4 mb-sm-5 mb-4 pb-sm-1 pb-0'>
             <div className="container custom-cake-container mx-auto mt-sm-3 mt-0 rounded row p-3">
                 <div className="col-lg-8  col-12 custom-left">
                   <h2 className='headingColor fw-bold'>Your Cake, Your Way🎂</h2>
@@ -112,7 +113,40 @@ const Home = () => {
             </div>
       </section>
 
-      <div className="bg-dark">dhirjnd</div>
+      {/* Why Choose Us Section */}
+      <section className='container-fluid why-choose-us mb-5 p-2'>
+            <div className="container d-flex flex-column justify-content-center align-items-center text-center">
+              <h2 className='headingColor fw-bold mt-4'>Why Choose Us</h2>
+              <p className='text-muted'>We belive great teste starts with quality ingredients and a lot of Love.</p>
+            </div>
+
+            <div className="d-flex flex-wrap justify-content-center between align-items-center gap-sm-5 gap-4 p-3 mx-sm-5 wcu-container">
+              {
+                whyChooseUs.map((wcu)=>(
+                  <div className="card text-center border-0 shadow p-2 wcu">
+                    <h1 className='p-4 wcu-icon'>{wcu.icon}</h1>
+                    <h5 className='headingColor fw-bold wcu-title'>{wcu.title}</h5>
+                    <p className='text-muted wcu-desc'>{wcu.desc}</p>
+                  </div>
+                ))
+              }
+            </div>
+      </section>
+
+      {/* Offer Section */}
+      <div className="container-fluid">
+        <div className="container home-cake-offer-container rounded">
+              <div className="offer-data d-flex flex-column col-4 text-center">
+                <p className='offer-data-1'>🎉 SPECIAL OFFER</p>
+                <p className='offer-data-2'>Make Every Celebration Sweeter!</p>
+                <p className='offer-data-3'>Enjoy delicious cakes and desserts made fresh with love.</p>
+                <p className='offer-data-4'>Get 20% OFF</p>
+                <p className='offer-data-5'>On selected cakes and desserts.</p>
+                <button className='offer-data-6'>View Menu</button>
+              </div>
+        </div>
+      </div>
+
     </>
   )
 }

@@ -89,6 +89,91 @@
     min-width: 150px;
 }
 
+/* Why choose us section */
+.why-choose-us{
+    background-color: #fff5ea;
+}
+
+.wcu{
+    height: 250px;
+    width: 245px;
+}
+
+.wcu-icon{
+    font-size: 60px;
+}
+
+/* Home-Cake-Offer-Section */
+.home-cake-offer-container {
+    background-image: url('/images/Home-Offer-Cake.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    width: 100%;
+    height: 620px;
+
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.offer-data{
+    position: absolute;
+    top: 22%;
+    left: 10%;
+    color: white;
+}
+
+
+
+.offer-data-1 {
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 0px 0px 10px rgb(167, 117, 56);
+}
+
+.offer-data-2 {
+    margin-top: -10px;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: normal;
+}
+
+.offer-data-3 {
+    font-size: 20px;
+}
+
+.offer-data-4 {
+    font-size: 32px;
+    font-weight: bold;
+    color: rgb(246, 187, 114);
+    margin-top: -10px;
+}
+
+.offer-data-5 {
+    font-size: 20px;
+    margin-top: -10px;
+}
+
+.offer-data-6 {
+    background-color: rgb(205, 146, 72);
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 3px 6px;
+    cursor: pointer;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    margin-left: 120px;
+    border-radius: 6px;
+    font-size: 25px;
+}
+
+.offer-data-6:hover{
+    background-color: rgb(111, 77, 35);
+    color: white
+}
 
 /*  Mobile */
 @media (max-width: 480px) {
@@ -129,5 +214,94 @@
     .custom-left{
         margin: 10px 0%;
     }
+
+    /* why choose us */
+    .wcu{
+        height: 189px;
+        width: 150px;
+    }
+
+    .wcu-icon{
+        font-size: 30px;
+    }
+
+    .wcu-title{
+        font-size: 13px;
+    }
+
+    .wcu-desc{
+        font-size: 10px
+    }
+
+    .wcu-container{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0%;
+    }
+
+    /* Offer Section */
+   .home-cake-offer-container {
+        background-image: url('/images/Home-Offer-Cake.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 228px;
+
+        margin-bottom: 40px;
+        position: relative;
+    }   
+    
+.offer-data{
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    margin-left: -35px;
+    
+}
+
+.offer-data-1 {
+    font-size: 10px;
+    font-weight: bold;
+    text-shadow: 0px 0px 10px rgb(167, 117, 56);
+}
+
+.offer-data-2 {
+    margin-top: -10px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: normal;
+}
+
+.offer-data-3 {
+    font-size: 10px;
+}
+
+.offer-data-4 {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(246, 187, 114);
+    margin-top: -10px;
+}
+
+.offer-data-5 {
+    font-size: 10px;
+    margin-top: -10px;
+}
+
+.offer-data-6 {
+    background-color: rgb(205, 146, 72);
+    border: none;
+    color: white;
+    font-weight: bold;
+
+    cursor: pointer;
+    width: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 120px;
+    border-radius: 6px;
+    font-size: 20px;
+}
     
 }
