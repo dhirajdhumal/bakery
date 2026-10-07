@@ -1,0 +1,30 @@
+.menus-item-button{
+    background-color: white;
+    border-radius: 25px;
+    padding: 8px 20px;
+    border: solid 1px rgb(185, 118, 37);
+    font-weight: bold;
+}
+
+.menus-item-button:hover{
+    background-color: rgb(65, 46, 22);
+    color: white
+}
+
+@media (max-width: 480px){
+    .menu-hero-header{
+        font-size: 28px;
+    }
+    .menu-hero-desc{
+        font-size: 14px !important;
+        max-width: 210px;
+    }
+    .menus-item-button{
+        background-color: white;
+        border-radius: 25px;
+        padding: 4px 10px;
+        border: solid 1px rgb(185, 118, 37);
+        font-weight: bold;
+        font-size: 14px;
+    }
+}
