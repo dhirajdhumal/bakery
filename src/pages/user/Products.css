@@ -1,4 +1,4 @@
-.menus-item-button{
+.menus-item-button {
     background-color: white;
     border-radius: 25px;
     padding: 8px 20px;
@@ -6,25 +6,114 @@
     font-weight: bold;
 }
 
-.menus-item-button:hover{
+.menus-item-button:hover {
     background-color: rgb(65, 46, 22);
     color: white
 }
 
-@media (max-width: 480px){
-    .menu-hero-header{
+.cake-card {
+    width: 300px;
+    height: 450px;
+    margin-bottom: 20px;
+}
+
+.line {
+    width: 70px;
+    margin: auto;
+    height: 3px;
+    border: none;
+    background-color: rgb(205, 146, 72);
+    margin-bottom: 20px;
+}
+
+.item-price {
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.add-to-cart-menu {
+    background-color: rgb(205, 146, 72);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+}
+
+@media (max-width: 480px) {
+    .menu-hero-header {
         font-size: 28px;
     }
-    .menu-hero-desc{
+
+    .menu-hero-desc {
         font-size: 14px !important;
         max-width: 210px;
     }
-    .menus-item-button{
+
+    .menus-item-button {
         background-color: white;
         border-radius: 25px;
         padding: 4px 10px;
         border: solid 1px rgb(185, 118, 37);
         font-weight: bold;
         font-size: 14px;
+    }
+
+    .cake-menu {
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        column-gap: 15px !important;
+        justify-content: flex-start !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    .cake-menu::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    .cake-card {
+        flex: 0 0 auto;
+    }
+
+    .cake-card {
+        width: 150px;
+        height: 250px !important;
+        margin-bottom: 20px;
+    }
+
+    .cake-card-2 {
+        width: 155px;
+        height: 266px !important;
+        margin-bottom: 20px;
+    }
+
+    .cake-card-2-title {
+        font-size: 9px !important;
+    }
+
+    .card-title {
+        font-size: 10px;
+    }
+
+    .item-desc {
+        font-size: 8px;
+    }
+
+    .item-price {
+        font-size: 8px !important;
+        margin-top: -12px;
+        margin-bottom: 12px;
+    }
+
+    .card-img-top {
+        height: 120px;
+    }
+
+    .add-to-cart-menu {
+        padding: 3px 6px;
+        font-size: 10px;
+        border-radius: 3px;
     }
 }

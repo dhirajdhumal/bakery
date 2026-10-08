@@ -1,26 +1,212 @@
-import React from 'react'
-import './Products.css';
+import React from "react";
+import "./Products.css";
+import { cakes, pastries, donuts, cookies, brownies, breads } from "../../data/products";
 
 const Products = () => {
   return (
     <>
-      <section className='m-4'>
-        <div className="container-fluid product-header-container d-flex flex-column p-3 align-items-center rounded" style={{backgroundColor: "#fff5ea"}}>
-          <h1 className='fw-bold headingColor display-4 menu-hero-header'>Our Sweet Menu</h1>
-          <p className='text-muted text-center fs-5 menu-hero-desc'>Freshly backed favorite for every craving.</p>
+      {/* Product Header */}
+      <section className="m-4">
+        <div
+          className="container-fluid product-header-container d-flex flex-column p-3 align-items-center rounded"
+          style={{ backgroundColor: "#fff5ea" }}
+        >
+          <h1 className="fw-bold headingColor display-4 menu-hero-header">
+            Our Sweet Menu
+          </h1>
+          <p className="text-muted text-center fs-5 menu-hero-desc">
+            Freshly backed favorite for every craving.
+          </p>
           <div className="menus m-3 d-flex flex-wrap gap-lg-4 gap-2">
-            <button className='menus-item-button headingColor' style={{backgroundColor: "rgb(65, 46, 22)", color: "White"}}>All</button>
-            <button className='menus-item-button headingColor'>Cakes</button>
-            <button className='menus-item-button headingColor'>Pastries</button>
-            <button className='menus-item-button headingColor'>Donuts</button>
-            <button className='menus-item-button headingColor'>Cookies</button>
-            <button className='menus-item-button headingColor'>Brownies</button>
-            <button className='menus-item-button headingColor'>Breads</button>
+            <button
+              className="menus-item-button headingColor"
+              style={{ backgroundColor: "rgb(65, 46, 22)", color: "White" }}
+            >
+              All
+            </button>
+            <a
+              className="menus-item-button headingColor text-decoration-none"
+              href="#cakes"
+            >
+              Cakes
+            </a>
+            <a className="menus-item-button headingColor text-decoration-none" href="#pastries">
+              Pastries
+            </a>
+            <a className="menus-item-button headingColor text-decoration-none" href="#donuts">
+              Donuts
+            </a>
+            <a className="menus-item-button headingColor text-decoration-none" href="#cookies">
+              Cookies
+            </a>
+            <a className="menus-item-button headingColor text-decoration-none" href="#brownies">
+              Brownies
+            </a>
+            <a className="menus-item-button headingColor text-decoration-none" href="#breads">
+              Breads
+            </a>
+          </div>
+        </div>
+      </section>
+
+     {/* Menu Section */}
+      <section>
+        {/* Cake Menu */}
+        <div className="cake-headings" id="cakes">
+          <h3 className="text-center headingColor fw-bold">Cakes</h3>
+          <hr className="line" />
+
+          <div className="cake-menu d-flex justify-content-center align-items-center flex-wrap gap-4">
+            {cakes.map((cake) => (
+              <div className="card shadow border-0 cake-card">
+                <img
+                  className="card-img-top"
+                  src={cake.img}
+                  alt=""
+                  height={"250px"}
+                  width={"100%"}
+                />
+                <div className="card-body d-flex flex-column justify-content-center align-items-center">
+                  <h4 className="card-title fw-bold headingColor">{cake.title}</h4>
+                  <p className="text-muted text-center item-desc">{cake.desc}</p>
+                  <p className="fw-bold headingColor fs-5 item-price">{cake.price}</p>
+                  <button className="btn add-to-cart-menu">Add to Cart</button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Pastry Menu */}
+        <div className="cake-headings" id="pastries">
+          <h3 className="text-center headingColor fw-bold">Pastries</h3>
+          <hr className="line" />
+
+          <div className="cake-menu d-flex justify-content-center align-items-center flex-wrap gap-4">
+            {pastries.map((pastrie) => (
+              <div className="card shadow border-0 cake-card">
+                <img
+                  className="card-img-top"
+                  src={pastrie.img}
+                  alt=""
+                  height={"250px"}
+                  width={"100%"}
+                />
+                <div className="card-body d-flex flex-column justify-content-center align-items-center p-1">
+                  <h4 className="card-title fw-bold headingColor">{pastrie.title}</h4>
+                  <p className="text-muted text-center item-desc">{pastrie.desc}</p>
+                  <p className="fw-bold headingColor fs-5 item-price">{pastrie.price}</p>
+                  <button className="btn add-to-cart-menu">Add to Cart</button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Donut Menu */}
+        <div className="cake-headings" id="donuts">
+          <h3 className="text-center headingColor fw-bold">Donuts</h3>
+          <hr className="line" />
+
+          <div className="cake-menu d-flex justify-content-center align-items-center flex-wrap gap-4">
+            {donuts.map((donut) => (
+              <div className="card shadow border-0 cake-card">
+                <img
+                  className="card-img-top"
+                  src={donut.img}
+                  alt=""
+                  height={"250px"}
+                  width={"100%"}
+                />
+                <div className="card-body d-flex flex-column justify-content-center align-items-center p-1">
+                  <h4 className="card-title fw-bold headingColor">{donut.title}</h4>
+                  <p className="text-muted text-center item-desc">{donut.desc}</p>
+                  <p className="fw-bold headingColor fs-5 item-price">{donut.price}</p>
+                  <button className="btn add-to-cart-menu">Add to Cart</button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Cookie Menu */}
+        <div className="cake-headings" id="cookies">
+          <h3 className="text-center headingColor fw-bold">Cookies</h3>
+          <hr className="line" />
+
+          <div className="cake-menu d-flex justify-content-center align-items-center flex-wrap gap-4">
+            {cookies.map((cookie) => (
+              <div className="card shadow border-0 cake-card cake-card-2" style={{ height: "472px" }}>
+                <img
+                  className="card-img-top"
+                  src={cookie.img}
+                  alt=""
+                  height={"250px"}
+                  width={"100%"}
+                />
+                <div className="card-body d-flex flex-column justify-content-center align-items-center">
+                  <h4 className="card-title cake-card-2-title fw-bold headingColor">{cookie.title}</h4>
+                  <p className="text-muted text-center item-desc">{cookie.desc}</p>
+                  <p className="fw-bold headingColor fs-5 item-price">{cookie.price}</p>
+                  <button className="btn add-to-cart-menu">Add to Cart</button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Brownie Menu */}
+        <div className="cake-headings" id="brownies">
+          <h3 className="text-center headingColor fw-bold">Brownies</h3>
+          <hr className="line" />
+
+          <div className="cake-menu d-flex justify-content-center align-items-center flex-wrap gap-4">
+            {brownies.map((brownie) => (
+              <div className="card shadow border-0 cake-card cake-card-2" style={{ height: "472px" }}>
+                <img
+                  className="card-img-top"
+                  src={brownie.img}
+                  alt=""
+                  height={"250px"}
+                  width={"100%"}
+                />
+                <div className="card-body d-flex flex-column justify-content-center align-items-center">
+                  <h5 className="card-title fw-bold headingColor cake-card-2-title">{brownie.title}</h5>
+                  <p className="text-muted text-center item-desc">{brownie.desc}</p>
+                  <p className="fw-bold headingColor fs-5 item-price">{brownie.price}</p>
+                  <button className="btn add-to-cart-menu">Add to Cart</button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="cake-headings" id="breads">
+          <h3 className="text-center headingColor fw-bold">Breads</h3>
+          <hr className="line" />
+
+          <div className="cake-menu d-flex justify-content-center align-items-center flex-wrap gap-4">
+            {breads.map((bread) => (
+              <div className="card shadow border-0 cake-card cake-card-2" style={{ height: "472px" }}>
+                <img
+                  className="card-img-top"
+                  src={bread.img}
+                  alt=""
+                  height={"100%"}
+                  width={"100%"}
+                />
+                <div className="card-body d-flex flex-column justify-content-center align-items-center">
+                  <h4 className="card-title fw-bold headingColor">{bread.title}</h4>
+                  <p className="text-muted text-center item-desc">{bread.desc}</p>
+                  <p className="fw-bold headingColor fs-5 item-price">{bread.price}</p>
+                  <button className="btn add-to-cart-menu">Add to Cart</button>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
     </>
-  )
-}
-
-export default Products
+  );
+};
+export default Products;
