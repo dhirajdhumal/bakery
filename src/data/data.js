@@ -1,33 +1,33 @@
 export const categories = [
     {
+        id: 1,
         img: "/images/categories/Cakes.png",
-        title: "Cakes",
-        link: ""
+        title: "Cakes"
     },
     {
+        id: 2,
         img: "/images/categories/Donuts.png",
-        title: "Donuts",
-        link: ""
+        title: "Donuts"
     },
     {
+        id: 3,
         img: "/images/categories/Pastries.png",
-        title: "Pastries",
-        link: ""
+        title: "Pastries"
     },
     {
+        id: 4,
         img: "/images/categories/Cookies.png",
-        title: "Cookies",
-        link: ""
+        title: "Cookies"
     },
     {
+        id: 5,
         img: "/images/categories/Brownies.png",
-        title: "Brownies",
-        link: ""
+        title: "Brownies"
     },
     {
+        id: 6,
         img: "/images/categories/Breads.png",
-        title: "Breads",
-        link: ""
+        title: "Breads"
     },
 ]
 

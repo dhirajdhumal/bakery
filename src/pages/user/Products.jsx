@@ -1,8 +1,36 @@
 import React from "react";
 import "./Products.css";
 import { cakes, pastries, donuts, cookies, brownies, breads } from "../../data/products";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const Products = () => {
+  const navigate = useNavigate();
+
+
+  function addToCart(item) {
+    const existingCartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    const existingItem = existingCartItems.find((existingCartItem)=>(
+      existingCartItem.title === item.title
+    ))
+
+    if(existingItem){
+      existingItem.quantity += 1;
+    }else{
+      existingCartItems.push({
+        ...item,
+        quantity: 1
+      })
+    }
+      
+    localStorage.setItem("cartItems", JSON.stringify(existingCartItems));
+    toast.success(`${item.title} added to cart!`);
+    // setTimeout(()=>{
+      navigate('/cart')
+    // },3000)
+  }
+
+
   return (
     <>
       {/* Product Header */}
@@ -58,6 +86,7 @@ const Products = () => {
 
           <div className="cake-menu d-flex justify-content-center align-items-center flex-wrap gap-4">
             {cakes.map((cake) => (
+              <a href={cake.link} className="text-decoration-none">
               <div className="card shadow border-0 cake-card">
                 <img
                   className="card-img-top"
@@ -70,9 +99,10 @@ const Products = () => {
                   <h4 className="card-title fw-bold headingColor">{cake.title}</h4>
                   <p className="text-muted text-center item-desc">{cake.desc}</p>
                   <p className="fw-bold headingColor fs-5 item-price">{cake.price}</p>
-                  <button className="btn add-to-cart-menu">Add to Cart</button>
+                  <button className="btn add-to-cart-menu" onClick={() => addToCart(cake)}>Add to Cart</button>
                 </div>
               </div>
+              </a>
             ))}
           </div>
         </div>
@@ -96,7 +126,7 @@ const Products = () => {
                   <h4 className="card-title fw-bold headingColor">{pastrie.title}</h4>
                   <p className="text-muted text-center item-desc">{pastrie.desc}</p>
                   <p className="fw-bold headingColor fs-5 item-price">{pastrie.price}</p>
-                  <button className="btn add-to-cart-menu">Add to Cart</button>
+                  <button className="btn add-to-cart-menu" onClick={() => addToCart(pastrie)}>Add to Cart</button>
                 </div>
               </div>
             ))}
@@ -122,7 +152,7 @@ const Products = () => {
                   <h4 className="card-title fw-bold headingColor">{donut.title}</h4>
                   <p className="text-muted text-center item-desc">{donut.desc}</p>
                   <p className="fw-bold headingColor fs-5 item-price">{donut.price}</p>
-                  <button className="btn add-to-cart-menu">Add to Cart</button>
+                  <button className="btn add-to-cart-menu" onClick={() => addToCart(donut)}>Add to Cart</button>
                 </div>
               </div>
             ))}
@@ -148,7 +178,7 @@ const Products = () => {
                   <h4 className="card-title cake-card-2-title fw-bold headingColor">{cookie.title}</h4>
                   <p className="text-muted text-center item-desc">{cookie.desc}</p>
                   <p className="fw-bold headingColor fs-5 item-price">{cookie.price}</p>
-                  <button className="btn add-to-cart-menu">Add to Cart</button>
+                  <button className="btn add-to-cart-menu" onClick={() => addToCart(cookie)}>Add to Cart</button>
                 </div>
               </div>
             ))}
@@ -174,7 +204,7 @@ const Products = () => {
                   <h5 className="card-title fw-bold headingColor cake-card-2-title">{brownie.title}</h5>
                   <p className="text-muted text-center item-desc">{brownie.desc}</p>
                   <p className="fw-bold headingColor fs-5 item-price">{brownie.price}</p>
-                  <button className="btn add-to-cart-menu">Add to Cart</button>
+                  <button className="btn add-to-cart-menu" onClick={() => addToCart(brownie)}>Add to Cart</button>
                 </div>
               </div>
             ))}
@@ -199,7 +229,7 @@ const Products = () => {
                   <h4 className="card-title fw-bold headingColor">{bread.title}</h4>
                   <p className="text-muted text-center item-desc">{bread.desc}</p>
                   <p className="fw-bold headingColor fs-5 item-price">{bread.price}</p>
-                  <button className="btn add-to-cart-menu">Add to Cart</button>
+                  <button className="btn add-to-cart-menu" onClick={() => addToCart(bread)}>Add to Cart</button>
                 </div>
               </div>
             ))}

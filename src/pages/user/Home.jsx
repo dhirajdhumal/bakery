@@ -18,6 +18,28 @@ const Home = () => {
     }
   },[])
 
+    function addToCart(item) {
+      const existingCartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+      const existingItem = existingCartItems.find((existingCartItem)=>(
+        existingCartItem.title === item.title
+      ))
+  
+      if(existingItem){
+        existingItem.quantity += 1;
+      }else{
+        existingCartItems.push({
+          ...item,
+          quantity: 1
+        })
+      }
+        
+      localStorage.setItem("cartItems", JSON.stringify(existingCartItems));
+      toast.success(`${item.title} added to cart!`);
+      // setTimeout(()=>{
+        navigate('/cart')
+      // },3000)
+    }
+
 
   return (
     <>
@@ -43,13 +65,15 @@ const Home = () => {
         <div className="d-flex flex-row flex-wrap justify-content-center align-items-center gap-sm-4 gap-3">
           {
             categories.map((category)=>(
+              
               <div className="category-cards card shadow border-0" key={category.img}>
-                <img className='card-img-top' src={category.img} alt={category.title} width={"100%"}/>
-                <div className="card-body">
-                  <Link to={category.link} className='text-decoration-none'>
-                  <h4 className='card-title category-title text-center fw-bold'>{category.title}</h4>
-                  </Link>
-                </div>
+                <Link to={'/products'} className='text-decoration-none text-dark'>
+                  <img className='card-img-top' src={category.img} alt={category.title} width={"100%"}/>
+                  <div className="card-body">
+
+                    <h4 className='card-title category-title text-center fw-bold'>{category.title}</h4>
+                  </div>
+                </Link>
               </div>
             ))
           }
@@ -72,7 +96,7 @@ const Home = () => {
                   <div className="card-body d-flex flex-column justify-content-center align-items-center">
                     <h5 className='featured-title fw-bold'>{products.title}</h5>
                     <p className='featured-title fw-bold'>₹{products.price}</p>
-                    <button className='btn add-to-cart'>Add to Cart</button>
+                    <button className='btn add-to-cart' onClick={()=>addToCart(products)}>Add to Cart</button>
                   </div>
                 </div>
               ))
@@ -142,7 +166,7 @@ const Home = () => {
                 <p className='offer-data-3'>Enjoy delicious cakes and desserts made fresh with love.</p>
                 <p className='offer-data-4'>Get 20% OFF</p>
                 <p className='offer-data-5'>On selected cakes and desserts.</p>
-                <button className='offer-data-6'>View Menu</button>
+                <button className='offer-data-6' onClick={()=> navigate('/products')}>View Menu</button>
               </div>
         </div>
       </div>
