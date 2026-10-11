@@ -67,7 +67,7 @@ const Navbar = () => {
                 
               ) :
               (
-                <Link className='text-decoration-none  nav-items btn btn-warning px-3 fs-5' to={'/login'}>Login</Link>
+                <Link className='text-decoration-none  btn add-to-cart px-3 fs-5' to={'/login'}>Login</Link>
               )
             }
 
