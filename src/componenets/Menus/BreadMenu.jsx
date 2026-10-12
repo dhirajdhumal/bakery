@@ -30,7 +30,7 @@ const BreadMenu = () => {
                 </h4>
                 <p className="text-muted text-center item-desc">{bread.desc}</p>
                 <p className="fw-bold headingColor fs-5 item-price">
-                  {bread.price}
+                  ₹{bread.price}
                 </p>
                 <button
                   className="btn add-to-cart-menu"

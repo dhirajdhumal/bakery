@@ -82,7 +82,7 @@ const Cart = () => {
                 <td>{cartItems.price}</td>
                 <td>
                   <button
-                    className="btn add-to-cart mx-2"
+                    className="btn add-to-cart mx-2 px-3"
                     onClick={() => {
                       decreaseQuantity(cartItems);
                     }}
@@ -91,7 +91,7 @@ const Cart = () => {
                   </button>
                   {cartItems.quantity}
                   <button
-                    className="btn add-to-cart mx-2"
+                    className="btn add-to-cart mx-2 px-3"
                     onClick={() => {
                       increaseQuantity(cartItems);
                     }}

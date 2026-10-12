@@ -26,7 +26,7 @@ const PastrieMenu = () => {
               </h4>
               <p className="text-muted text-center item-desc">{pastrie.desc}</p>
               <p className="fw-bold headingColor fs-5 item-price">
-                {pastrie.price}
+                ₹{pastrie.price}
               </p>
               <button
                 className="btn add-to-cart-menu"

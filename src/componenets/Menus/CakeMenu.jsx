@@ -30,7 +30,7 @@ const CakeMenu = () => {
                     {cake.desc}
                   </p>
                   <p className="fw-bold headingColor fs-5 item-price">
-                    {cake.price}
+                    ₹{cake.price}
                   </p>
                   <button
                     className="btn add-to-cart-menu"

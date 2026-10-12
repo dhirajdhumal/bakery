@@ -32,7 +32,7 @@ const CookiesMenu = () => {
                   {cookie.desc}
                 </p>
                 <p className="fw-bold headingColor fs-5 item-price">
-                  {cookie.price}
+                  ₹{cookie.price}
                 </p>
                 <button
                   className="btn add-to-cart-menu"

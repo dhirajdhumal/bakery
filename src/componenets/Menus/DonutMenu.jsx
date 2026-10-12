@@ -27,7 +27,7 @@ const DonutMenu = () => {
                 </h4>
                 <p className="text-muted text-center item-desc">{donut.desc}</p>
                 <p className="fw-bold headingColor fs-5 item-price">
-                  {donut.price}
+                  ₹{donut.price}
                 </p>
                 <button
                   className="btn add-to-cart-menu"
