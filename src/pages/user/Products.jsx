@@ -3,34 +3,15 @@ import "./Products.css";
 import { cakes, pastries, donuts, cookies, brownies, breads } from "../../data/products";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import CakeMenu from "../../componenets/Menus/CakeMenu";
+import PastrieMenu from "../../componenets/Menus/PastrieMenu";
+import DonutMenu from "../../componenets/Menus/DonutMenu";
+import CookiesMenu from "../../componenets/Menus/CookiesMenu";
+import BrownieMenu from "../../componenets/Menus/BrownieMenu";
+import BreadMenu from "../../componenets/Menus/BreadMenu";
 
 const Products = () => {
   const navigate = useNavigate();
-
-
-  function addToCart(item) {
-    const existingCartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-    const existingItem = existingCartItems.find((existingCartItem)=>(
-      existingCartItem.title === item.title
-    ))
-
-    if(existingItem){
-      existingItem.quantity += 1;
-    }else{
-      existingCartItems.push({
-        ...item,
-        quantity: 1
-      })
-    }
-      
-    localStorage.setItem("cartItems", JSON.stringify(existingCartItems));
-    toast.success(`${item.title} added to cart!`);
-    // setTimeout(()=>{
-      navigate('/cart')
-    // },3000)
-  }
-
-
   return (
     <>
       {/* Product Header */}
@@ -80,161 +61,22 @@ const Products = () => {
      {/* Menu Section */}
       <section>
         {/* Cake Menu */}
-        <div className="cake-headings" id="cakes">
-          <h3 className="text-center headingColor fw-bold">Cakes</h3>
-          <hr className="line" />
-
-          <div className="cake-menu d-flex justify-content-center align-items-center flex-wrap gap-4">
-            {cakes.map((cake) => (
-              <a href={cake.link} className="text-decoration-none">
-              <div className="card shadow border-0 cake-card">
-                <img
-                  className="card-img-top"
-                  src={cake.img}
-                  alt=""
-                  height={"250px"}
-                  width={"100%"}
-                />
-                <div className="card-body d-flex flex-column justify-content-center align-items-center">
-                  <h4 className="card-title fw-bold headingColor">{cake.title}</h4>
-                  <p className="text-muted text-center item-desc">{cake.desc}</p>
-                  <p className="fw-bold headingColor fs-5 item-price">{cake.price}</p>
-                  <button className="btn add-to-cart-menu" onClick={() => addToCart(cake)}>Add to Cart</button>
-                </div>
-              </div>
-              </a>
-            ))}
-          </div>
-        </div>
+        <CakeMenu />
 
         {/* Pastry Menu */}
-        <div className="cake-headings" id="pastries">
-          <h3 className="text-center headingColor fw-bold">Pastries</h3>
-          <hr className="line" />
-
-          <div className="cake-menu d-flex justify-content-center align-items-center flex-wrap gap-4">
-            {pastries.map((pastrie) => (
-              <div className="card shadow border-0 cake-card">
-                <img
-                  className="card-img-top"
-                  src={pastrie.img}
-                  alt=""
-                  height={"250px"}
-                  width={"100%"}
-                />
-                <div className="card-body d-flex flex-column justify-content-center align-items-center p-1">
-                  <h4 className="card-title fw-bold headingColor">{pastrie.title}</h4>
-                  <p className="text-muted text-center item-desc">{pastrie.desc}</p>
-                  <p className="fw-bold headingColor fs-5 item-price">{pastrie.price}</p>
-                  <button className="btn add-to-cart-menu" onClick={() => addToCart(pastrie)}>Add to Cart</button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        <PastrieMenu />
 
         {/* Donut Menu */}
-        <div className="cake-headings" id="donuts">
-          <h3 className="text-center headingColor fw-bold">Donuts</h3>
-          <hr className="line" />
-
-          <div className="cake-menu d-flex justify-content-center align-items-center flex-wrap gap-4">
-            {donuts.map((donut) => (
-              <div className="card shadow border-0 cake-card">
-                <img
-                  className="card-img-top"
-                  src={donut.img}
-                  alt=""
-                  height={"250px"}
-                  width={"100%"}
-                />
-                <div className="card-body d-flex flex-column justify-content-center align-items-center p-1">
-                  <h4 className="card-title fw-bold headingColor">{donut.title}</h4>
-                  <p className="text-muted text-center item-desc">{donut.desc}</p>
-                  <p className="fw-bold headingColor fs-5 item-price">{donut.price}</p>
-                  <button className="btn add-to-cart-menu" onClick={() => addToCart(donut)}>Add to Cart</button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        <DonutMenu />
 
         {/* Cookie Menu */}
-        <div className="cake-headings" id="cookies">
-          <h3 className="text-center headingColor fw-bold">Cookies</h3>
-          <hr className="line" />
-
-          <div className="cake-menu d-flex justify-content-center align-items-center flex-wrap gap-4">
-            {cookies.map((cookie) => (
-              <div className="card shadow border-0 cake-card cake-card-2" style={{ height: "472px" }}>
-                <img
-                  className="card-img-top"
-                  src={cookie.img}
-                  alt=""
-                  height={"250px"}
-                  width={"100%"}
-                />
-                <div className="card-body d-flex flex-column justify-content-center align-items-center">
-                  <h4 className="card-title cake-card-2-title fw-bold headingColor">{cookie.title}</h4>
-                  <p className="text-muted text-center item-desc">{cookie.desc}</p>
-                  <p className="fw-bold headingColor fs-5 item-price">{cookie.price}</p>
-                  <button className="btn add-to-cart-menu" onClick={() => addToCart(cookie)}>Add to Cart</button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        <CookiesMenu />
 
         {/* Brownie Menu */}
-        <div className="cake-headings" id="brownies">
-          <h3 className="text-center headingColor fw-bold">Brownies</h3>
-          <hr className="line" />
+        <BrownieMenu />
 
-          <div className="cake-menu d-flex justify-content-center align-items-center flex-wrap gap-4">
-            {brownies.map((brownie) => (
-              <div className="card shadow border-0 cake-card cake-card-2" style={{ height: "472px" }}>
-                <img
-                  className="card-img-top"
-                  src={brownie.img}
-                  alt=""
-                  height={"250px"}
-                  width={"100%"}
-                />
-                <div className="card-body d-flex flex-column justify-content-center align-items-center">
-                  <h5 className="card-title fw-bold headingColor cake-card-2-title">{brownie.title}</h5>
-                  <p className="text-muted text-center item-desc">{brownie.desc}</p>
-                  <p className="fw-bold headingColor fs-5 item-price">{brownie.price}</p>
-                  <button className="btn add-to-cart-menu" onClick={() => addToCart(brownie)}>Add to Cart</button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="cake-headings" id="breads">
-          <h3 className="text-center headingColor fw-bold">Breads</h3>
-          <hr className="line" />
-
-          <div className="cake-menu d-flex justify-content-center align-items-center flex-wrap gap-4">
-            {breads.map((bread) => (
-              <div className="card shadow border-0 cake-card cake-card-2" style={{ height: "472px" }}>
-                <img
-                  className="card-img-top"
-                  src={bread.img}
-                  alt=""
-                  height={"100%"}
-                  width={"100%"}
-                />
-                <div className="card-body d-flex flex-column justify-content-center align-items-center">
-                  <h4 className="card-title fw-bold headingColor">{bread.title}</h4>
-                  <p className="text-muted text-center item-desc">{bread.desc}</p>
-                  <p className="fw-bold headingColor fs-5 item-price">{bread.price}</p>
-                  <button className="btn add-to-cart-menu" onClick={() => addToCart(bread)}>Add to Cart</button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        {/* Bread Menu */}
+        <BreadMenu />
       </section>
     </>
   );

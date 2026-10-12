@@ -67,13 +67,12 @@ const Home = () => {
             categories.map((category)=>(
               
               <div className="category-cards card shadow border-0" key={category.img}>
-                <Link to={'/products'} className='text-decoration-none text-dark'>
-                  <img className='card-img-top' src={category.img} alt={category.title} width={"100%"}/>
-                  <div className="card-body">
-
-                    <h4 className='card-title category-title text-center fw-bold'>{category.title}</h4>
-                  </div>
-                </Link>
+                  <Link to={category.link} className='text-decoration-none text-dark'>
+                    <img className='card-img-top' src={category.img} alt={category.title} width={"100%"}/>
+                    <div className="card-body">
+                      <h4 className='card-title category-title text-center fw-bold'>{category.title}</h4>
+                    </div>
+                  </Link>
               </div>
             ))
           }

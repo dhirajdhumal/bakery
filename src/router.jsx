@@ -18,6 +18,12 @@ import AdminLogin from './pages/admin/AdminLogin';
 import AdminOrders from './pages/admin/AdminOrders';
 import Profile from './pages/user/Profile';
 import ChangePassModel from './pages/user/ChangePassModel';
+import DonutMenu from './componenets/Menus/DonutMenu';
+import CakeMenu from './componenets/Menus/CakeMenu';
+import PastrieMenu from './componenets/Menus/PastrieMenu';
+import CookiesMenu from './componenets/Menus/CookiesMenu';
+import BrownieMenu from './componenets/Menus/BrownieMenu';
+import BreadMenu from './componenets/Menus/BreadMenu';
 
 const router = createBrowserRouter([
 
@@ -83,6 +89,30 @@ const router = createBrowserRouter([
                 path: '/register',
                 element: <Register />
             },
+            {
+                path: '/cake-menu',
+                element:  <CakeMenu />
+            },
+            {
+                path: '/donut-menu',
+                element: <DonutMenu />
+            },
+            {
+                path: '/pastrie-menu',
+                element: <PastrieMenu />
+            },
+            {
+                path: '/cookies-menu',
+                element: <CookiesMenu />
+            },
+            {
+                path: '/brownie-menu',
+                element: <BrownieMenu />
+            },
+            {
+                path: '/bread-menu',
+                element: <BreadMenu />
+            }
         ]
     },
 

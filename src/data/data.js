@@ -2,32 +2,38 @@ export const categories = [
     {
         id: 1,
         img: "/images/categories/Cakes.png",
-        title: "Cakes"
+        title: "Cakes",
+        link: '/cake-menu'
     },
     {
         id: 2,
         img: "/images/categories/Donuts.png",
-        title: "Donuts"
+        title: "Donuts",
+        link: '/donut-menu'
     },
     {
         id: 3,
         img: "/images/categories/Pastries.png",
-        title: "Pastries"
+        title: "Pastries",
+        link: '/pastrie-menu'
     },
     {
         id: 4,
         img: "/images/categories/Cookies.png",
-        title: "Cookies"
+        title: "Cookies",
+        link: '/cookies-menu'
     },
     {
         id: 5,
         img: "/images/categories/Brownies.png",
-        title: "Brownies"
+        title: "Brownies",
+        link: '/brownie-menu'
     },
     {
         id: 6,
         img: "/images/categories/Breads.png",
-        title: "Breads"
+        title: "Breads",
+        link: '/bread-menu'
     },
 ]
 
