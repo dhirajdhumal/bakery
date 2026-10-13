@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Profile = () => {
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem("LoggedInUser")));
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("LoggedInUser")) || {});
   const [createPassModal, setCreatePassModal] =useState(false);
 
   const nameRef = useRef();
@@ -132,8 +132,8 @@ const Profile = () => {
                 </h1>
 
                 <hr />
-                <p className="fs-5"><b>Name: </b> <span className="text-muted">{user.name}</span> </p>
-                <p className="fs-5"><b>Email: </b> <span className="text-muted">{user.email}</span> </p>
+                <p className="fs-5"><b>Name: </b> <span className="text-muted">{user.name || "Not provided"}</span> </p>
+                <p className="fs-5"><b>Email: </b> <span className="text-muted">{user.email || "Not provided"}</span> </p>
                 <p className="fs-5"><b>Contact-No: </b> <span className="text-muted">{user.phone || "Not provided"}</span> </p>
                 <p className="fs-5"><b>Address: </b> <span className="text-muted">{user.address ? user.address : "Not provided"}</span> </p>
 
