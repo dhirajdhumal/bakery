@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Cart.css";
 import { useState } from "react";
 
@@ -40,6 +40,10 @@ const Cart = () => {
     setCartItems(updatedCartItems);
   };
 
+  const totalAmount = cartItems.reduce((sum, item) => {
+    return sum += item.price * item.quantity;
+    }, 0);
+
   return (
     <>
       <table
@@ -61,7 +65,10 @@ const Cart = () => {
           {cartItems.length === 0 ? (
             <tr>
               <td colSpan={6}>
-                <div className="d-flex align-items-center justify-content-center fw-bold fs-3" style={{marginTop: "20px", height: "480px"}}>
+                <div
+                  className="d-flex align-items-center justify-content-center fw-bold fs-3"
+                  style={{ marginTop: "20px", height: "480px" }}
+                >
                   Your cart is empty
                 </div>
               </td>
@@ -78,7 +85,7 @@ const Cart = () => {
                     width={"50px"}
                   />
                 </td>
-                <td>{cartItems.title}</td>
+                <td style={{ fontWeight: "bold" }}>{cartItems.title}</td>
                 <td>{cartItems.price}</td>
                 <td>
                   <button
@@ -113,6 +120,16 @@ const Cart = () => {
             ))
           )}
         </tbody>
+        <tfoot className="text-center" style={{ backgroundColor: "#f5dfc5" }}>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td className="text-center fs-4 headingColor fw-bold">
+            Total Amount
+          </td>
+          <td className="headingColor fw-bold">{totalAmount}</td>
+        </tfoot>
       </table>
     </>
   );
