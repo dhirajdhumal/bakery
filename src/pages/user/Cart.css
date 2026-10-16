@@ -1,3 +1,78 @@
-.table-row{
-    margin-left: 20px;
+.cart-container {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    box-sizing: border-box;
+}
+
+/* Cart table */
+.cart-container table {
+    width: 100%;
+    min-width: 750px;
+    border-collapse: collapse;
+    margin-bottom: 0;
+}
+
+/* Table rows */
+.table-row {
+    vertical-align: middle;
+}
+
+/* Product image */
+.cart-container img {
+    max-width: 50px;
+    height: 45px;
+    object-fit: cover;
+}
+
+/* Product title */
+.product-title {
+    font-weight: bold;
+    min-width: 140px;
+}
+
+/* Mobile responsive design */
+@media (max-width: 480px) {
+    .cart-container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        overflow-x: auto;
+    }
+
+    .cart-container table {
+        min-width: 700px;
+        font-size: 12px;
+    }
+
+    .table-heading {
+        font-size: 12px !important;
+    }
+
+    .product-title {
+        font-size: 12px !important;
+        min-width: 100px;
+    }
+
+    .cart-container .btn {
+        font-size: 12px;
+        padding: 5px 8px !important;
+        margin-left: 3px !important;
+        margin-right: 3px !important;
+    }
+
+    .cart-container tfoot td {
+        font-size: 12px !important;
+        white-space: nowrap;
+    }
+    
+    .plus-btn {
+        font-size: 8px !important;
+        
+    }
+
+    .minus-btn {
+        font-size: 8px !important;
+    }
 }

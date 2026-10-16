@@ -45,10 +45,10 @@
 }
 
 .add-to-cart{
-    background-color: rgb(205, 146, 72);
+    background-color: rgb(205, 146, 72) !important;
     border: none;
     border-radius: 6px;
-    color: white;
+    color: white !important;
     font-weight: bold; 
 }
 
@@ -57,8 +57,8 @@
 }
 
 .add-to-cart:hover{
-    background-color: rgb(65, 46, 22);
-    color: white
+    background-color: rgb(65, 46, 22) !important;
+    color: white !important;
 }
 
 /* Custom cake section */
