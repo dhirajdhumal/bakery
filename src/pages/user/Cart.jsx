@@ -3,8 +3,11 @@ import "./Cart.css";
 import "./Home.css";
 import { useState } from "react";
 import{toast} from 'react-toastify'
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
+  const navigate = useNavigate();
+
   const [cartItems, setCartItems] = useState(
     JSON.parse(localStorage.getItem("cartItems")) || [],
   );
@@ -45,6 +48,15 @@ const Cart = () => {
   const totalAmount = cartItems.reduce((sum, item) => {
     return (sum += item.price * item.quantity);
   }, 0);
+
+  function checkout(){
+    const existingItems = JSON.parse(localStorage.getItem('orderItems')) || []
+    const allItems = [[...cartItems], ...existingItems];
+    localStorage.setItem("orderItems", JSON.stringify(allItems));
+    toast.success("Order Placed Successfully");
+    localStorage.removeItem("cartItems");
+    navigate('/orders');
+  }
 
   return (
     <>
@@ -133,7 +145,7 @@ const Cart = () => {
             <td></td>
             <td className="headingColor fw-bold">{totalAmount}</td>
             <td className="text-center">
-              <button className="text-decoration-none btn add-to-cart my-2" onClick={()=> toast.success("Procced For Checkout")}>
+              <button className="text-decoration-none btn add-to-cart my-2" onClick={checkout}>
                 Checkout
               </button>
             </td>
