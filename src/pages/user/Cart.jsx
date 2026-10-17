@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import "./Cart.css";
 import "./Home.css";
 import { useState } from "react";
@@ -50,8 +49,24 @@ const Cart = () => {
   }, 0);
 
   function checkout(){
+    const loginUser = JSON.parse(localStorage.getItem('LoggedInUser'));
+
+    if(!loginUser){
+      toast.success("Please Login to place an Order");
+      return;
+    }
+
     const existingItems = JSON.parse(localStorage.getItem('orderItems')) || []
-    const allItems = [[...cartItems], ...existingItems];
+
+    const newOrder = {
+      orderId: Date.now(),
+      userName: loginUser.name,
+      userEmail: loginUser.email,
+      items: cartItems,
+      orderDate: new Date().toISOString()
+    }
+
+    const allItems = [newOrder, ...existingItems];
     localStorage.setItem("orderItems", JSON.stringify(allItems));
     toast.success("Order Placed Successfully");
     localStorage.removeItem("cartItems");
