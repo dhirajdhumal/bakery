@@ -11,7 +11,7 @@ export function addToCart(item, navigate) {
   } else {
     existingCartItems.push({
       ...item,
-      quantity: 1,
+      quantity: 1, 
     });
   }
 
