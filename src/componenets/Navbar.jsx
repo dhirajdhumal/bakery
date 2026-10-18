@@ -49,7 +49,13 @@ const Navbar = () => {
             <Link className='text-decoration-none  nav-items' to={'/products'}>Menu</Link>
             <Link className='text-decoration-none  nav-items' to={'/gallery'}>Gallery</Link>
             <Link className='text-decoration-none  nav-items' to={'/orders'}>Orders</Link>
-            <Link className='text-decoration-none  nav-items' to={'/cart'}>Cart</Link>
+            <Link className='text-decoration-none  nav-items' to={'/cart'}> <div className="position-relative d-inline-block">
+        <i className="bi bi-cart3 fs-3"></i>
+
+        <span className="position-absolute top-0 start-10 translate-middle badge rounded-pill bg-danger" style={{ marginTop: "5px" }}>
+          {JSON.parse(localStorage.getItem("cartItems"))?.length || 0}
+        </span>
+      </div></Link>
             <Link className='text-decoration-none  nav-items' to={'about-us'}>AboutUs</Link>
           
             
