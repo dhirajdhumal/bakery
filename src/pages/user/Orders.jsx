@@ -23,8 +23,8 @@ const Orders = () => {
               <div className="order-container shadow p-4 mb-4 rounded">
                 {/* <h1>OrderNo: {userOrders.length - index}</h1> */}
                 <div className="order-item">
-                  <div className="row">
-                    <div className="col-2 border-end">
+                  <div className="row gap-4 gap-lg-0">
+                    <div className="col-lg-2 border-end">
                       <div
                         className="rounded p-2"
                         style={{
@@ -56,21 +56,17 @@ const Orders = () => {
                       </div>
                     </div>
                     <div
-                      className="col-5 d-lg-flex "
+                      className="col-lg-5 scrollbar-hide"
                       style={{
                         overflowX: "auto",
                         display: "flex",
                         flexWrap: "nowrap",
-                        gap: "7px",
+                        gap: "35px",
                       }}
                     >
-                      {order.items.slice(0, 3).map((item, itemIndex) => (
+                      {order.items.map((item, itemIndex) => (
                         <>
-                          <div
-                            className="item"
-                            style={{ marginLeft: "15px" }}
-                            key={itemIndex}
-                          >
+                          <div className="item" key={itemIndex}>
                             <img
                               className="rounded"
                               src={item.img}
@@ -91,7 +87,7 @@ const Orders = () => {
                           </div>
                         </>
                       ))}
-                      {order.items.length > 3 && (
+                      {/* {order.items.length > 3 && (
                         <div
                           className="d-flex flex-column justify-content-center align-items-center px-2 rounded text-center ms-4"
                           style={{
@@ -108,9 +104,9 @@ const Orders = () => {
                             More Items
                           </p>
                         </div>
-                      )}
+                      )} */}
                     </div>
-                    <div className="col-5 d-flex align-items-center justify-content-center border-start">
+                    <div className="col-lg-5 d-flex align-items-center justify-content-center border-start">
                       <div className="total me-3">
                         <p className="text-muted m-0">Total Amount</p>
 

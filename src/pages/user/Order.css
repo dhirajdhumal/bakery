@@ -1,22 +1,27 @@
-.item-name{
+.item-name {
     font-size: 12px;
 
 }
-.item-quantity{
+
+.item-quantity {
     font-size: 12px;
 }
 
-.view-details:hover{
+.view-details:hover {
     background-color: rgb(65, 46, 22) !important;
     color: white !important;
 }
 
-.track-order{
+.track-order {
     background-color: rgb(65, 46, 22) !important;
     color: white !important;
 }
 
-.track-order:hover{
+.track-order:hover {
     background-color: rgb(205, 146, 72) !important;
     color: white !important;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none !important;
 }
