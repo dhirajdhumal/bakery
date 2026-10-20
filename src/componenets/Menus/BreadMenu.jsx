@@ -1,10 +1,12 @@
 import React from "react";
-import { addToCart } from "./addToCart";
 import { breads } from "../../data/products";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { CartItemContext } from "../../contextapi/CartItemContext";
 
 const BreadMenu = () => {
   const navigate = useNavigate();
+  const {addToCart} = useContext(CartItemContext);
   return (
     <>
       <div className="cake-headings" id="breads">

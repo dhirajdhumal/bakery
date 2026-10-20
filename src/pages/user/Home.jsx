@@ -6,9 +6,12 @@ import { categories, featuredProducts } from '../../data/data'
 import './Home.css';
 import {Link} from 'react-router-dom';
 import { whyChooseUs } from '../../data/homePage';
+import { useContext } from 'react';
+import { CartItemContext } from '../../contextapi/CartItemContext';
 
 const Home = () => {
   const navigate = useNavigate();
+  const {addToCart} = useContext(CartItemContext);
 
   useEffect(()=>{
     const loggedInSuccess = localStorage.getItem("LoggedInSuccess");
@@ -17,29 +20,6 @@ const Home = () => {
       localStorage.removeItem("LoggedInSuccess");
     }
   },[])
-
-    function addToCart(item) {
-      const existingCartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-      const existingItem = existingCartItems.find((existingCartItem)=>(
-        existingCartItem.title === item.title
-      ))
-  
-      if(existingItem){
-        existingItem.quantity += 1;
-      }else{
-        existingCartItems.push({
-          ...item,
-          quantity: 1
-        })
-      }
-        
-      localStorage.setItem("cartItems", JSON.stringify(existingCartItems));
-      toast.success(`${item.title} added to cart!`);
-      // setTimeout(()=>{
-        navigate('/cart')
-      // },3000)
-    }
-
 
   return (
     <>
@@ -95,7 +75,7 @@ const Home = () => {
                   <div className="card-body d-flex flex-column justify-content-center align-items-center">
                     <h5 className='featured-title fw-bold'>{products.title}</h5>
                     <p className='featured-title fw-bold'>₹{products.price}</p>
-                    <button className='btn add-to-cart' onClick={()=>addToCart(products)}>Add to Cart</button>
+                    <button className='btn add-to-cart' onClick={()=>addToCart(products, navigate)}>Add to Cart</button>
                   </div>
                 </div>
               ))

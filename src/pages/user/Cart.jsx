@@ -3,46 +3,19 @@ import "./Home.css";
 import { useState } from "react";
 import{toast} from 'react-toastify'
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { CartItemContext } from "../../contextapi/CartItemContext";
 
 const Cart = () => {
   const navigate = useNavigate();
 
-  const [cartItems, setCartItems] = useState(
-    JSON.parse(localStorage.getItem("cartItems")) || [],
-  );
-
-  const removeItemFromCart = (cartItem) => {
-    const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-    const updatedCartItems = cartItems.filter(
-      (item) => item.title !== cartItem.title,
-    );
-    localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
-    setCartItems(updatedCartItems);
-  };
-
-  const increaseQuantity = (cartItem) => {
-    const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-    const updatedCartItems = cartItems.map((item) => {
-      if (item.title === cartItem.title) {
-        return { ...item, quantity: item.quantity + 1 };
-      }
-      return item;
-    });
-    localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
-    setCartItems(updatedCartItems);
-  };
-
-  const decreaseQuantity = (cartItem) => {
-    const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-    const updatedCartItems = cartItems.map((item) => {
-      if (item.title === cartItem.title && item.quantity > 1) {
-        return { ...item, quantity: item.quantity - 1 };
-      }
-      return item;
-    });
-    localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
-    setCartItems(updatedCartItems);
-  };
+  const {
+    cartItems,
+    clearCart,
+    removeItemFromCart,
+    increaseQuantity,
+    decreaseQuantity,
+  } = useContext(CartItemContext);
 
   const totalAmount = cartItems.reduce((sum, item) => {
     return (sum += item.price * item.quantity);
@@ -69,7 +42,7 @@ const Cart = () => {
     const allItems = [newOrder, ...existingItems];
     localStorage.setItem("orderItems", JSON.stringify(allItems));
     toast.success("Order Placed Successfully");
-    localStorage.removeItem("cartItems");
+    clearCart();
     navigate('/orders');
   }
 

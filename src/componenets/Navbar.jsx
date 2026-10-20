@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "././Navbar.css";
 import { toast } from "react-toastify";
+import { useContext } from "react";
+import { CartItemContext } from "../contextapi/CartItemContext";
 
 const Navbar = () => {
   const [user, setUser] = useState(
     JSON.parse(localStorage.getItem("LoggedInUser")),
   );
+
+  const {cartItems} = useContext(CartItemContext);
   const navigate = useNavigate();
 
   function handleLogout() {
@@ -70,12 +74,12 @@ const Navbar = () => {
               <div className="position-relative d-inline-block">
                 <i className="bi bi-cart3 fs-3"></i>
 
-                {JSON.parse(localStorage.getItem("cartItems"))?.length > 0 && (
+                {cartItems.length > 0 && (
                   <span
                     className="position-absolute top-0 start-10 translate-middle badge rounded-pill bg-danger"
                     style={{ marginTop: "5px" }}
                   >
-                    {JSON.parse(localStorage.getItem("cartItems"))?.length}
+                    {cartItems.length}
                   </span>
                 )}
               </div>
