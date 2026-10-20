@@ -69,6 +69,17 @@ const Navbar = () => {
             <Link className="text-decoration-none  nav-items" to={"/orders"}>
               Orders
             </Link>
+          
+            <Link className="text-decoration-none  nav-items" to={"about-us"}>
+              AboutUs
+            </Link>
+
+            {user && (
+              <Link className="text-decoration-none  nav-items" to={"profile"}>
+                Profile
+              </Link>
+            )}
+
             <Link className="text-decoration-none  nav-items" to={"/cart"}>
               {" "}
               <div className="position-relative d-inline-block">
@@ -84,15 +95,6 @@ const Navbar = () => {
                 )}
               </div>
             </Link>
-            <Link className="text-decoration-none  nav-items" to={"about-us"}>
-              AboutUs
-            </Link>
-
-            {user && (
-              <Link className="text-decoration-none  nav-items" to={"profile"}>
-                Profile
-              </Link>
-            )}
 
             {user ? (
               <>
