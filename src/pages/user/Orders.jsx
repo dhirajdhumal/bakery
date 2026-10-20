@@ -56,20 +56,19 @@ const Orders = () => {
                       </div>
                     </div>
                     <div
-                      className="col-5 d-lg-flex align-items-lg-center"
+                      className="col-5 d-lg-flex "
                       style={{
                         overflowX: "auto",
                         display: "flex",
                         flexWrap: "nowrap",
-                        
-                        gap: "0px",
+                        gap: "7px",
                       }}
                     >
                       {order.items.slice(0, 3).map((item, itemIndex) => (
                         <>
                           <div
                             className="item"
-                            style={{ marginLeft: "25px" }}
+                            style={{ marginLeft: "15px" }}
                             key={itemIndex}
                           >
                             <img
@@ -79,7 +78,10 @@ const Orders = () => {
                               height={"85px"}
                               width={"100px"}
                             />
-                            <p className="item-name fw-bold m-0">
+                            <p
+                              className="item-name fw-bold m-0"
+                              style={{ width: "100px" }}
+                            >
                               {item.title}
                             </p>
                             <p className="item-quantity fw-bold m-0">
@@ -93,9 +95,10 @@ const Orders = () => {
                         <div
                           className="d-flex flex-column justify-content-center align-items-center px-2 rounded text-center ms-4"
                           style={{
-                            backgroundColor: "#fbf2ea",
-                            height: "118px",
-                            width: "90px",
+                            backgroundColor: "#eeb47c93",
+                            height: "87px",
+                            width: "100px",
+                            marginRight: "15px",
                           }}
                         >
                           <p className="mb-1 fw-bold headingColor">
@@ -110,20 +113,30 @@ const Orders = () => {
                     <div className="col-5 d-flex align-items-center justify-content-center border-start">
                       <div className="total me-3">
                         <p className="text-muted m-0">Total Amount</p>
-                        
-                        <p className="fw-bold headingColor fs-5 m-0">₹
-                        {
-                          order.items.reduce((total, item) => 
-                            total += item.price * item.quantity, 
-                          0,)
-                        }
+
+                        <p className="fw-bold headingColor fs-5 m-0">
+                          ₹
+                          {order.items.reduce(
+                            (total, item) =>
+                              (total += item.price * item.quantity),
+                            0,
+                          )}
                         </p>
                       </div>
                       <div className="buttons d-flex  gap-2">
-                        <button className="rounded view-details fw-bold p-2 headingColor" style={{ backgroundColor: "white", border: "1px solid #531b1b" }}>View Details</button>
-                        <button className="track-order border-0 rounded p-2"><i className="bi bi-truck"></i> Track Order</button>
+                        <button
+                          className="rounded view-details fw-bold p-2 headingColor"
+                          style={{
+                            backgroundColor: "white",
+                            border: "1px solid #531b1b",
+                          }}
+                        >
+                          View Details
+                        </button>
+                        <button className="track-order border-0 rounded p-2">
+                          <i className="bi bi-truck"></i> Track Order
+                        </button>
                       </div>
-                      
                     </div>
                   </div>
                 </div>
