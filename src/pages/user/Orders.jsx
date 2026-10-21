@@ -6,9 +6,9 @@ const Orders = () => {
 
   const allOrders = JSON.parse(localStorage.getItem("orderItems")) || [];
 
-  const userOrders = allOrders.filter(
+  const userOrders = loginUser ? allOrders.filter(
     (order) => order.userEmail === loginUser.email,
-  );
+  ) : [];
 
   return (
     <>

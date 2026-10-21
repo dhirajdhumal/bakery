@@ -187,7 +187,15 @@
     /* Categories Section */
     .category-cards{
         width: 100px;
-        height: 110px;
+        height: 119px;
+    }
+    
+    .category-img{
+        
+       
+        width: 100px;
+        height: 90px !important;
+   
     }
 
     .category-title{
