@@ -1,21 +1,18 @@
-import React from "react";
-import { cakes } from "../../data/products";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import { CartItemContext } from "../../contextapi/CartItemContext";
+import { CartItemContext } from "../contextapi/CartItemContext";
 
-const CakeMenu = () => {
+const ProductMenu = ({title, product}) => {
   const navigate = useNavigate();
   const {addToCart} = useContext(CartItemContext);
   return (
     <>
-      <div className="cake-headings" id="cakes">
-        <h3 className="text-center headingColor fw-bold">Cakes</h3>
+      <div className="cake-headings" >
+        <h3 className="text-center headingColor fw-bold">{title}</h3>
         <hr className="line" />
 
         <div className="cake-menu d-flex justify-content-center align-items-center flex-wrap gap-4">
-          {cakes.map((cake) => (
-            <a href={cake.link} className="text-decoration-none">
+          {product.map((cake) => (
               <div className="card shadow border-0 cake-card">
                 <img
                   className="card-img-top"
@@ -42,7 +39,6 @@ const CakeMenu = () => {
                   </button>
                 </div>
               </div>
-            </a>
           ))}
         </div>
       </div>
@@ -50,4 +46,4 @@ const CakeMenu = () => {
   );
 };
 
-export default CakeMenu;
+export default ProductMenu;

@@ -1,17 +1,12 @@
-import React from "react";
 import "./Products.css";
-import { cakes, pastries, donuts, cookies, brownies, breads } from "../../data/products";
-import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
-import CakeMenu from "../../componenets/Menus/CakeMenu";
-import PastrieMenu from "../../componenets/Menus/PastrieMenu";
-import DonutMenu from "../../componenets/Menus/DonutMenu";
-import CookiesMenu from "../../componenets/Menus/CookiesMenu";
-import BrownieMenu from "../../componenets/Menus/BrownieMenu";
-import BreadMenu from "../../componenets/Menus/BreadMenu";
+import CakeMenu from "./Menus/CakeMenu";
+import PastrieMenu from "./Menus/PastrieMenu";
+import DonutMenu from "./Menus/DonutMenu";
+import CookiesMenu from "./Menus/CookiesMenu";
+import BrownieMenu from "./Menus/BrownieMenu";
+import BreadMenu from "./Menus/BreadMenu";
 
 const Products = () => {
-  const navigate = useNavigate();
   return (
     <>
       {/* Product Header */}

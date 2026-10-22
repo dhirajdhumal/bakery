@@ -2,49 +2,49 @@ export const cakes = [
   {
     img: "/images/products/cakes/Chocolate Truffle Cake.png",
     title: "Chocolate Truffle Cake",
-    desc: "Rich chocolate layers with a silky truffle finish for indulgent celebrations.",
+    desc: "Rich chocolate layers with silky truffle frosting, perfect for celebrations.",
     price: 550,
   },
   {
     img: "/images/products/cakes/Red Velvet Cake.png",
     title: "Red Velvet Cake",
-    desc: "A moist and fluffy cake with a rich red color and a tangy cream cheese frosting.",
+    desc: "Moist red velvet cake topped with tangy cream cheese frosting.",
     price: 450,
   },
   {
     img: "/images/products/cakes/Black forest cake.png",
     title: "Black Forest Cake",
-    desc: "A delicious cake with layers of chocolate, cherries, and cream.",
+    desc: "Decadent chocolate cake layered with cherries and cream for indulgence.",
     price: 500,
   },
   {
     img: "/images/products/cakes/ButterscotchCake.png",
     title: "Butterscotch Cake",
-    desc: "A sweet and creamy cake with a rich butterscotch flavor and a smooth texture.",
+    desc: "Sweet butterscotch cake with smooth texture and rich caramelized flavor.",
     price: 400,
   },
   {
     img: "/images/products/cakes/PineappleCake.png",
     title: "Pineapple Cake",
-    desc: "A tropical delight with fresh pineapple and a hint of coconut.",
+    desc: "Tropical pineapple cake with flavor, creamy frosting, and coconut notes.",
     price: 450,
   },
   {
     img: "/images/products/cakes/StrawberryCake.png",
     title: "Strawberry Cake",
-    desc: "A delightful cake with a fresh strawberry flavor and a creamy topping.",
+    desc: "Delightful strawberry cake featuring fresh berry flavor and creamy topping.",
     price: 450,
   },
   {
     img: "/images/products/cakes/MangoCake.png",
     title: "Mango Cake",
-    desc: "A delicious cake with a rich mango flavor and a creamy topping.",
+    desc: "Creamy mango cake bursting with tropical flavor and smooth topping.",
     price: 450,
   },
   {
     img: "/images/products/cakes/ChocolateFudgeCake.png",
     title: "Chocolate Fudge Cake",
-    desc: "A rich and decadent cake with a deep chocolate flavor and a fudgy texture.",
+    desc: "Decadent chocolate fudge cake with cocoa flavor and fudgy texture.",
     price: 450,
   },
 ];
@@ -53,49 +53,49 @@ export const pastries = [
   {
     img: "/images/products/pastries/ChocolatePastry.png",
     title: "Chocolate Pastry",
-    desc: "A rich and delicious chocolate pastry with soft layers and a smooth chocolate topping.",
+    desc: "Rich chocolate pastry with tender layers and smooth chocolate topping.",
     price: 90,
   },
   {
     img: "/images/products/pastries/BlackForestPastry.png",
     title: "Black Forest Pastry",
-    desc: "A delightful pastry with chocolate layers, cherries, and a creamy frosting.",
+    desc: "Delightful pastry layered with chocolate, cherries, and creamy frosting today.",
     price: 100,
   },
   {
     img: "/images/products/pastries/PineapplePastry.png",
     title: "Pineapple Pastry",
-    desc: "A light and refreshing pastry filled with sweet pineapple and creamy frosting.",
+    desc: "Light pineapple pastry filled with sweet fruit and creamy frosting.",
     price: 90,
   },
   {
     img: "/images/products/pastries/StrawberryPastry.png",
     title: "Strawberry Pastry",
-    desc: "A soft and creamy pastry bursting with fresh strawberry flavor and a sweet topping.",
+    desc: "Soft strawberry pastry bursting with berry flavor and sweet topping.",
     price: 90,
   },
   {
     img: "/images/products/pastries/RedVelvetPastry.png",
     title: "Red Velvet Pastry",
-    desc: "A soft red velvet pastry layered with creamy frosting for a rich and elegant taste.",
+    desc: "Soft red velvet pastry layered with creamy frosting for indulgence.",
     price: 100,
   },
   {
     img: "/images/products/pastries/ButterscotchPastry.png",
     title: "Butterscotch Pastry",
-    desc: "A creamy and delicious pastry with a rich butterscotch flavor and crunchy caramel bits.",
+    desc: "Creamy butterscotch pastry featuring rich caramel flavor and crunchy bits.",
     price: 90,
   },
   {
     img: "/images/products/pastries/LotusBiscoffPastry.png",
     title: "Lotus Biscoff Pastry",
-    desc: "A delicious creamy pastry infused with the unique caramelized flavor of Lotus Biscoff.",
+    desc: "Creamy pastry infused with Lotus Biscoff's caramelized spice flavor.",
     price: 120,
   },
   {
     img: "/images/products/pastries/CoffeeMochaPastry.png",
     title: "Coffee Mocha Pastry",
-    desc: "A delightful pastry combining rich coffee and flavors with a creamy mocha topping.",
+    desc: "Delightful pastry combining bold coffee flavor with creamy mocha topping.",
     price: 100,
   },
 ];
@@ -104,56 +104,56 @@ export const donuts = [
   {
     img: "/images/products/donuts/ChocolateDonut.png",
     title: "Chocolate Donut",
-    desc: "A soft and fluffy donut coated with rich chocolate glaze for a delicious bite.",
+    desc: "Soft fluffy donut coated with rich chocolate glaze for enjoyment.",
     price: 70,
   },
 
   {
     img: "/images/products/donuts/StrawberryDonut.png",
     title: "Strawberry Donut",
-    desc: "A soft donut topped with sweet strawberry glaze and a creamy finish.",
+    desc: "Soft donut topped with sweet strawberry glaze and creamy drizzle.",
     price: 70,
   },
 
   {
     img: "/images/products/donuts/OreoDonut.png",
     title: "Oreo Donut",
-    desc: "A delicious donut topped with creamy icing and crunchy Oreo cookie pieces.",
+    desc: "Donut topped with creamy icing and crunchy Oreo cookie pieces.",
     price: 80,
   },
 
   {
     img: "/images/products/donuts/GlazedDonut.png",
     title: "Glazed Donut",
-    desc: "A classic soft and fluffy donut covered with a smooth and sweet sugar glaze.",
+    desc: "Classic soft fluffy donut covered with smooth sweet sugar glaze.",
     price: 60,
   },
 
   {
     img: "/images/products/donuts/SprinkleDonut.png",
     title: "Sprinkle Donut",
-    desc: "A fun and colorful donut topped with sweet icing and crunchy colorful sprinkles.",
+    desc: "Fun colorful donut topped with sweet icing and crunchy sprinkles.",
     price: 70,
   },
 
   {
     img: "/images/products/donuts/CaramelDonut.png",
     title: "Caramel Donut",
-    desc: "A soft donut covered with rich caramel glaze for a perfectly sweet and buttery flavor.",
+    desc: "Donut covered with rich caramel glaze for sweet buttery flavor.",
     price: 80,
   },
 
   {
     img: "/images/products/donuts/CoconutDonut.png",
     title: "Coconut Donut",
-    desc: "A soft and delicious donut topped with creamy icing and sweet coconut flakes.",
+    desc: "Soft donut topped with creamy icing and sweet coconut flakes.",
     price: 70,
   },
 
   {
     img: "/images/products/donuts/MarbleDonut.png",
     title: "Marble Donut",
-    desc: "A delightful donut featuring a beautiful combination of chocolate and vanilla flavors.",
+    desc: "Delightful donut featuring chocolate and vanilla flavors in every bite.",
     price: 80,
   },
 ];
@@ -162,56 +162,56 @@ export const cookies = [
   {
     img: "/images/products/cookies/ChocolateChipCookies.png",
     title: "Chocolate Chip Cookie",
-    desc: "A classic buttery cookie loaded with delicious chocolate chips for a perfect crunchy and chewy bite.",
+    desc: "Classic buttery cookie loaded with chocolate chips for crunchy enjoyment.",
     price: 60,
   },
 
   {
     img: "/images/products/cookies/ButterCookies.png",
     title: "Butter Cookie",
-    desc: "A rich and melt-in-the-mouth cookie made with creamy butter for a classic bakery flavor.",
+    desc: "Rich buttery cookie with melt-in-the-mouth texture and classic bakery flavor.",
     price: 50,
   },
 
   {
     img: "/images/products/cookies/DoubleChocolateCookies.png",
     title: "Double Chocolate Cookie",
-    desc: "A rich chocolate cookie packed with chocolate chips for an extra indulgent chocolate experience.",
+    desc: "Rich chocolate cookie packed with chocolate chips for extra indulgence.",
     price: 70,
   },
 
   {
     img: "/images/products/cookies/AlmondCookies.png",
     title: "Almond Cookie",
-    desc: "A delicious buttery cookie filled with crunchy almonds for a rich and nutty flavor for your enjoyment.",
+    desc: "Delicious buttery cookie filled with crunchy almonds for nutty flavor.",
     price: 70,
   },
 
   {
     img: "/images/products/cookies/CashewCookies.png",
     title: "Cashew Cookie",
-    desc: "A soft and crunchy cookie topped with premium cashews for a delicious nutty taste and texture.",
+    desc: "Soft crunchy cookie topped with premium cashews for nutty texture.",
     price: 70,
   },
 
   {
     img: "/images/products/cookies/OatmealCookies.png",
     title: "Oatmeal Cookie",
-    desc: "A wholesome and delicious cookie made with oats for a lightly sweet and a satisfying bite.",
+    desc: "Wholesome oatmeal cookie with lightly sweet flavor and satisfying texture.",
     price: 60,
   },
 
   {
     img: "/images/products/cookies/NutellaCookies.png",
     title: "Nutella Cookie",
-    desc: "A soft and indulgent cookie filled with creamy Nutella for a rich and chocolate-hazelnut flavor.",
+    desc: "Soft cookie filled with creamy Nutella for rich chocolate-hazelnut flavor.",
     price: 80,
   },
 
   {
     img: "/images/products/cookies/BiscoffCookies.png",
     title: "Biscoff Cookie",
-    desc: "A delicious caramelized cookie with the unique spiced flavor of Biscoff for a delightful treat and a hint of spice.",
+    desc: "Delicious caramelized cookie featuring Biscoff's unique spiced flavor enjoyment today.",
     price: 80,
   },
 ];
@@ -220,56 +220,56 @@ export const brownies = [
   {
     img: "/images/products/brownies/FudgeBrownie.png",
     title: "Fudge Brownie",
-    desc: "A rich and gooey chocolate brownie with an intensely fudgy texture and deep chocolate flavor.",
+    desc: "Rich gooey chocolate brownie with fudgy texture and cocoa flavor.",
     price: 90,
   },
 
   {
     img: "/images/products/brownies/WalnutBrownie.png",
     title: "Walnut Brownie",
-    desc: "A rich chocolate brownie loaded with crunchy walnuts for a delicious combination of textures.",
+    desc: "Rich chocolate brownie loaded with crunchy walnuts for contrasting textures.",
     price: 100,
   },
 
   {
     img: "/images/products/brownies/OreoBrownie.png",
     title: "Oreo Brownie",
-    desc: "A fudgy chocolate brownie topped with crunchy Oreo cookies for an indulgent treat and a hint of vanilla.",
+    desc: "Fudgy chocolate brownie topped with crunchy Oreo cookies for enjoyment.",
     price: 100,
   },
 
   {
     img: "/images/products/brownies/ChocolateChipBrownie.png",
     title: "Chocolate Chip Brownie",
-    desc: "A soft and fudgy chocolate brownie packed with delicious chocolate chips in every bite of pure indulgence.",
+    desc: "Fudgy chocolate brownie packed with chocolate chips in each bite.",
     price: 90,
   },
 
   {
     img: "/images/products/brownies/CaramelBrownie.png",
     title: "Caramel Brownie",
-    desc: "A rich chocolate brownie drizzled with smooth caramel for a perfect sweet and indulgent flavor.",
+    desc: "Rich chocolate brownie drizzled with smooth caramel for indulgent flavor.",
     price: 100,
   },
 
   {
     img: "/images/products/brownies/DoubleChocolateBrownie.png",
-    title: "Double Chocolate Brownie",
-    desc: "An extra-rich chocolate brownie made with layers of chocolate flavor and delicious chocolate chunks.",
+    title: "Double Choco Brownie",
+    desc: "Extra-rich chocolate brownie layered with intense cocoa flavor and chunks.",
     price: 110,
   },
 
   {
     img: "/images/products/brownies/PeanutButterBrownie.png",
     title: "Peanut Butter Brownie",
-    desc: "A fudgy chocolate brownie combined with creamy peanut butter for a delicious sweet and nutty taste.",
+    desc: "Fudgy chocolate brownie combined with creamy peanut butter for flavor.",
     price: 100,
   },
 
   {
     img: "/images/products/brownies/HazelnutBrownie.png",
     title: "Hazelnut Brownie",
-    desc: "A decadent chocolate brownie topped with crunchy hazelnuts for a rich and nutty flavor and long-lasting satisfaction.",
+    desc: "Decadent chocolate brownie topped with crunchy hazelnuts for nutty satisfaction.",
     price: 110,
   },
 ];
@@ -278,56 +278,56 @@ export const breads = [
   {
     img: "/images/products/breads/MilkBread.png",
     title: "Milk Bread",
-    desc: "A soft and fluffy bread made with milk, perfect for breakfast, sandwiches, and everyday snacking.",
+    desc: "Soft fluffy milk bread perfect for breakfast, sandwiches, and snacking.",
     price: 60,
   },
 
   {
     img: "/images/products/breads/GarlicBread.png",
     title: "Garlic Bread",
-    desc: "Soft and flavorful bread topped with aromatic garlic butter and herbs for a delicious savory taste.",
+    desc: "Bread topped with aromatic garlic butter and herbs for enjoyment.",
     price: 80,
   },
 
   {
     img: "/images/products/breads/WholeWheatBread.png",
     title: "Whole Wheat Bread",
-    desc: "A wholesome and nutritious bread made with whole wheat flour for a healthy and satisfying choice.",
+    desc: "Wholesome bread made with whole wheat flour for everyday enjoyment.",
     price: 70,
   },
 
   {
     img: "/images/products/breads/MultigrainBread.png",
     title: "Multigrain Bread",
-    desc: "A nutritious and hearty bread made with a blend of wholesome grains and seeds for a rich texture.",
+    desc: "Nutritious hearty bread made with wholesome grains and seeds texture.",
     price: 90,
   },
 
   {
     img: "/images/products/breads/FrenchBread.png",
     title: "French Bread",
-    desc: "A classic French-style bread with a crisp golden crust and a soft, airy center, perfect for sandwiches.",
+    desc: "French-style bread with crisp golden crust and soft airy center.",
     price: 80,
   },
 
   {
     img: "/images/products/breads/CheeseBread.png",
     title: "Cheese Bread",
-    desc: "Soft and delicious bread baked with creamy cheese for a rich and savory flavor and a satisfying texture.",
+    desc: "Soft bread baked with creamy cheese for rich savory flavor.",
     price: 100,
   },
 
   {
     img: "/images/products/breads/HoneyOatBread.png",
     title: "Honey Oat",
-    desc: "A sweet and wholesome bread made with oats and honey for a soft texture and delightful flavor.",
+    desc: "Sweet wholesome bread made with oats and honey for flavor.",
     price: 90,
   },
 
   {
     img: "/images/products/breads/RaisinBread.png",
     title: "Raisin Bread",
-    desc: "A soft and slightly sweet bread filled with plump raisins for a delightful treat and a hint of natural sweetness.",
+    desc: "Soft slightly sweet bread filled with plump raisins for sweetness.",
     price: 90,
   }
 ];

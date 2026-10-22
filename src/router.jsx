@@ -18,12 +18,12 @@ import AdminLogin from './pages/admin/AdminLogin';
 import AdminOrders from './pages/admin/AdminOrders';
 import Profile from './pages/user/Profile';
 import ChangePassModel from './pages/user/ChangePassModel';
-import DonutMenu from './componenets/Menus/DonutMenu';
-import CakeMenu from './componenets/Menus/CakeMenu';
-import PastrieMenu from './componenets/Menus/PastrieMenu';
-import CookiesMenu from './componenets/Menus/CookiesMenu';
-import BrownieMenu from './componenets/Menus/BrownieMenu';
-import BreadMenu from './componenets/Menus/BreadMenu';
+import DonutMenu from './pages/user/Menus/DonutMenu';
+import CakeMenu from './pages/user/Menus/CakeMenu';
+import PastrieMenu from './pages/user/Menus/PastrieMenu';
+import CookiesMenu from './pages/user/Menus/CookiesMenu';
+import BrownieMenu from './pages/user/Menus/BrownieMenu';
+import BreadMenu from './pages/user/Menus/BreadMenu';
 
 const router = createBrowserRouter([
 
