@@ -1,4 +1,5 @@
 import "./Products.css";
+import { useState } from "react";
 import CakeMenu from "./Menus/CakeMenu";
 import PastrieMenu from "./Menus/PastrieMenu";
 import DonutMenu from "./Menus/DonutMenu";
@@ -7,6 +8,8 @@ import BrownieMenu from "./Menus/BrownieMenu";
 import BreadMenu from "./Menus/BreadMenu";
 
 const Products = () => {
+  const [selectedCategory, setSelectedCategory] = useState("all");
+
   return (
     <>
       {/* Product Header */}
@@ -25,30 +28,46 @@ const Products = () => {
             <button
               className="menus-item-button headingColor"
               style={{ backgroundColor: "rgb(65, 46, 22)", color: "White" }}
+              onClick={() => setSelectedCategory("all")}
             >
               All
             </button>
-            <a
+            <button
               className="menus-item-button headingColor text-decoration-none"
-              href="#cakes"
+              onClick={() => setSelectedCategory("cakes")}
             >
               Cakes
-            </a>
-            <a className="menus-item-button headingColor text-decoration-none" href="#pastries">
+            </button>
+            <button
+              className="menus-item-button headingColor text-decoration-none"
+              onClick={() => setSelectedCategory("pastries")}
+            >
               Pastries
-            </a>
-            <a className="menus-item-button headingColor text-decoration-none" href="#donuts">
+            </button>
+            <button
+              className="menus-item-button headingColor text-decoration-none"
+              onClick={() => setSelectedCategory("donuts")}
+            >
               Donuts
-            </a>
-            <a className="menus-item-button headingColor text-decoration-none" href="#cookies">
+            </button>
+            <button
+              className="menus-item-button headingColor text-decoration-none"
+              onClick={() => setSelectedCategory("cookies")}
+            >
               Cookies
-            </a>
-            <a className="menus-item-button headingColor text-decoration-none" href="#brownies">
+            </button>
+            <button
+              className="menus-item-button headingColor text-decoration-none"
+              onClick={() => setSelectedCategory("brownies")}
+            >
               Brownies
-            </a>
-            <a className="menus-item-button headingColor text-decoration-none" href="#breads">
+            </button>
+            <button
+              className="menus-item-button headingColor text-decoration-none"
+              onClick={() => setSelectedCategory("breads")}
+            >
               Breads
-            </a>
+            </button>
           </div>
         </div>
       </section>
@@ -56,22 +75,34 @@ const Products = () => {
      {/* Menu Section */}
       <section>
         {/* Cake Menu */}
-        <CakeMenu />
+        {(selectedCategory === "all" || selectedCategory === "cakes") && (
+          <CakeMenu />
+        )}
 
         {/* Pastry Menu */}
-        <PastrieMenu />
+        {(selectedCategory === "all" || selectedCategory === "pastries") && (
+          <PastrieMenu />
+        )}
 
         {/* Donut Menu */}
-        <DonutMenu />
+        {(selectedCategory === "all" || selectedCategory === "donuts") && (
+          <DonutMenu />
+        )}
 
         {/* Cookie Menu */}
-        <CookiesMenu />
+        {(selectedCategory === "all" || selectedCategory === "cookies") && (
+          <CookiesMenu />
+        )}
 
         {/* Brownie Menu */}
-        <BrownieMenu />
+        {(selectedCategory === "all" || selectedCategory === "brownies") && (
+          <BrownieMenu />
+        )}
 
         {/* Bread Menu */}
-        <BreadMenu />
+        {(selectedCategory === "all" || selectedCategory === "breads") && (
+          <BreadMenu />
+        )}
       </section>
     </>
   );
