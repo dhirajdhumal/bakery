@@ -39,6 +39,11 @@
     font-weight: bold;
 }
 
+.menus-item-button.active {
+  background-color: rgb(65, 46, 22);
+  color: white;
+}
+
 @media (max-width: 480px) {
     .menu-hero-header {
         font-size: 28px;

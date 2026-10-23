@@ -146,7 +146,7 @@ export const donuts = [
   {
     img: "/images/products/donuts/CoconutDonut.png",
     title: "Coconut Donut",
-    desc: "Soft donut topped with creamy icing and sweet coconut flakes.",
+    desc: "Soft donut topped with creamy icing, sweet and nutty coconut flakes.",
     price: 70,
   },
 
@@ -175,7 +175,7 @@ export const cookies = [
 
   {
     img: "/images/products/cookies/DoubleChocolateCookies.png",
-    title: "Double Chocolate Cookie",
+    title: "Double Choco Cookie",
     desc: "Rich chocolate cookie packed with chocolate chips for extra indulgence.",
     price: 70,
   },
@@ -211,7 +211,7 @@ export const cookies = [
   {
     img: "/images/products/cookies/BiscoffCookies.png",
     title: "Biscoff Cookie",
-    desc: "Delicious caramelized cookie featuring Biscoff's unique spiced flavor enjoyment today.",
+    desc: "Delicious cookie featuring Biscoff's unique spiced flavor for enjoyment today.",
     price: 80,
   },
 ];
@@ -240,7 +240,7 @@ export const brownies = [
 
   {
     img: "/images/products/brownies/ChocolateChipBrownie.png",
-    title: "Chocolate Chip Brownie",
+    title: "Choco Chip Brownie",
     desc: "Fudgy chocolate brownie packed with chocolate chips in each bite.",
     price: 90,
   },
@@ -269,7 +269,7 @@ export const brownies = [
   {
     img: "/images/products/brownies/HazelnutBrownie.png",
     title: "Hazelnut Brownie",
-    desc: "Decadent chocolate brownie topped with crunchy hazelnuts for nutty satisfaction.",
+    desc: "Decadent chocolate brownie topped with crunchy hazelnuts & nutty satisfaction.",
     price: 110,
   },
 ];
@@ -313,14 +313,14 @@ export const breads = [
   {
     img: "/images/products/breads/CheeseBread.png",
     title: "Cheese Bread",
-    desc: "Soft bread baked with creamy cheese for rich savory flavor.",
+    desc: "Soft bread baked with creamy cheese & herbs for rich savory flavor.",
     price: 100,
   },
 
   {
     img: "/images/products/breads/HoneyOatBread.png",
     title: "Honey Oat",
-    desc: "Sweet wholesome bread made with oats and honey for flavor.",
+    desc: "Sweet wholesome bread made with oats, honey & herbs for flavor.",
     price: 90,
   },
 

@@ -22,48 +22,61 @@ const Products = () => {
             Our Sweet Menu
           </h1>
           <p className="text-muted text-center fs-5 menu-hero-desc">
-            Freshly backed favorite for every craving.
+            Freshly baked favorite for every craving.
           </p>
           <div className="menus m-3 d-flex flex-wrap gap-lg-4 gap-2">
             <button
-              className="menus-item-button headingColor"
-              style={{ backgroundColor: "rgb(65, 46, 22)", color: "White" }}
+              className={`menus-item-button headingColor ${
+                selectedCategory === "all" ? "active" : ""
+              }`}
               onClick={() => setSelectedCategory("all")}
             >
               All
             </button>
             <button
-              className="menus-item-button headingColor text-decoration-none"
+              className={`menus-item-button headingColor ${
+                selectedCategory === "cakes" ? "active" : ""
+              }`}
               onClick={() => setSelectedCategory("cakes")}
             >
               Cakes
             </button>
             <button
-              className="menus-item-button headingColor text-decoration-none"
+              className={`menus-item-button headingColor ${
+                selectedCategory === "pastries" ? "active" : ""
+              }`}
               onClick={() => setSelectedCategory("pastries")}
             >
               Pastries
             </button>
             <button
-              className="menus-item-button headingColor text-decoration-none"
+              className={`menus-item-button headingColor ${
+                selectedCategory === "donuts" ? "active" : ""
+              }`}
               onClick={() => setSelectedCategory("donuts")}
             >
               Donuts
             </button>
             <button
-              className="menus-item-button headingColor text-decoration-none"
+              className={`menus-item-button headingColor ${
+                selectedCategory === "cookies" ? "active" : ""
+              }`}
               onClick={() => setSelectedCategory("cookies")}
             >
               Cookies
             </button>
             <button
-              className="menus-item-button headingColor text-decoration-none"
+              className={`menus-item-button headingColor ${
+                selectedCategory === "brownies" ? "active" : ""
+              }`}
               onClick={() => setSelectedCategory("brownies")}
             >
               Brownies
             </button>
             <button
-              className="menus-item-button headingColor text-decoration-none"
+              className={`menus-item-button headingColor ${
+                selectedCategory === "breads" ? "active" : ""
+              }`}
               onClick={() => setSelectedCategory("breads")}
             >
               Breads
