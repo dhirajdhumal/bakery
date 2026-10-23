@@ -74,7 +74,7 @@ const Orders = () => {
                             width={"100px"}
                           />
                           <p
-                            className="item-name fw-bold m-0"
+                            className="item-name fw-bold m-0 headingColor"
                             style={{ width: "100px" }}
                           >
                             {item.title}
