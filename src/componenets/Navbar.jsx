@@ -12,7 +12,7 @@ const Navbar = () => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const {cartItems} = useContext(CartItemContext);
+  const { cartItems } = useContext(CartItemContext);
   const navigate = useNavigate();
 
   function handleLogout() {
@@ -57,30 +57,61 @@ const Navbar = () => {
           className={`collapse navbar-collapse text-center justify-content-end ${isMenuOpen ? "show" : "collapse"}`}
         >
           <div className="navbar-nav d-flex flex-lg-row align-items-center text-center gap-lg-3 fs-5 gap-2 mt-lg-0 p-2 p-lg-0 mt-1 collapse-menu">
-            <Link className="text-decoration-none nav-items" to={"/"} onClick={() => setIsMenuOpen(false)}>
+            <Link
+              className="text-decoration-none nav-items"
+              to={"/"}
+              onClick={() => setIsMenuOpen(false)}
+            >
               Home
             </Link>
-            <Link className="text-decoration-none  nav-items" to={"/products"} onClick={() => setIsMenuOpen(false)}>
+            <Link
+              className="text-decoration-none  nav-items"
+              to={"/products"}
+              onClick={() => setIsMenuOpen(false)}
+            >
               Menu
             </Link>
-            <Link className="text-decoration-none  nav-items" to={"/gallery"} onClick={() => setIsMenuOpen(false)}>
+            <Link
+              className="text-decoration-none  nav-items"
+              to={"/gallery"}
+              onClick={() => setIsMenuOpen(false)}
+            >
               Gallery
             </Link>
-            <Link className="text-decoration-none  nav-items" to={"/orders"} onClick={() => setIsMenuOpen(false)}>
-              Orders
-            </Link>
-          
-            <Link className="text-decoration-none  nav-items" to={"about-us"} onClick={() => setIsMenuOpen(false)}>
+
+            {user && (
+              <Link
+                className="text-decoration-none  nav-items"
+                to={"/orders"}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Orders
+              </Link>
+            )}
+
+            <Link
+              className="text-decoration-none  nav-items"
+              to={"about-us"}
+              onClick={() => setIsMenuOpen(false)}
+            >
               AboutUs
             </Link>
 
             {user && (
-              <Link className="text-decoration-none  nav-items" to={"profile"} onClick={() => setIsMenuOpen(false)}>
+              <Link
+                className="text-decoration-none  nav-items"
+                to={"profile"}
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Profile
               </Link>
             )}
 
-            <Link className="text-decoration-none  nav-items" to={"/cart"} onClick={() => setIsMenuOpen(false)}>
+            <Link
+              className="text-decoration-none  nav-items"
+              to={"/cart"}
+              onClick={() => setIsMenuOpen(false)}
+            >
               {" "}
               <div className="position-relative d-inline-block">
                 <i className="bi bi-cart3 fs-3"></i>
@@ -111,7 +142,8 @@ const Navbar = () => {
             ) : (
               <Link
                 className="text-decoration-none  btn add-to-cart px-3 fs-5"
-                to={"/login"} onClick={() => setIsMenuOpen(false)}
+                to={"/login"}
+                onClick={() => setIsMenuOpen(false)}
               >
                 Login
               </Link>
