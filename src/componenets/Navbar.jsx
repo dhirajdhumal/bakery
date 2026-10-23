@@ -72,7 +72,7 @@ const Navbar = () => {
               Menu
             </Link>
             <Link
-              className="text-decoration-none nav-items"
+              className="text-decoration-none nav-items your-cake-btn"
               to={'/your-cake'}
               onClick={()=> setIsMenuOpen(false)}
             >
@@ -115,7 +115,7 @@ const Navbar = () => {
             )}
 
             <Link
-              className="text-decoration-none  nav-items"
+              className="text-decoration-none cart-icon "
               to={"/cart"}
               onClick={() => setIsMenuOpen(false)}
             >

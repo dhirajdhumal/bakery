@@ -1,9 +1,12 @@
 .nav-items:hover{
-    color: red !important;
+    background-color: rgb(205, 146, 72);
+    color: white !important;
+    padding: 1px 5px;
+    border-radius: 5px;
 }
 
 .nav-items{
-    color: black;
+    color: rgb(65, 46, 22);
     font-weight: bold;
 }
 
@@ -12,6 +15,26 @@
     margin-left: 5px;
 }
 
+.cart-icon{
+    color: rgb(65, 46, 22);
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.your-cake-btn{
+    background-color: rgb(65, 46, 22);
+    padding: 5px 10px;
+    border-radius: 50%;
+    color: white !important;
+}
+
+.your-cake-btn:hover{
+    background-color: rgb(205, 146, 72) !important;
+    padding: 5px 10px;
+    border-radius: 50%;
+    color: rgb(94, 12, 12) !important;
+}
 
 
 @media (max-width: 480px) {
