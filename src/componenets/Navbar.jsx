@@ -72,6 +72,13 @@ const Navbar = () => {
               Menu
             </Link>
             <Link
+              className="text-decoration-none nav-items"
+              to={'/your-cake'}
+              onClick={()=> setIsMenuOpen(false)}
+            >
+              Your-Cake
+            </Link>
+            <Link
               className="text-decoration-none  nav-items"
               to={"/gallery"}
               onClick={() => setIsMenuOpen(false)}
