@@ -124,7 +124,7 @@ const Cart = () => {
               ))
             )}
           </tbody>
-          <tfoot className="text-center" style={{ backgroundColor: "#f5dfc5" }}>
+          <tfoot className="text-center table-footer" style={{ backgroundColor: "#f5dfc5" }}>
             <td></td>
             <td className="text-center fs-4 headingColor fw-bold">
               Total Amount

@@ -47,7 +47,11 @@
     }
 
     .table-heading {
-        font-size: 12px !important;
+        font-size: 18px !important;
+    }
+
+    .table-footer td{
+        font-size: 16px !important;
     }
 
     .product-title {
@@ -60,11 +64,6 @@
         padding: 5px 8px !important;
         margin-left: 3px !important;
         margin-right: 3px !important;
-    }
-
-    .cart-container tfoot td {
-        font-size: 12px !important;
-        white-space: nowrap;
     }
     
     .plus-btn {
