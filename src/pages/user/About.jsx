@@ -75,8 +75,8 @@ const About = () => {
       </section>
 
       <section className="about-stats container">
-        <div><strong>150+</strong><span>Sweet creations</span></div>
-        <div><strong>4+</strong><span>Years of baking</span></div>
+        <div><strong>1500+</strong><span>Sweet creations</span></div>
+        <div><strong>6+</strong><span>Years of baking</span></div>
         <div><strong>100%</strong><span>Made with love</span></div>
       </section>
 
