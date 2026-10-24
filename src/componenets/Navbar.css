@@ -36,6 +36,16 @@
     color: rgb(94, 12, 12) !important;
 }
 
+.badge-color{
+    background-color: rgb(65, 46, 22);
+}
+
+.badge-color:hover{
+    background-color: rgb(205, 146, 72) !important;
+    color: rgb(94, 12, 12) !important;
+
+
+}
 
 @media (max-width: 480px) {
     .collapse-menu{

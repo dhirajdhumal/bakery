@@ -125,7 +125,7 @@ const Navbar = () => {
 
                 {cartItems.length > 0 && (
                   <span
-                    className="position-absolute top-0 start-10 translate-middle badge rounded-pill bg-danger"
+                    className="position-absolute top-0 start-10 translate-middle badge rounded-pill badge-color"
                     style={{ marginTop: "5px" }}
                   >
                     {cartItems.length}
