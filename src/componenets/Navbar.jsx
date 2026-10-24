@@ -106,13 +106,15 @@ const Navbar = () => {
 
             {user && (
               <Link
-                className="text-decoration-none  nav-items"
+                className="text-decoration-none  nav-items "
                 to={"profile"}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Profile
               </Link>
             )}
+
+            <span className="vr mx-2"></span>
 
             <Link
               className="text-decoration-none cart-icon "
@@ -137,12 +139,13 @@ const Navbar = () => {
             {user ? (
               <>
                 <button
-                  className="btn btn-danger px-3 fs-5"
+                  className="btn btn-danger px-2 fs-5"
                   onClick={() => {
                     handleLogout();
                     setIsMenuOpen(false);
                   }}
                 >
+                  <i className="bi bi-box-arrow-right me-2"></i>
                   Logout
                 </button>
               </>
