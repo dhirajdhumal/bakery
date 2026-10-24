@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import './Profile.css'
 
 const Profile = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("LoggedInUser")) || {});
@@ -122,30 +123,30 @@ const Profile = () => {
           <div className="row">
             
             <div className="col-md-12 col-lg-6 d-flex justify-content-center">
-              <div className="shadow col-12 rounded border-0 p-3 col-md-12 col-lg-12">
+              <div className="shadow col-12 rounded border-0 p-3 col-md-12 col-lg-12 user-info">
               
-                <h1 className="text-lg-center bg-light p-1 rounded fw-bold position-relative">
+                <h1 className="text-lg-center headingColor  p-1 rounded fw-bold position-relative">
                   User-Info 
-                  <button className="btn btn-warning btn-sm fs-6 position-absolute top-50 end-0 translate-middle-y me-2" data-bs-toggle="modal" data-bs-target="#personalInfo">
+                  <button className="btn add-to-cart btn-sm fs-6 position-absolute top-50 end-0 translate-middle-y me-2" data-bs-toggle="modal" data-bs-target="#personalInfo">
                   Edit-Info     
                   </button>
                 </h1>
 
                 <hr />
-                <p className="fs-5"><b>Name: </b> <span className="text-muted">{user.name || "Not provided"}</span> </p>
-                <p className="fs-5"><b>Email: </b> <span className="text-muted">{user.email || "Not provided"}</span> </p>
-                <p className="fs-5"><b>Contact-No: </b> <span className="text-muted">{user.phone || "Not provided"}</span> </p>
-                <p className="fs-5"><b>Address: </b> <span className="text-muted">{user.address ? user.address : "Not provided"}</span> </p>
+                <p className="fs-5 headingColor"><b>Name: </b> <span className="text-muted">{user.name || "Not provided"}</span> </p>
+                <p className="fs-5 headingColor"><b>Email: </b> <span className="text-muted">{user.email || "Not provided"}</span> </p>
+                <p className="fs-5 headingColor"><b>Contact-No: </b> <span className="text-muted">{user.phone || "Not provided"}</span> </p>
+                <p className="fs-5 headingColor"><b>Address: </b> <span className="text-muted">{user.address ? user.address : "Not provided"}</span> </p>
 
                 {/* Edit Info Model */}
                 <div className="modal" id="personalInfo">
                   <div className="modal-dialog">
                     <div className="modal-content">
-                      <div className="modal-header">
+                      <div className="modal-header model-title">
                         <h5 className="modal-title text-center w-100 fw-bold">Edit Your Personal Information</h5>
-                        <button type="button" className="btn-close btn btn-dark" data-bs-dismiss="modal"></button>
+                        <button type="button" className="btn-close btn" data-bs-dismiss="modal"></button>
                       </div>
-                      <div className="modal-body">
+                      <div className="modal-body model-info ">
                         <form onSubmit={handleUpdate}>
                           <label htmlFor="name" className="form-label">Name</label>
                           <input type="text" name="" id="name" className="form-control" placeholder="Enter your updated name" ref={nameRef} defaultValue={user.name}/>
@@ -155,7 +156,7 @@ const Profile = () => {
                           <input type="number" name="" id="mo" className="form-control" placeholder="Enter your contact number" ref={contactRef} defaultValue={user.phone}/>
                           <label htmlFor="add" className="form-label">Address</label>
                           <textarea name="" id="" className="form-control" placeholder="Enter your address" ref={addRef} defaultValue={user.address}></textarea>
-                          <button className="btn btn-success mt-3 w-100 fw-bold fs-3" data-bs-dismiss="modal">Save-Details</button>
+                          <button className="btn add-to-cart mt-3 w-100 fw-bold fs-3" data-bs-dismiss="modal">Update-Details</button>
                         </form>
                       </div>
                     </div>
@@ -165,26 +166,26 @@ const Profile = () => {
 
               </div>
             </div>
-            <div className="col-md-12 col-lg-6 mt-sm-4 mt-4 mt-lg-0 d-flex justify-content-center">
-              <div className="shadow rounded p-3 border-0 col-md-12 col-lg-12">
-                <h1 className="text-center bg-light p-1 rounded fw-bold">Change Password</h1>
+            <div className="col-md-12 col-lg-6 mt-sm-4 mt-4 mt-lg-0 d-flex justify-content-center ">
+              <div className="shadow rounded p-3 border-0 col-md-12 col-lg-12 change-password">
+                <h1 className="text-center p-1 headingColor rounded fw-bold">Change Password</h1>
                 <hr />  
                 <form onSubmit={changePassword}>
                   <div className="row">
                     <div className="col-md-6 col-sm-12">
-                      <label htmlFor="pass" className="form-label fs-5">Last Pass</label>
+                      <label htmlFor="pass" className="form-label fs-5 fw-bold headingColor">Last Pass</label>
                       <input type="password" className="form-control mb-2" placeholder="Enter your last pass" ref={cpassRef}/>
                       
-                      <label htmlFor="rpass" className="form-label fs-5">Re-enter Last Pass</label>
+                      <label htmlFor="rpass" className="form-label fs-5 fw-bold headingColor">Re-enter Last Pass</label>
                       <input type="password" className="form-control" placeholder="Re-enter your last pass" ref={ccpassRef}/>
 
-                      <button className="mt-4 btn btn-warning">Change Password</button>
+                      <button className="mt-4 btn add-to-cart">Change Password</button>
                     </div>
 
                   
                     <div className="col-md-6 col-sm-12 mt-3 mt-sm-3 mt-md-0">
-                      <div className="shadow bg-dark text-white p-4 rounded">
-                          <h5 className="text-warning fw-bold">Steps to change password</h5>
+                      <div className="shadow  text-white p-4 rounded steps-card">
+                          <h5 className="fw-bold steps-card-title">Steps to change password</h5>
                           <p>Step 1: Enter your last password</p>
                           <p>Step 2: Re-enter your last password</p>
                           <p>Step 3: Click on Change / Update password button</p>
@@ -204,7 +205,7 @@ const Profile = () => {
                   style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
                 >
                   <div className="modal-dialog">
-                    <div className="modal-content">
+                    <div className="modal-content model-title">
 
                       <div className="modal-header">
                         <h5 className="modal-title fw-bold">
@@ -218,7 +219,7 @@ const Profile = () => {
                         ></button>
                       </div>
 
-                      <div className="modal-body">
+                      <div className="modal-body model-info">
 
                         <form onSubmit={createNewPassword}>
 
@@ -246,7 +247,7 @@ const Profile = () => {
 
                           <button
                             type="submit"
-                            className="btn btn-success w-100 fw-bold"
+                            className="btn add-to-cart w-100 fw-bold"
                           >
                             Update Password
                           </button>
@@ -273,12 +274,12 @@ const Profile = () => {
 
           
             <div className="col-lg-4 d-none d-lg-block d-md-block d-sm-block d-flex justify-content-center">
-              <div className="shadow rounded p-3 bg-secondary">
-                <h4 className="fw-bold text-warning">Bakery-Cakery Offers</h4>
+              <div className="shadow rounded p-3 steps-card">
+                <h4 className="fw-bold steps-card-title">Bakery-Cakery Offers</h4>
                 <p className="border-top border-warning"></p>
                 <p className="text-white">Offer Starting Date- 10/10/2026</p>
                 <p className="text-white" style={{"margin-top": "-10px"}}>Offer Ending Date- 12/10/2026</p>
-                <p className="text-center text-white fs-4 fw-bold" style={{"margin-top": "-10px","margin-bottom": "-10px"}}>Time: 10am to 10pm</p>
+                <p className="text-center steps-card-title fs-4 fw-bold" style={{"margin-top": "-10px","margin-bottom": "-10px"}}>Time: 10am to 10pm</p>
               </div>
             </div>
 
