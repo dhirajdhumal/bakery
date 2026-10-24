@@ -43,29 +43,29 @@ const Register = () => {
   return (
     <>
       <div className="container form-size">
-        <div className="shadow p-5 rounded">
-          <div className="px-5 py-1 text-center rounded bg-dark text-white">
+        <div className="shadow p-5 rounded model-info">
+          <div className="px-5 py-1 text-center rounded steps-card text-white">
             <h1 className="fw-bold">Register</h1>
-            <h2>Bakery-cakery</h2>
+            <h2 className="fw-bold steps-card-title">Bakery-cakery</h2>
           </div>
           <form className="mt-4" onSubmit={handleSubmit}>
             <div className="">
-              <label htmlFor="name">Name</label>
+              <label className="form-label fw-bold headingColor" htmlFor="name">Name</label>
               <input type="text" id="name" className="form-control" placeholder="Enter your name" ref={nameRef} required/>
             </div>
 
             <div className="mt-3">
-              <label htmlFor="email">Email</label>
+              <label className="form-label fw-bold headingColor" htmlFor="email">Email</label>
               <input type="email" id="email" className="form-control" placeholder="Enter your email" ref={emailRef} required/>
             </div>
 
             <div className="mt-3">
-              <label htmlFor="pass">Password</label>
+              <label className="form-label fw-bold headingColor" htmlFor="pass">Password</label>
               <input type="password" id="pass" className="form-control" placeholder="Enter your password" ref={passRef} required/>
             </div>
 
             <button
-              className="btn btn-success w-100 mt-3 fs-2 fw-bold"
+              className="btn add-to-cart w-100 mt-3 fs-2 fw-bold"
               type="submit"
             >
               Register
