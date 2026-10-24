@@ -1,22 +1,22 @@
 export const whyChooseUs = [
   {
-    icon: "🍞",
+    icon: "bi bi-basket2-fill",
     title: "Freshly Baked",
-    desc: "Our bakery products are freshly baked every day to give you the best taste and quality.",
+    desc: "Baked in small batches every day so your favourite treats are fresh and full of flavour.",
   },
   {
-    icon: "🥛",
+    icon: "bi bi-patch-check-fill",
     title: "Quality Ingredients",
-    desc: "We use carefully selected and high-quality ingredients in every product we make.",
+    desc: "We choose dependable, quality ingredients to make every cake, bread, and pastry taste special.",
   },
   {
-    icon: "👨‍🍳",
-    title: "Expert Bakers",
-    desc: "Our skilled bakers prepare every treat with experience, creativity and care.",
+    icon: "bi bi-palette-fill",
+    title: "Made Your Way",
+    desc: "Create a cake that matches your occasion with your favourite flavours, colours, and design.",
   },
   {
-    icon: "❤️",
-    title: "Made With Love",
-    desc: "Every cake and dessert is made with love to make your special moments sweeter.",
+    icon: "bi bi-truck",
+    title: "Easy Ordering",
+    desc: "Order your favourite treats with a smooth experience and dependable service from start to finish.",
   },
 ];

@@ -123,11 +123,13 @@ const Home = () => {
               <p className='text-muted'>We belive great teste starts with quality ingredients and a lot of Love.</p>
             </div>
 
-            <div className="d-flex flex-wrap justify-content-center between align-items-center gap-sm-5 gap-4 p-3 mx-sm-5 wcu-container">
+            <div className="d-flex flex-wrap justify-content-center align-items-center gap-sm-4 gap-3 p-3 mx-sm-5 wcu-container">
               {
                 whyChooseUs.map((wcu)=>(
-                  <div className="card text-center border-0 shadow p-2 wcu">
-                    <h1 className='p-4 wcu-icon'>{wcu.icon}</h1>
+                  <div className="card text-center border-0 shadow p-3 wcu" key={wcu.title}>
+                    <div className='wcu-icon' aria-hidden="true">
+                      <i className={wcu.icon}></i>
+                    </div>
                     <h5 className='headingColor fw-bold wcu-title'>{wcu.title}</h5>
                     <p className='text-muted wcu-desc'>{wcu.desc}</p>
                   </div>
