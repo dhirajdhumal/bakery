@@ -1,7 +1,9 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Order.css";
+import { toast } from "react-toastify";
 
 const Orders = () => {
+  const navigate = useNavigate();
   const loginUser = JSON.parse(localStorage.getItem("LoggedInUser"));
 
   const allOrders = JSON.parse(localStorage.getItem("orderItems")) || [];
@@ -9,6 +11,14 @@ const Orders = () => {
   const userOrders = loginUser
     ? allOrders.filter((order) => order.userEmail === loginUser.email)
     : [];
+
+  function viewDetails(order) {
+    navigate(`/orders/${order.orderId}`)
+  }
+
+  function trackOrder() {
+    toast.info("Feature Comming Soon!");
+  }
 
   return (
     <>
@@ -120,15 +130,17 @@ const Orders = () => {
                     </div>
                     <div className="buttons d-flex  gap-2">
                       <button
+                        type="button"
                         className="rounded view-details fw-bold p-2 headingColor"
                         style={{
                           backgroundColor: "white",
                           border: "1px solid #531b1b",
                         }}
+                        onClick={() => viewDetails(order)}
                       >
                         View Details
                       </button>
-                      <button className="track-order border-0 rounded p-2">
+                      <button className="track-order border-0 rounded p-2" onClick={trackOrder}>
                         <i className="bi bi-truck"></i> Track Order
                       </button>
                     </div>

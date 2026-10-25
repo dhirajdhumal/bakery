@@ -5,6 +5,7 @@ import Login from './pages/user/Login'
 import Products from './pages/user/Products'
 import Cart from './pages/user/Cart'
 import Orders from './pages/user/Orders'
+import OrderDetails from './componenets/OrderDetails'
 import Register from './pages/user/Register'
 import AdminApp from './AdminApp'
 import Dashboard from './pages/admin/Dashboard'
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
             {
                 path: '/orders',
                 element: <Orders />
+            },
+            {
+                path: '/orders/:orderId',
+                element: <OrderDetails />
             },
             {
                 path: '/profile',
