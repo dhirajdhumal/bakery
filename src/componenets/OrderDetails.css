@@ -1,0 +1,5 @@
+@media (max-width: 480px) {
+.paid{
+  max-width: 72px !important;
+}
+}
