@@ -114,7 +114,7 @@ const Navbar = () => {
               </Link>
             )}
 
-            <span className="vr mx-2"></span>
+            <span className="vr mx-2 d-none d-md-inline-block"></span>
 
             <Link
               className="text-decoration-none cart-icon "
