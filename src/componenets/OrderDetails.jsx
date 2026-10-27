@@ -176,7 +176,6 @@ const OrderDetails = () => {
                   className="w-100 p-2 rounded add-to-cart mb-3"
                   type="button"
                   onClick={() => toast.info("Feature Coming Soon!")}
-                  style={{ border: "1px solid #edb285" }}
                 >
                   <i className="bi bi-download me-2"></i>Download Invoice
                 </button>
