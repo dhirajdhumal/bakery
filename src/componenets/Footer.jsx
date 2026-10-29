@@ -60,7 +60,7 @@ const Footer = () => {
             <p className="text-muted"><i class="bi bi-geo-alt"></i>
               Lingdeo, Akole, Ahilyanager,
               <br />
-              Maharashtra 422610
+              Maharashtra 422610.
             </p>
             <p className="text-muted"><i class="bi bi-telephone"></i> 9421900342</p>
             <p className="text-muted"><i class="bi bi-envelope"></i> bakerycakery@gmail.com</p>
