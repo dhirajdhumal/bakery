@@ -140,7 +140,7 @@ const Orders = () => {
                       >
                         View Details
                       </button>
-                      <button className="track-order border-0 rounded p-2" onClick={trackOrder}>
+                      <button className="add-to-cart border-0 rounded p-2" onClick={trackOrder}>
                         <i className="bi bi-truck"></i> Track Order
                       </button>
                     </div>

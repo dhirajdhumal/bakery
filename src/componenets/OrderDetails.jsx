@@ -2,6 +2,8 @@ import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./OrderDetails.css";
+import { jsPDF } from "jspdf";
+import autoTable from "jspdf-autotable";
 
 const OrderDetails = () => {
   const navigate = useNavigate();
@@ -16,6 +18,154 @@ const OrderDetails = () => {
   const total = orderDetails.items.reduce((sum, items) => {
     return (sum += items.quantity * items.price);
   }, 0);
+
+  const downloadInvoice = () => {
+    if (!orderDetails) {
+      toast.error("Order details not found!");
+      return;
+    }
+
+    const doc = new jsPDF();
+
+    // Page dimensions
+    const pageWidth = doc.internal.pageSize.getWidth();
+
+    // Colors
+  
+    const headingColor = [92, 55, 35];
+    const textColor = [60, 60, 60];
+
+    // Background color for the first page
+
+
+    // Invoice heading
+    doc.setTextColor(...headingColor);
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(22);
+    doc.text("INVOICE", 20, 25);
+
+    // Order information
+    doc.setFontSize(11);
+    doc.setTextColor(...textColor);
+
+    doc.text(`Order ID: ${orderDetails.orderId}`, 20, 40);
+
+    doc.text(`Customer Name: ${orderDetails.userName || "Customer"}`, 20, 46);
+
+    doc.text(`Customer Email: ${orderDetails.userEmail || "Email"}`, 20, 52);
+
+    doc.text(`Customer Address: ${orderDetails.userAddress || "Address"}`, 20, 58);
+
+    doc.text(`Customer Mobile: ${orderDetails.userMobile || "Mobile"}`, 20, 64);
+
+
+
+
+    doc.text(
+      `Order Date: ${new Date(orderDetails.orderDate).toLocaleDateString("en-IN")}`,
+      20,
+      70,
+    );
+
+    // Table data generated dynamically from order items
+    const tableRows = orderDetails.items.map((item, index) => [
+      index + 1,
+      item.title,
+      `Rs. ${Number(item.price).toFixed(2)}`,
+      item.quantity,
+      `Rs. ${(Number(item.price) * Number(item.quantity)).toFixed(2)}`,
+    ]);
+
+    // Calculate subtotal
+    const subtotal = orderDetails.items.reduce(
+      (sum, item) => sum + Number(item.price) * Number(item.quantity),
+      0,
+    );
+
+    const deliveryFee = 50;
+    const grandTotal = subtotal + deliveryFee;
+
+    // Items table
+    autoTable(doc, {
+      startY: 80,
+
+      head: [["#", "Item", "Price", "Quantity", "Total"]],
+
+      body: tableRows,
+
+      theme: "grid",
+
+      headStyles: {
+        fillColor: headingColor,
+        textColor: [255, 255, 255],
+        fontStyle: "bold",
+      },
+
+      styles: {
+        font: "helvetica",
+        fontSize: 10,
+        cellPadding: 4,
+        textColor: textColor,
+        overflow: "linebreak",
+      },
+
+      columnStyles: {
+        0: { cellWidth: 12 },
+        1: { cellWidth: "auto" },
+        2: { cellWidth: 30 },
+        3: { cellWidth: 23 },
+        4: { cellWidth: 32 },
+      },
+
+      margin: {
+        left: 20,
+        right: 20,
+        bottom: 20,
+      },
+
+      didDrawPage: () => {
+        // Apply the background to every generated page.
+        // Draw it behind the existing content.
+        const pageNumber = doc.internal.getCurrentPageInfo().pageNumber;
+
+        // Backgrounds for additional pages are handled below
+        // by the page-background helper after table generation.
+      },
+    });
+
+    // Get the ending position of the table
+    let finalY = doc.lastAutoTable.finalY + 12;
+
+    // Add summary, moving it to a new page if necessary
+    const pageHeight = doc.internal.pageSize.getHeight();
+
+    if (finalY + 35 > pageHeight - 15) {
+      doc.addPage();
+      finalY = 25;
+    }
+
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(11);
+    doc.setTextColor(...textColor);
+
+    doc.text(`Subtotal: Rs. ${subtotal.toFixed(2)}`, 130, finalY);
+
+    doc.text(`Delivery Fee: Rs. ${deliveryFee.toFixed(2)}`, 130, finalY + 8);
+
+    doc.setDrawColor(...headingColor);
+    doc.line(125, finalY + 12, pageWidth - 20, finalY + 12);
+
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(13);
+    doc.setTextColor(...headingColor);
+
+    doc.text(`Grand Total: Rs. ${grandTotal.toFixed(2)}`, 130, finalY + 22);
+
+    // Save the PDF
+    doc.save(`Invoice-${orderDetails.orderId}.pdf`);
+
+    toast.success("Invoice downloaded successfully!");
+  };
 
   if (!orderDetails) {
     return (
@@ -52,7 +202,7 @@ const OrderDetails = () => {
         </button>
       </div>
       <div className="container order-items mt-3 mb-5">
-        <div className="row align-items-start g-4" >
+        <div className="row align-items-start g-4">
           <div className="col-lg-8 col-12 mx-lg-0  shadow p-0 rounded order-items">
             <div className="model-info rounded d-flex justify-content-between">
               <h3 className=" m-0 p-2  fw-bold headingColor">
@@ -175,7 +325,7 @@ const OrderDetails = () => {
                 <button
                   className="w-100 p-2 rounded add-to-cart mb-3"
                   type="button"
-                  onClick={() => toast.info("Feature Coming Soon!")}
+                  onClick={downloadInvoice}
                 >
                   <i className="bi bi-download me-2"></i>Download Invoice
                 </button>

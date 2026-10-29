@@ -29,12 +29,19 @@ const Cart = () => {
       return;
     }
 
+    if(!loginUser.address || !loginUser.phone){
+      toast.success("Please add your address and phone number to place an Order");
+      return;
+    }
+
     const existingItems = JSON.parse(localStorage.getItem('orderItems')) || []
 
     const newOrder = {
       orderId: Date.now(),
       userName: loginUser.name,
       userEmail: loginUser.email,
+      userAddress: loginUser.address,
+      userMobile: loginUser.phone,
       items: cartItems,
       orderDate: new Date().toISOString()
     }
