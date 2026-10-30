@@ -1,9 +1,14 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "././Login.css";
 import { toast } from "react-toastify";
+import { AuthContext } from "../../contextapi/AuthContext";
+
+
 const Register = () => {
   const navigate = useNavigate();
+
+  const {setRegisteredSuccess} = useContext(AuthContext);
 
   const nameRef = useRef();
   const emailRef = useRef();
@@ -30,7 +35,8 @@ const Register = () => {
     
     existingUsers.push(user);
     
-    localStorage.setItem("RegisteredSuccess", "true");
+    // localStorage.setItem("RegisteredSuccess", "true");
+    setRegisteredSuccess(true);
     localStorage.setItem("users", JSON.stringify(existingUsers));
 
     navigate("/login");

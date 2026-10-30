@@ -1,51 +1,46 @@
 import React, { useRef, useState } from "react";
-import { Link, useNavigate, } from "react-router-dom";
-import {toast} from "react-toastify";
-import {useEffect} from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { useEffect } from "react";
 import "././Login.css";
 import { useContext } from "react";
-import { CartItemContext } from "../../contextapi/CartItemContext";
-
-
+import { AuthContext } from "../../contextapi/AuthContext";
 
 const Login = () => {
   const navigate = useNavigate();
-  const {setUser} = useContext(CartItemContext); 
+  const { registeredSuccess, setRegisteredSuccess, setLoginSuccess, setUser } = useContext(AuthContext);
+
+  useEffect(() => {
+    if (registeredSuccess) {
+      toast.success("Registration Successful!");
+      setRegisteredSuccess(false);
+    }
+  }, [registeredSuccess, setRegisteredSuccess]);
 
   const emailRef = useRef();
-  const passRef = useRef(); 
-
-
-  useEffect(()=>{
-    const registeredSuccess = localStorage.getItem("RegisteredSuccess");
-    if(registeredSuccess === "true"){ 
-      toast.success("Registration Successful!");
-      localStorage.removeItem("RegisteredSuccess");
-    }
-  },[])
+  const passRef = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     const email = emailRef.current.value;
     const password = passRef.current.value;
 
     const users = JSON.parse(localStorage.getItem("users")) || [];
 
-    const user = users.find((u)=>(
-      u.email === email && u.password === password
-    ))
+    const user = users.find(
+      (u) => u.email === email && u.password === password,
+    );
 
-    if(user){
-      localStorage.setItem("LoggedInSuccess","true")
-      localStorage.setItem("LoggedInUser", JSON.stringify(user))
+    if (user) {
+      localStorage.setItem("LoggedInUser", JSON.stringify(user));
+      setLoginSuccess(true);
       setUser(user);
       navigate("/");
-    }else{
+    } else {
       toast.error("Invalid Credentials!");
     }
-
-  }
+  };
   return (
     <>
       <div className="container form-size">
@@ -56,18 +51,38 @@ const Login = () => {
           </div>
           <form className="mt-4" onSubmit={handleSubmit}>
             <div className="">
-              <label className="form-label fw-bold headingColor" htmlFor="email">Email</label>
-              <input type="email" id="email" className="form-control" placeholder="Enter your email" ref={emailRef}/>
+              <label
+                className="form-label fw-bold headingColor"
+                htmlFor="email"
+              >
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                className="form-control"
+                placeholder="Enter your email"
+                ref={emailRef}
+              />
             </div>
 
             <div className="mt-3">
-              <label className="form-label fw-bold headingColor" htmlFor="pass">Password</label>
-              <input type="password" id="pass" className="form-control" placeholder="Enter your password" ref={passRef}/>
+              <label className="form-label fw-bold headingColor" htmlFor="pass">
+                Password
+              </label>
+              <input
+                type="password"
+                id="pass"
+                className="form-control"
+                placeholder="Enter your password"
+                ref={passRef}
+              />
             </div>
 
             <button
               className="btn add-to-cart w-100 mt-3 fs-2 fw-bold"
-              type="submit">
+              type="submit"
+            >
               Login
             </button>
 
@@ -81,9 +96,14 @@ const Login = () => {
               </Link>
             </p>
           </form>
-            <div className="d-flex justify-content-center">
-              <button className="btn add-to-cart mt-3 fw-bold" onClick={()=> navigate('/admin/admin-login')}>Admin Login</button>
-            </div>
+          <div className="d-flex justify-content-center">
+            <button
+              className="btn add-to-cart mt-3 fw-bold"
+              onClick={() => navigate("/admin/admin-login")}
+            >
+              Admin Login
+            </button>
+          </div>
         </div>
       </div>
     </>

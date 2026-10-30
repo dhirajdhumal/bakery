@@ -4,12 +4,14 @@ import "././Navbar.css";
 import { toast } from "react-toastify";
 import { useContext } from "react";
 import { CartItemContext } from "../contextapi/CartItemContext";
+import { AuthContext } from "../contextapi/AuthContext";
 
 const Navbar = () => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const { cartItems, setUser, user } = useContext(CartItemContext);
+  const { user, setUser } = useContext(AuthContext);
+  const { cartItems } = useContext(CartItemContext);
   const navigate = useNavigate();
 
   function handleLogout() {

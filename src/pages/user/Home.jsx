@@ -8,18 +8,19 @@ import {Link} from 'react-router-dom';
 import { whyChooseUs } from '../../data/homePage';
 import { useContext } from 'react';
 import { CartItemContext } from '../../contextapi/CartItemContext';
+import { AuthContext } from '../../contextapi/AuthContext';
 
 const Home = () => {
   const navigate = useNavigate();
   const {addToCart} = useContext(CartItemContext);
+  const { loginSuccess, setLoginSuccess } = useContext(AuthContext );
 
   useEffect(()=>{
-    const loggedInSuccess = localStorage.getItem("LoggedInSuccess");
-    if(loggedInSuccess === "true"){ 
+    if(loginSuccess === true){ 
       toast.success("Login Successful!");
-      localStorage.removeItem("LoggedInSuccess");
+      setLoginSuccess(false);
     }
-  },[])
+  },[loginSuccess, setLoginSuccess]);
 
   return (
     <>

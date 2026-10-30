@@ -2,9 +2,11 @@ import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import './Profile.css'
+import { useContext } from "react";
+import { AuthContext } from "../../contextapi/AuthContext";
 
 const Profile = () => {
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem("LoggedInUser")) || {});
+  const { user, setUser } = useContext(AuthContext);
   const [createPassModal, setCreatePassModal] =useState(false);
 
   const nameRef = useRef();
@@ -17,8 +19,6 @@ const Profile = () => {
 
   const newpassRef = useRef();
   const cnewpassRef = useRef();
-
-  const navigate = useNavigate();
 
   function handleUpdate(e) {
     e.preventDefault();
