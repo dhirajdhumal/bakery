@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../contextapi/AuthContext";
 
 const Footer = () => {
+  const { user } = useContext(AuthContext);
   return (
     <footer>
       <div className="container-fluid text-black py-4" style={{backgroundColor: "#f5dfc5"}}>
@@ -50,9 +52,11 @@ const Footer = () => {
               <Link className="text-decoration-none text-muted" to={"about-us"}>
                 AboutUs
               </Link>
+              { user && (
               <Link className="text-decoration-none text-muted" to={"/profile"}>
                 Profile
-              </Link>
+              </Link> 
+              )}
             </div>
           </div>
           <div className="col-lg-3 col-md-6">
