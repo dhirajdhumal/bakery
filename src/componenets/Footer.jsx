@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../contextapi/AuthContext";
+import { useContext } from "react";
 
 const Footer = () => {
   const { user } = useContext(AuthContext);
