@@ -118,6 +118,7 @@ const Profile = () => {
 
   return (
     <>
+      {user ? (
       <div className="container-fluid">
         <div className="container rounded p-3 mt-5">
           <div className="row">
@@ -288,7 +289,7 @@ const Profile = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div>) : <h3>Please Login To View Your Profile Details</h3>
     </>
   );
 };
