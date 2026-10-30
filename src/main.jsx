@@ -10,12 +10,13 @@ import router from "./router.jsx";
 import { ToastContainer } from "react-toastify";
 import CartItemProvider from "./contextapi/CartItemContext.jsx";
 
+
 createRoot(document.getElementById("root")).render(
   <>
     <CartItemProvider>
       <RouterProvider router={router} />
     </CartItemProvider>
 
-    <ToastContainer position="top-right" autoClose={3000} />
+    <ToastContainer position="top-center" autoClose={1500} />
   </>,
 );
