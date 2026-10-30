@@ -35,7 +35,7 @@ const Login = () => {
     if(user){
       localStorage.setItem("LoggedInSuccess","true")
       localStorage.setItem("LoggedInUser", JSON.stringify(user))
-      window.location.href = "/";
+      navigate("/");
     }else{
       toast.error("Invalid Credentials!");
     }

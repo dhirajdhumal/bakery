@@ -33,7 +33,7 @@ const Register = () => {
     localStorage.setItem("RegisteredSuccess", "true");
     localStorage.setItem("users", JSON.stringify(existingUsers));
 
-    window.location.href = "/login";
+    navigate("/login");
 
     nameRef.current.value = "";
     emailRef.current.value = "",
