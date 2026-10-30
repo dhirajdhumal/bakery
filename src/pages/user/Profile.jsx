@@ -289,7 +289,7 @@ const Profile = () => {
             </div>
           </div>
         </div>
-      </div>) : <h3>Please Login To View Your Profile Details</h3>
+      </div>) : <h3>Please Login To View Your Profile Details</h3> }
     </>
   );
 };
