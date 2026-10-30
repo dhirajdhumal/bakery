@@ -2,17 +2,21 @@ import React, { useRef, useState } from "react";
 import { Link, useNavigate, } from "react-router-dom";
 import {toast} from "react-toastify";
 import {useEffect} from "react";
+import "././Login.css";
+import { useContext } from "react";
+import { CartItemContext } from "../../contextapi/CartItemContext";
 
 
 
 const Login = () => {
   const navigate = useNavigate();
+  const {setUser} = useContext(CartItemContext); 
 
   const emailRef = useRef();
   const passRef = useRef(); 
 
 
-  useState(()=>{
+  useEffect(()=>{
     const registeredSuccess = localStorage.getItem("RegisteredSuccess");
     if(registeredSuccess === "true"){ 
       toast.success("Registration Successful!");
@@ -35,6 +39,7 @@ const Login = () => {
     if(user){
       localStorage.setItem("LoggedInSuccess","true")
       localStorage.setItem("LoggedInUser", JSON.stringify(user))
+      setUser(user);
       navigate("/");
     }else{
       toast.error("Invalid Credentials!");

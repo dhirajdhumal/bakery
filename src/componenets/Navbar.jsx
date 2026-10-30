@@ -6,13 +6,10 @@ import { useContext } from "react";
 import { CartItemContext } from "../contextapi/CartItemContext";
 
 const Navbar = () => {
-  const [user, setUser] = useState(
-    JSON.parse(localStorage.getItem("LoggedInUser")),
-  );
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const { cartItems } = useContext(CartItemContext);
+  const { cartItems, setUser, user } = useContext(CartItemContext);
   const navigate = useNavigate();
 
   function handleLogout() {

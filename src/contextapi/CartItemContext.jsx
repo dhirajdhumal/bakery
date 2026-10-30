@@ -9,6 +9,10 @@ export default function CartItemProvider({ children }) {
     JSON.parse(localStorage.getItem("cartItems")) || [],
   );
 
+  const [user, setUser] = useState(
+    JSON.parse(localStorage.getItem("LoggedInUser")),
+  );
+
   function addToCart(item, navigate) {
     const existingItem = cartItems.find(
       (existingCartItem) => existingCartItem.title === item.title,
@@ -82,6 +86,8 @@ export default function CartItemProvider({ children }) {
         removeItemFromCart,
         increaseQuantity,
         decreaseQuantity,
+        setUser,
+        user,
       }}
     >
       {children}
