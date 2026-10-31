@@ -250,6 +250,10 @@
         height: 119px;
     }
     
+    .category-grid {
+    max-width: 1280px;
+    margin: -12px auto;
+}
     .category-img{
         width: 100%;
         height: 90px !important;
