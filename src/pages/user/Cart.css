@@ -11,11 +11,33 @@
     min-width: 750px;
     border-collapse: collapse;
     margin-bottom: 0;
+    table-layout: fixed;
 }
 
 /* Table rows */
 .table-row {
     vertical-align: middle;
+}
+
+/* Scrollable cart items */
+.cart-items-body {
+    display: block;
+    height: 420px !important;
+    overflow-y: scroll;
+    box-sizing: border-box;
+}
+
+.cart-container thead,
+.cart-container tfoot {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.cart-items-body tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
 }
 
 /* Product image */
@@ -40,11 +62,17 @@
         padding-right: 0;
         overflow-x: auto;
     }
+    
+    .cart-items-body{
+        height: 62vh !important;
+    }
+
 
     .cart-container table {
         min-width: 700px;
         font-size: 12px;
     }
+    
 
     .table-heading {
         font-size: 18px !important;
