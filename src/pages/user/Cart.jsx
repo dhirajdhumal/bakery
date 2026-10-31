@@ -79,7 +79,7 @@ const Cart = () => {
                 <td colSpan={6}>
                   <div
                     className="d-flex flex-column align-items-center justify-content-center fw-bold fs-3 empty-cart"
-                    style={{ marginTop: "20px", height: "393px" }}
+                    style={{ marginTop: "20px", height: "382px" }}
                   >
                     <h2 className="headingColor fw-bold">Your cart is empty</h2>
                     <button className="btn add-to-cart" onClick={() => navigate('/products')}>
