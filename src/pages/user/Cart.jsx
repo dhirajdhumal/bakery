@@ -55,8 +55,11 @@ const Cart = () => {
 
   return (
     <>
-      <div className="cart-container container my-5">
-        <table className="mx-auto table">
+      <div className="cart-container container my-3">
+        <button className="btn add-to-cart my-2 text-center" onClick={clearCart}>
+          Clear Cart
+        </button>
+        <table className="mx-auto table m-3">
           <thead
             className="text-center fs-4 headingColor table-heading"
             style={{ backgroundColor: "#f5dfc5" }}
@@ -70,15 +73,18 @@ const Cart = () => {
               <th>Action</th>
            
           </thead>
-          <tbody className="text-center headingColor">
+          <tbody className="cart-items-body text-center headingColor">
             {cartItems.length === 0 ? (
               <tr>
                 <td colSpan={6}>
                   <div
-                    className="d-flex align-items-center justify-content-center fw-bold fs-3"
-                    style={{ marginTop: "20px", height: "420px" }}
+                    className="d-flex flex-column align-items-center justify-content-center fw-bold fs-3"
+                    style={{ marginTop: "20px", height: "393px" }}
                   >
-                    Your cart is empty
+                    <h2 className="headingColor fw-bold">Your cart is empty</h2>
+                    <button className="btn add-to-cart" onClick={() => navigate('/products')}>
+                      Explore Menu
+                    </button>
                   </div>
                 </td>
               </tr>

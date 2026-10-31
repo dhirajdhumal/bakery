@@ -289,7 +289,12 @@ const Profile = () => {
             </div>
           </div>
         </div>
-      </div>) : <h3>Please Login To View Your Profile Details</h3> }
+      </div>) 
+        : 
+      <div className="d-flex justify-content-center align-items-center" style={{height: "92vh"}}>
+        <h3 className="headingColor fw-bold">Please Login To View Your Profile Details</h3>
+      </div>
+     }
     </>
   );
 };
