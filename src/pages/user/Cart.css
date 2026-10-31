@@ -67,6 +67,9 @@
         height: 62vh !important;
     }
 
+    .empty-cart {
+        height: 490px !important;
+    }
 
     .cart-container table {
         min-width: 700px;
