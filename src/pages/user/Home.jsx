@@ -43,17 +43,19 @@ const Home = () => {
           <p className="text-muted">Discover something delicious for every occasion.</p>
         </div>
 
-        <div className="d-flex flex-row flex-wrap justify-content-center align-items-center gap-sm-4 gap-3">
+        <div className="row row-cols-3 row-cols-md-4 row-cols-lg-6 g-3 category-grid">
           {
             categories.map((category)=>(
               
-              <div className="category-cards card shadow border-0" key={category.img}>
+              <div className="col d-flex justify-content-center" key={category.img}>
+                <div className="category-cards card shadow border-0">
                   <Link to={category.link} className='text-decoration-none text-dark'>
                     <img className='card-img-top category-img' src={category.img} alt={category.title} width={"100%"}/>
                     <div className="card-body">
                       <h4 className='card-title category-title text-center fw-bold'>{category.title}</h4>
                     </div>
                   </Link>
+                </div>
               </div>
             ))
           }
@@ -68,15 +70,17 @@ const Home = () => {
             <p className='text-muted'>Delicious favorites freshly baked for you.</p>
           </div>
 
-          <div className="d-flex flex-row flex-sm-wrap flex-wrap justify-content-center align-items-center gap-sm-4 gap-3">
+          <div className="row row-cols-2 row-cols-md-4 g-3 featured-grid">
             {
               featuredProducts.map((products)=>(
-                <div className="card featured-cards shadow border-0" key={products.img}>
-                  <img className='card-img-top rounded' src={products.img} alt={products.title} />
-                  <div className="card-body d-flex flex-column justify-content-center align-items-center">
-                    <h5 className='featured-title fw-bold'>{products.title}</h5>
-                    <p className='featured-title fw-bold'>₹{products.price}</p>
-                    <button className='btn add-to-cart' onClick={()=>addToCart(products, navigate)}>Add to Cart</button>
+                <div className="col d-flex justify-content-center" key={products.img}>
+                  <div className="card featured-cards shadow border-0">
+                    <img className='card-img-top rounded featured-img' src={products.img} alt={products.title} />
+                    <div className="card-body d-flex flex-column justify-content-center align-items-center">
+                      <h5 className='featured-title fw-bold'>{products.title}</h5>
+                      <p className='featured-title fw-bold'>₹{products.price}</p>
+                      <button className='btn add-to-cart' onClick={()=>addToCart(products, navigate)}>Add to Cart</button>
+                    </div>
                   </div>
                 </div>
               ))
@@ -124,15 +128,17 @@ const Home = () => {
               <p className='text-muted'>We belive great teste starts with quality ingredients and a lot of Love.</p>
             </div>
 
-            <div className="d-flex flex-wrap justify-content-center align-items-center gap-sm-4 gap-3 p-3 mx-sm-5 wcu-container">
+            <div className="row row-cols-2 row-cols-md-4 g-3 p-3 mx-sm-5 wcu-container">
               {
                 whyChooseUs.map((wcu)=>(
-                  <div className="card text-center border-0 shadow p-3 wcu" key={wcu.title}>
-                    <div className='wcu-icon' aria-hidden="true">
-                      <i className={wcu.icon}></i>
+                  <div className="col d-flex justify-content-center" key={wcu.title}>
+                    <div className="card text-center border-0 shadow p-3 wcu">
+                      <div className='wcu-icon' aria-hidden="true">
+                        <i className={wcu.icon}></i>
+                      </div>
+                      <h5 className='headingColor fw-bold wcu-title'>{wcu.title}</h5>
+                      <p className='text-muted wcu-desc'>{wcu.desc}</p>
                     </div>
-                    <h5 className='headingColor fw-bold wcu-title'>{wcu.title}</h5>
-                    <p className='text-muted wcu-desc'>{wcu.desc}</p>
                   </div>
                 ))
               }
