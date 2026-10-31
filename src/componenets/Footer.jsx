@@ -44,9 +44,11 @@ const Footer = () => {
               <Link className="text-decoration-none text-muted" to={"/gallery"}>
                 Gallery
               </Link>
-              <Link className="text-decoration-none text-muted" to={"/orders"}>
-                Orders
-              </Link>
+              {user && (
+                <Link className="text-decoration-none text-muted" to={"/orders"}>
+                  Orders
+                </Link>
+              )}
               <Link className="text-decoration-none text-muted" to={"/cart"}>
                 Cart
               </Link>
