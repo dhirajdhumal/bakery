@@ -60,7 +60,7 @@ const TrackOrder = () => {
     <>
     {user ? (
       <section className="trac-order m-3">
-        <div className="ms-5 d-flex justify-content-between align-items-center">
+        <div className="ms-lg-5 d-flex justify-content-between align-items-center tracking-header">
           <div>
             <h1 className="fw-bold headingColor">Tracking Details</h1>
             <h5 className="fw-bold headingColor">Order #{orderId}</h5>
@@ -92,7 +92,7 @@ const TrackOrder = () => {
           </div>
           <div className="d-flex justify-content-center align-items-center">
             <button
-              className="add-to-cart me-5 p-2"
+              className="add-to-cart me-lg-5 p-2"
               type="button"
               onClick={() => navigate("/orders")}
             >
@@ -103,10 +103,10 @@ const TrackOrder = () => {
 
         <div className="status-container m-5">
           <div
-            className="d-flex model-info rounded justify-content-center  text-center align-items-center"
+            className="d-flex model-info status-container rounded justify-content-center  text-center align-items-center"
             style={{ height: "63vh" }}
           >
-            <div className="">
+            <div className="mt-3 mt-lg-0 parent">
               {orderDetails.orderStatus === "Placed" ||
               orderDetails.orderStatus === "Confirmed" ||
               orderDetails.orderStatus === "Preparing" ||
@@ -121,7 +121,7 @@ const TrackOrder = () => {
                 </h1>
               )}
               <h4 className="headingColor fw-bold m-0">Order Placed</h4>
-              <p className="track-order-desc ">
+              <p className="track-order-desc-1 track-order-desc">
                 {new Date(orderDetails.orderDate).toLocaleDateString("en-US")}{" "}
                 {new Date(orderDetails.orderDate).toLocaleTimeString("en-US")}
               </p>
@@ -136,7 +136,7 @@ const TrackOrder = () => {
               <h1 className="track-line-off"></h1>
             )}
 
-            <div className="">
+            <div className="parent">
               {orderDetails.orderStatus === "Confirmed" ||
               orderDetails.orderStatus === "Preparing" ||
               orderDetails.orderStatus === "ReadyToPickup" ||
@@ -169,7 +169,7 @@ const TrackOrder = () => {
               <h1 className="track-line-off"></h1>
             )}
 
-            <div className="">
+            <div className="parent">
               {orderDetails.orderStatus === "Preparing" ||
               orderDetails.orderStatus === "ReadyToPickup" ||
               orderDetails.orderStatus === "Delivered" ? (
@@ -202,7 +202,7 @@ const TrackOrder = () => {
               <h1 className="track-line-off"></h1>
             )}
 
-            <div>
+            <div className="parent">
               {orderDetails.orderStatus === "ReadyToPickup" ||
               orderDetails.orderStatus === "Delivered" ? (
                 <>
@@ -210,7 +210,7 @@ const TrackOrder = () => {
                     <i class="bi bi-check-circle-fill"></i>
                   </h1>
                   <h4 className="headingColor fw-bold m-0">Ready to Pickup</h4>
-                  <p className="track-order-desc ms-4">
+                  <p className="track-order-desc ms-lg-4">
                     Your order is ready for pickup
                   </p>
                 </>
@@ -233,7 +233,7 @@ const TrackOrder = () => {
               <h1 className="track-line-off"></h1>
             )}
 
-            <div>
+            <div className="mb-3 mb-lg-0 parent">
               {orderDetails.orderStatus === "Delivered" ? (
                 <>
                   <h1 className="headingColor fw-bold m-0">
