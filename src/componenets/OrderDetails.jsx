@@ -4,10 +4,13 @@ import { toast } from "react-toastify";
 import "./OrderDetails.css";
 import { jsPDF } from "jspdf";
 import autoTable from "jspdf-autotable";
+import { useContext } from "react";
+import { AuthContext } from "../contextapi/AuthContext";
 
 const OrderDetails = () => {
   const navigate = useNavigate();
   const { orderId } = useParams();
+  const {user} = useContext(AuthContext);
 
   const allOrders = JSON.parse(localStorage.getItem("orderItems")) || [];
 
@@ -170,7 +173,7 @@ const OrderDetails = () => {
   if (!orderDetails) {
     return (
       <section>
-        <h2 className="mt- ms-5">Order Not Found</h2>
+        <h2 className="mt-5 ms-5">Order Not Found</h2>
         <button
           className="ms-5 mb-5 p-2 add-to-cart"
           type="button"
@@ -183,6 +186,7 @@ const OrderDetails = () => {
   }
   return (
     <>
+     {user ? ( <>
       <div className="d-flex justify-content-between align-items-center">
         <div>
           <h1 className="headingColor fw-bold ms-5 mt-3">Order Details</h1>
@@ -342,6 +346,18 @@ const OrderDetails = () => {
           </div>
         </div>
       </div>
+      </>) : (
+        <div className="d-flex flex-column align-items-center justify-content-center" style={{ height: "92vh" }}>
+          <h2 className="headingColor fw-bold">Please log in to view order details.</h2>
+          <button
+            className="add-to-cart p-2"
+            type="button"
+            onClick={() => navigate("/login")}
+          >
+            Log In
+          </button>
+        </div>
+      )}
     </>
   );
 };

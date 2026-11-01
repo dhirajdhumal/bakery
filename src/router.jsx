@@ -21,6 +21,7 @@ import PastrieMenu from './pages/user/Menus/PastrieMenu';
 import CookiesMenu from './pages/user/Menus/CookiesMenu';
 import BrownieMenu from './pages/user/Menus/BrownieMenu';
 import BreadMenu from './pages/user/Menus/BreadMenu';
+import TrackOrder from './componenets/TrackOrder';
 
 const router = createBrowserRouter([
 
@@ -55,8 +56,12 @@ const router = createBrowserRouter([
                 element: <Orders />
             },
             {
-                path: '/orders/:orderId',
+                path: '/order-details/:orderId',
                 element: <OrderDetails />
+            },
+            {
+                path: '/track-order/:orderId',
+                element: <TrackOrder />
             },
             {
                 path: '/profile',

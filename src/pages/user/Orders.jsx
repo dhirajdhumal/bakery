@@ -16,11 +16,11 @@ const Orders = () => {
     : [];
 
   function viewDetails(order) {
-    navigate(`/orders/${order.orderId}`);
+    navigate(`/order-details/${order.orderId}`);
   }
 
-  function trackOrder() {
-    toast.info("Feature Comming Soon!");
+  function trackOrder(order) {
+    navigate(`/track-order/${order.orderId}`);
   }
 
   return (
@@ -146,7 +146,7 @@ const Orders = () => {
                         </button>
                         <button
                           className="add-to-cart border-0 rounded p-2"
-                          onClick={trackOrder}
+                          onClick={()=> trackOrder(order)}
                         >
                           <i className="bi bi-truck"></i> Track Order
                         </button>

@@ -43,7 +43,8 @@ const Cart = () => {
       userAddress: loginUser.address,
       userMobile: loginUser.phone,
       items: cartItems,
-      orderDate: new Date().toISOString()
+      orderDate: new Date().toISOString(),
+      orderStatus: "Placed",
     }
 
     const allItems = [newOrder, ...existingItems];
