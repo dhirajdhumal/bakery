@@ -39,6 +39,11 @@
     font-weight: bold;
 }
 
+.add-to-cart-menu:hover {
+    background-color: rgb(65, 46, 22);
+    color: white;
+}
+
 .menus-item-button.active {
   background-color: rgb(65, 46, 22);
   color: white;
