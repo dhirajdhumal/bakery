@@ -78,8 +78,7 @@ const Orders = () => {
                       }}
                     >
                       {order.items.map((item, itemIndex) => (
-                        <>
-                          <div className="item" key={itemIndex}>
+                        <div className="item" key={itemIndex}>
                             <img
                               className="rounded"
                               src={item.img}
@@ -97,8 +96,7 @@ const Orders = () => {
                               <span className="text-muted">Qty: </span>
                               {item.quantity}
                             </p>
-                          </div>
-                        </>
+                        </div>
                       ))}
                       {/* {order.items.length > 3 && (
                         <div

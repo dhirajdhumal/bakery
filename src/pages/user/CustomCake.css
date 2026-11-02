@@ -1,0 +1,269 @@
+.custom-cake-page {
+  background: #fffaf5;
+  color: #4b2e1e;
+  padding-bottom: 4rem;
+}
+
+.custom-cake-hero {
+  background: linear-gradient(110deg, rgba(75, 46, 30, .88), rgba(151, 94, 41, .72)),
+    url("/images/Home-Offer-Cake.png") center/cover;
+  color: white;
+  padding: 5.5rem 1rem;
+}
+
+.custom-cake-hero h1 {
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  font-weight: 800;
+  max-width: 650px;
+  margin: .4rem 0 1rem;
+}
+
+.custom-cake-hero p:last-child {
+  font-size: 1.15rem;
+  max-width: 560px;
+  margin-bottom: 0;
+}
+
+.custom-cake-eyebrow {
+  color: #cd9248;
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+  margin-bottom: .5rem;
+}
+
+.custom-cake-hero .custom-cake-eyebrow {
+  color: #f6bb72;
+}
+
+.custom-cake-content {
+  padding-top: 3.5rem;
+}
+
+.custom-cake-intro {
+  max-width: 650px;
+  margin-bottom: 2rem;
+}
+
+.custom-cake-intro h2 {
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  font-weight: 800;
+}
+
+.custom-cake-intro p:last-child {
+  color: #76695f;
+  line-height: 1.7;
+}
+
+.custom-cake-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(280px, .8fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.custom-cake-form,
+.custom-cake-summary {
+  background: white;
+  border: 1px solid #f0dfcf;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(75, 46, 30, .08);
+}
+
+.custom-cake-form-section {
+  padding: 1.6rem;
+  border-bottom: 1px solid #f2e7dc;
+}
+
+.custom-cake-form-section h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+}
+
+.custom-cake-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.custom-cake-form label {
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
+  color: #5b4537;
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+.custom-cake-form input,
+.custom-cake-form select {
+  width: 100%;
+  border: 1px solid #decbb9;
+  border-radius: 8px;
+  color: #4b2e1e;
+  background: #fffdfb;
+  padding: .7rem .8rem;
+  font: inherit;
+  font-weight: 400;
+}
+
+.custom-cake-form input:focus,
+.custom-cake-form select:focus {
+  outline: 2px solid rgba(205, 146, 72, .35);
+  border-color: #cd9248;
+}
+
+.custom-cake-upload {
+  margin-top: 1rem;
+}
+
+.custom-cake-upload input[type="file"] {
+  display: none;
+}
+
+.custom-cake-file-name {
+  align-items: center;
+  border: 1px dashed #cd9248;
+  border-radius: 8px;
+  color: #8d6a4e;
+  display: flex;
+  font-weight: 400;
+  gap: .5rem;
+  padding: .7rem .8rem;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.custom-cake-file-name i {
+  color: #cd9248;
+  font-size: 1.1rem;
+}
+
+.custom-cake-upload > span:first-child {
+  font-weight: 700;
+}
+
+.custom-cake-upload > span:first-child span {
+  color: #9c8c80;
+  font-weight: 400;
+}
+
+.custom-cake-submit {
+  background: #cd9248;
+  border: 0;
+  border-radius: 8px;
+  color: white;
+  font-weight: 800;
+  margin: 1.6rem;
+  padding: .85rem 1.25rem;
+  transition: background-color .2s ease, transform .2s ease;
+}
+
+.custom-cake-submit:hover {
+  background: #6f4d23;
+  transform: translateY(-2px);
+}
+
+.custom-cake-summary {
+  background: #f5dfc5;
+  padding: 1.8rem;
+  position: sticky;
+  top: 85px;
+}
+
+.custom-cake-summary-icon {
+  align-items: center;
+  background: white;
+  border-radius: 50%;
+  color: #cd9248;
+  display: flex;
+  font-size: 2.3rem;
+  height: 75px;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  width: 75px;
+}
+
+.custom-cake-summary h2 {
+  font-size: 1.7rem;
+  font-weight: 800;
+  margin-bottom: 1.4rem;
+}
+
+.custom-cake-summary-details {
+  border-bottom: 1px solid rgba(75, 46, 30, .16);
+  display: grid;
+  gap: .9rem;
+  padding-bottom: 1.2rem;
+}
+
+.custom-cake-summary-details span {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: #6e5a4a;
+}
+
+.custom-cake-summary-details strong {
+  color: #4b2e1e;
+}
+
+.custom-cake-estimate {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.2rem 0 .4rem;
+}
+
+.custom-cake-estimate span {
+  color: #6e5a4a;
+  font-size: .85rem;
+}
+
+.custom-cake-estimate strong {
+  font-size: 1.5rem;
+}
+
+.custom-cake-note {
+  color: #806b5a;
+  font-size: .8rem;
+  line-height: 1.5;
+  margin: .8rem 0 0;
+}
+
+@media (max-width: 767.98px) {
+  .custom-cake-hero {
+    padding: 3.5rem 1rem;
+  }
+
+  .custom-cake-content {
+    padding-top: 2.5rem;
+  }
+
+  .custom-cake-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .custom-cake-summary {
+    position: static;
+    grid-row: 1;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .custom-cake-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .custom-cake-form-section,
+  .custom-cake-summary {
+    padding: 1.25rem;
+  }
+
+  .custom-cake-submit {
+    margin: 1.25rem;
+  }
+}

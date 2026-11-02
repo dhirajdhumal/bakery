@@ -111,7 +111,7 @@ const Home = () => {
                       made especially for you.
                   </p>
 
-                  <button className='add-to-cart py-2 px-3'>Customize Your Cake</button>
+                  <button className='add-to-cart py-2 px-3' onClick={()=>navigate('/custom-cake')}>Customize Your Cake</button>
                 </div>
                 <div className="col-lg-4 col-12 d-none d-sm-flex justify-content-center align-items-center">
                   <div className="custom-right d-flex justify-content-center shadow">

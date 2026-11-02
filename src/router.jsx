@@ -14,7 +14,6 @@ import Gallery from './pages/user/Gallery';
 import AdminLogin from './pages/admin/AdminLogin';
 import AdminOrders from './pages/admin/AdminOrders';
 import Profile from './pages/user/Profile';
-import YourCake from './pages/user/YourCake';
 import DonutMenu from './pages/user/Menus/DonutMenu';
 import CakeMenu from './pages/user/Menus/CakeMenu';
 import PastrieMenu from './pages/user/Menus/PastrieMenu';
@@ -22,6 +21,7 @@ import CookiesMenu from './pages/user/Menus/CookiesMenu';
 import BrownieMenu from './pages/user/Menus/BrownieMenu';
 import BreadMenu from './pages/user/Menus/BreadMenu';
 import TrackOrder from './componenets/TrackOrder';
+import CustomCake from './pages/user/CustomCake';
 
 const router = createBrowserRouter([
 
@@ -38,6 +38,10 @@ const router = createBrowserRouter([
             {
                 path:  '/products',
                 element: <Products />
+            },
+            {
+                path: '/custom-cake',
+                element: <CustomCake />
             },
             {
                 path: '/about-us',
@@ -66,10 +70,6 @@ const router = createBrowserRouter([
             {
                 path: '/profile',
                 element: <Profile />
-            },
-            {
-                path: '/your-cake',
-                element: <YourCake />
             },
             {
                 path: '/login',

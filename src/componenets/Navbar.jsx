@@ -72,7 +72,7 @@ const Navbar = () => {
             </Link>
             <Link
               className="text-decoration-none nav-items your-cake-btn"
-              to={'/your-cake'}
+              to={'/custom-cake'}
               onClick={()=> setIsMenuOpen(false)}
             >
               Your-Cake
