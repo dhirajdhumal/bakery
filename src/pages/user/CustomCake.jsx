@@ -49,10 +49,10 @@ const CustomCake = () => {
       orderId: Date.now(),
       userName: details.name,
       userEmail: user.email,
-      userAddress: user.address || "To be confirmed",
+      userAddress: details.address,
       userMobile: details.phone,
       orderDate: new Date().toISOString(),
-      orderStatus: "Placed",
+      orderStatus: "Requested",
       customCake: {
         ...details,
         referenceImage,
@@ -81,7 +81,6 @@ const CustomCake = () => {
 
   return (
     <main className="custom-cake-page">
-
       <section className="container custom-cake-content">
         <div className="custom-cake-intro">
           <p className="custom-cake-eyebrow">YOUR CAKE, YOUR WAY</p>
@@ -100,7 +99,11 @@ const CustomCake = () => {
               <div className="custom-cake-fields">
                 <label>
                   Occasion
-                  <select name="occasion" value={details.occasion} onChange={updateDetail}>
+                  <select
+                    name="occasion"
+                    value={details.occasion}
+                    onChange={updateDetail}
+                  >
                     {customCakeOptions.occasions.map((occasion) => (
                       <option key={occasion}>{occasion}</option>
                     ))}
@@ -108,7 +111,11 @@ const CustomCake = () => {
                 </label>
                 <label>
                   Flavour
-                  <select name="flavor" value={details.flavor} onChange={updateDetail}>
+                  <select
+                    name="flavor"
+                    value={details.flavor}
+                    onChange={updateDetail}
+                  >
                     {customCakeOptions.flavors.map((flavor) => (
                       <option key={flavor}>{flavor}</option>
                     ))}
@@ -116,7 +123,11 @@ const CustomCake = () => {
                 </label>
                 <label>
                   Size
-                  <select name="size" value={details.size} onChange={updateDetail}>
+                  <select
+                    name="size"
+                    value={details.size}
+                    onChange={updateDetail}
+                  >
                     {customCakeOptions.sizes.map((size) => (
                       <option key={size}>{size}</option>
                     ))}
@@ -124,7 +135,11 @@ const CustomCake = () => {
                 </label>
                 <label>
                   Layers
-                  <select name="layers" value={details.layers} onChange={updateDetail}>
+                  <select
+                    name="layers"
+                    value={details.layers}
+                    onChange={updateDetail}
+                  >
                     {customCakeOptions.layers.map((layers) => (
                       <option key={layers}>{layers}</option>
                     ))}
@@ -132,7 +147,11 @@ const CustomCake = () => {
                 </label>
                 <label>
                   Shape
-                  <select name="shape" value={details.shape} onChange={updateDetail}>
+                  <select
+                    name="shape"
+                    value={details.shape}
+                    onChange={updateDetail}
+                  >
                     {customCakeOptions.shapes.map((shape) => (
                       <option key={shape}>{shape}</option>
                     ))}
@@ -140,7 +159,11 @@ const CustomCake = () => {
                 </label>
                 <label>
                   Frosting
-                  <select name="frosting" value={details.frosting} onChange={updateDetail}>
+                  <select
+                    name="frosting"
+                    value={details.frosting}
+                    onChange={updateDetail}
+                  >
                     {customCakeOptions.frostings.map((frosting) => (
                       <option key={frosting}>{frosting}</option>
                     ))}
@@ -172,7 +195,11 @@ const CustomCake = () => {
               </label>
               <label className="custom-cake-upload">
                 Reference image <span>(optional)</span>
-                <input type="file" accept="image/*" onChange={handleImageChange} />
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageChange}
+                />
                 <span className="custom-cake-file-name">
                   <i className="bi bi-cloud-arrow-up"></i>
                   {referenceImage || "Upload an inspiration image"}
@@ -185,7 +212,12 @@ const CustomCake = () => {
               <div className="custom-cake-fields">
                 <label>
                   Your name
-                  <input name="name" value={details.name} onChange={updateDetail} required />
+                  <input
+                    name="name"
+                    value={details.name}
+                    onChange={updateDetail}
+                    required
+                  />
                 </label>
                 <label>
                   Phone number
@@ -199,8 +231,25 @@ const CustomCake = () => {
                   />
                 </label>
                 <label>
+                  Delivery address
+                  <textarea
+                    name="address"
+                    value={details.address}
+                    onChange={updateDetail}
+                    rows="3"
+                    placeholder="Enter your complete delivery address"
+                    required
+                  />
+                </label>
+                <label>
                   Preferred date
-                  <input name="date" type="date" value={details.date} onChange={updateDetail} required />
+                  <input
+                    name="date"
+                    type="date"
+                    value={details.date}
+                    onChange={updateDetail}
+                    required
+                  />
                 </label>
               </div>
             </div>
@@ -217,20 +266,40 @@ const CustomCake = () => {
             <p className="custom-cake-eyebrow">YOUR CREATION</p>
             <h2>{details.occasion} cake</h2>
             <div className="custom-cake-summary-details">
-              <span><strong>Flavour</strong>{details.flavor}</span>
-              <span><strong>Size</strong>{details.size}</span>
-              <span><strong>Layers</strong>{details.layers}</span>
-              <span><strong>Shape</strong>{details.shape}</span>
-              <span><strong>Frosting</strong>{details.frosting}</span>
-              {details.theme && <span><strong>Theme</strong>{details.theme}</span>}
+              <span>
+                <strong>Flavour</strong>
+                {details.flavor}
+              </span>
+              <span>
+                <strong>Size</strong>
+                {details.size}
+              </span>
+              <span>
+                <strong>Layers</strong>
+                {details.layers}
+              </span>
+              <span>
+                <strong>Shape</strong>
+                {details.shape}
+              </span>
+              <span>
+                <strong>Frosting</strong>
+                {details.frosting}
+              </span>
+              {details.theme && (
+                <span>
+                  <strong>Theme</strong>
+                  {details.theme}
+                </span>
+              )}
             </div>
             <div className="custom-cake-estimate">
               <span>Estimated starting price</span>
               <strong>₹{estimate.toLocaleString("en-IN")}</strong>
             </div>
             <p className="custom-cake-note">
-              Final pricing may change based on design complexity. We will confirm
-              everything with you before baking.
+              Final pricing may change based on design complexity. We will
+              confirm everything with you before baking.
             </p>
           </aside>
         </div>

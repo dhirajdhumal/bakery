@@ -187,15 +187,19 @@ const OrderDetails = () => {
   return (
     <>
      {user ? ( <>
+
+      
       <div className="d-flex justify-content-between align-items-center">
         <div>
           <h1 className="headingColor fw-bold ms-5 mt-3">Order Details</h1>
           <h5 className="headingColor fw-bold ms-5">Order #{orderId}</h5>
-          <h6 className="text-muted ms-5">
-            Placed on{" "}
-            {new Date(orderDetails.orderDate).toLocaleDateString("en-US")} at{" "}
-            {new Date(orderDetails.orderDate).toLocaleTimeString("en-US")}
-          </h6>
+          {orderDetails.orderStatus !== "Requested" && (
+            <h6 className="text-muted ms-5">
+              Placed on{" "}
+              {new Date(orderDetails.orderDate).toLocaleDateString("en-US")} at{" "}
+              {new Date(orderDetails.orderDate).toLocaleTimeString("en-US")}
+            </h6>
+          )}
         </div>
         <button
           className="add-to-cart me-5 mt-3 p-2"
@@ -205,6 +209,8 @@ const OrderDetails = () => {
           Close details
         </button>
       </div>
+
+      {orderDetails.orderStatus !== "Requested" ? 
       <div className="container order-items mt-3 mb-5">
         <div className="row align-items-start g-4">
           <div className="col-lg-8 col-12 mx-lg-0  shadow p-0 rounded order-items">
@@ -346,6 +352,11 @@ const OrderDetails = () => {
           </div>
         </div>
       </div>
+      :
+      <div className="d-flex flex-column align-items-center justify-content-center" style={{ height: "77vh" }}>
+        <h3 className="headingColor fw-bold">Your order is in Requested state. Please wait for confirmation.</h3>
+      </div>
+      }
       </>) : (
         <div className="d-flex flex-column align-items-center justify-content-center" style={{ height: "92vh" }}>
           <h2 className="headingColor fw-bold">Please log in to view order details.</h2>

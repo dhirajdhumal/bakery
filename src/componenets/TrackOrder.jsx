@@ -32,10 +32,10 @@ const TrackOrder = () => {
     };
 
     const updatedOrders = allOrders.map((orders) => {
-      if (orders.userEmail === orderDetails.userEmail) {
+      if (String(orders.orderId) === String(orderDetails.orderId)) {
         return updatedStatus;
       }
-      return orders;
+      return orders;    
     });
 
     localStorage.setItem("orderItems", JSON.stringify(updatedOrders));
@@ -76,6 +76,7 @@ const TrackOrder = () => {
               ref={statusRef}
               style={{ border: "2px solid #edb285" }}
             >
+              <option value="Requested">Requested</option>
               <option value="Placed">Placed</option>
               <option value="Confirmed">Confirmed</option>
               <option value="Preparing">Preparing</option>
@@ -101,6 +102,7 @@ const TrackOrder = () => {
           </div>
         </div>
 
+        {orderDetails.orderStatus !== "Requested" ? 
         <div className="status-container m-5">
           <div
             className="d-flex model-info status-container rounded justify-content-center  text-center align-items-center"
@@ -254,6 +256,12 @@ const TrackOrder = () => {
             </div>
           </div>
         </div>
+        : 
+       <div className="d-flex flex-column align-items-center justify-content-center" style={{ height: "75vh" }}>
+        <h3 className="text-center mt-5 headingColor fw-bold">Your order is in Requested state. Please wait for confirmation.</h3>
+        </div>
+
+    }
       </section>
         ) : (
         <div className="d-flex flex-column align-items-center justify-content-center" style={{ height: "92vh" }}>

@@ -97,7 +97,8 @@
 }
 
 .custom-cake-form input,
-.custom-cake-form select {
+.custom-cake-form select,
+.custom-cake-form textarea {
   width: 100%;
   border: 1px solid #decbb9;
   border-radius: 8px;
@@ -109,9 +110,14 @@
 }
 
 .custom-cake-form input:focus,
-.custom-cake-form select:focus {
+.custom-cake-form select:focus,
+.custom-cake-form textarea:focus {
   outline: 2px solid rgba(205, 146, 72, .35);
   border-color: #cd9248;
+}
+
+.custom-cake-form textarea {
+  resize: vertical;
 }
 
 .custom-cake-upload {

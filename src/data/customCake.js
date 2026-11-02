@@ -10,6 +10,7 @@ export const customCakeDefaults = {
   date: "",
   name: "",
   phone: "",
+  address: "",
 };
 
 export const customCakeOptions = {
