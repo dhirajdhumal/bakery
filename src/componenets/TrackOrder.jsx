@@ -258,7 +258,7 @@ const TrackOrder = () => {
         </div>
         : 
        <div className="d-flex flex-column align-items-center justify-content-center" style={{ height: "75vh" }}>
-        <h3 className="text-center mt-5 headingColor fw-bold">Your order is in Requested state. Please wait for confirmation.</h3>
+        <h3 className="text-center mt-5 headingColor fw-bold mx-lg-0 mx-2 fs-lg-0 fs-4">Your order is in Requested state. Please wait for confirmation.</h3>
         </div>
 
     }

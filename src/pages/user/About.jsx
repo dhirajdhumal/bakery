@@ -8,7 +8,7 @@ const About = () => {
       <section className="about-hero">
         <div className="about-hero-content container">
           <p className="about-eyebrow">BAKED FRESH DAILY</p>
-          <h1>A little joy<br />in every bite.</h1>
+          <h1 className="fw-bold">A little joy<br />in every bite.</h1>
           <p>
             Cakes, pastries, and sweet moments made especially for you.
           </p>

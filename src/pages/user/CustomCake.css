@@ -12,23 +12,22 @@
 }
 
 .custom-cake-hero h1 {
-  font-size: clamp(2.4rem, 6vw, 4.5rem);
-  font-weight: 800;
+  font-size: clamp(2.5rem, 6vw, 5rem);
   max-width: 650px;
   margin: .4rem 0 1rem;
 }
 
 .custom-cake-hero p:last-child {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   max-width: 560px;
   margin-bottom: 0;
 }
 
 .custom-cake-eyebrow {
   color: #cd9248;
-  font-size: .75rem;
-  font-weight: 800;
-  letter-spacing: .16em;
+  font-size: .9rem;
+  font-weight: 700;
+  letter-spacing: .18em;
   margin-bottom: .5rem;
 }
 
@@ -46,8 +45,7 @@
 }
 
 .custom-cake-intro h2 {
-  font-size: clamp(1.8rem, 4vw, 2.7rem);
-  font-weight: 800;
+  font-size: clamp(2rem, 4vw, 3rem);
 }
 
 .custom-cake-intro p:last-child {

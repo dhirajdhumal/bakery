@@ -354,7 +354,7 @@ const OrderDetails = () => {
       </div>
       :
       <div className="d-flex flex-column align-items-center justify-content-center" style={{ height: "77vh" }}>
-        <h3 className="headingColor fw-bold">Your order is in Requested state. Please wait for confirmation.</h3>
+        <h3 className="headingColor text-center fw-bold mx-lg-0 mx-2 fs-lg-0 fs-4">Your order is in Requested state. Please wait for confirmation.</h3>
       </div>
       }
       </>) : (

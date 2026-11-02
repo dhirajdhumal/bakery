@@ -84,7 +84,7 @@ const CustomCake = () => {
       <section className="container custom-cake-content">
         <div className="custom-cake-intro">
           <p className="custom-cake-eyebrow">YOUR CAKE, YOUR WAY</p>
-          <h2>Bring your sweetest idea to life.</h2>
+          <h2 className="fw-bold">Bring your sweetest idea to life.</h2>
           <p>
             Share your preferences below. Our bakers will review your request
             and call you to confirm the final design, availability, and delivery
