@@ -64,10 +64,12 @@ const OrderDetails = () => {
 
     doc.text(`Customer Mobile: ${orderDetails.userMobile || "Mobile"}`, 20, 64);
 
+    doc.text(`Payment Method: ${orderDetails.paymentMode }`, 20, 70)
+
     doc.text(
       `Order Date: ${new Date(orderDetails.orderDate).toLocaleDateString("en-IN")}`,
       20,
-      70,
+      76,
     );
 
     // Table data generated dynamically from order items
