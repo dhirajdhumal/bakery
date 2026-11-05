@@ -34,24 +34,12 @@ const Cart = () => {
       return;
     }
 
-    const existingItems = JSON.parse(localStorage.getItem('orderItems')) || []
-
-    const newOrder = {
-      orderId: Date.now(),
-      userName: loginUser.name,
-      userEmail: loginUser.email,
-      userAddress: loginUser.address,
-      userMobile: loginUser.phone,
-      items: cartItems,
-      orderDate: new Date().toISOString(),
-      orderStatus: "Placed",
+    if(cartItems.length === 0){
+      toast.warning("Plz add the items first");
+      return;
     }
 
-    const allItems = [newOrder, ...existingItems];
-    localStorage.setItem("orderItems", JSON.stringify(allItems));
-    toast.success("Order Placed Successfully");
-    clearCart();
-    navigate('/orders');
+    navigate('/do-payment');
   }
 
   return (

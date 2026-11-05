@@ -22,6 +22,7 @@ import BrownieMenu from './pages/user/Menus/BrownieMenu';
 import BreadMenu from './pages/user/Menus/BreadMenu';
 import TrackOrder from './componenets/TrackOrder';
 import CustomCake from './pages/user/CustomCake';
+import Payment from './componenets/Payment';
 
 const router = createBrowserRouter([
 
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
             {
                 path: '/cart',
                 element: <Cart />
+            },
+            {
+                path: '/do-payment',
+                element: <Payment />
             },
             {
                 path: '/orders',
