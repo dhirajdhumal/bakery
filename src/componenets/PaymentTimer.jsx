@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const PaymentTimer = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const [timeLeft, setTimeLeft] = useState(300);
-
-  const [expired, setExpired] = useState(false);
 
   useEffect(() => {
     if (timeLeft <= 0) {
-      setExpired(true);
-      navigate('/cart');
+      navigate("/cart");
+      toast.warning("Payment time expired. Please try again.");
       return;
     }
 
@@ -26,18 +25,11 @@ const PaymentTimer = () => {
 
   return (
     <div className="text-center mt-3">
-      {!expired ? (
-        <>
-          <h6 className="text-danger fw-bold">
-            {String(minutes).padStart(2, "0")}:
-            {String(seconds).padStart(2, "0")}
-          </h6>
-        </>
-      ) : (
-        <div className="alert alert-danger">
-          Payment session expired! Please try again.
-        </div>
-      )}
+      <>
+        <h6 className="text-danger fw-bold">
+          {String(minutes).padStart(2, "0")}:{String(seconds).padStart(2, "0")}
+        </h6>
+      </>
     </div>
   );
 };

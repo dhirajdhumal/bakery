@@ -130,16 +130,13 @@ const Payment = () => {
                         <option value="Bank">Via Bank</option>
                       </select>
                     </div>
-                    {
-                      onlineMethod === "QR" ? <PaymentTimer /> : ""
-                    }
-                    {
-                      onlineMethod === "UPI" ? <PaymentTimer /> : ""
-                    }
-                    {
-                      onlineMethod === "Bank" ? <PaymentTimer /> : ""
-                    }
-                    
+                    {onlineMethod === "QR" ||
+                    onlineMethod === "UPI" ||
+                    onlineMethod === "Bank" ? (
+                      <PaymentTimer />
+                    ) : (
+                      ""
+                    )}
                   </div>
 
                   {onlineMethod === "QR" && (
