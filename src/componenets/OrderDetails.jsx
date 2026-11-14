@@ -23,6 +23,11 @@ const OrderDetails = () => {
   }, 0);
 
   const downloadInvoice = async () => {
+    if(orderDetails.orderStatus !== "Delivered" || orderDetails.orderStatus === "Cancelled"){
+      toast.warning("Invoice can only be downloaded When the order is delivered or cancelled.");
+      return;
+    }
+
     if (!orderDetails) {
       toast.error("Order details not found!");
       return;
