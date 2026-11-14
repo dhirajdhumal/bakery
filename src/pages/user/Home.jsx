@@ -13,13 +13,13 @@ import { AuthContext } from '../../contextapi/AuthContext';
 const Home = () => {
   const navigate = useNavigate();
   const {addToCart} = useContext(CartItemContext);
-  const { loginSuccess, setLoginSuccess } = useContext(AuthContext );
+  const { loginSuccess, setLoginSuccess, user } = useContext(AuthContext );
 
   useEffect(()=>{
-    if(loginSuccess === true){ 
-      toast.success("Login Successful!");
-      setLoginSuccess(false);
-    }
+    if (loginSuccess && user) {
+    toast.success(`Welcome back ${user.name}!`);
+    setLoginSuccess(false);
+  }
   },[loginSuccess, setLoginSuccess]);
 
   return (

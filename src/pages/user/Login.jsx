@@ -8,7 +8,8 @@ import { AuthContext } from "../../contextapi/AuthContext";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { registeredSuccess, setRegisteredSuccess, setLoginSuccess, setUser } = useContext(AuthContext);
+  const { registeredSuccess, setRegisteredSuccess, setLoginSuccess, setUser } =
+    useContext(AuthContext);
 
   useEffect(() => {
     if (registeredSuccess) {
@@ -34,7 +35,22 @@ const Login = () => {
 
     if (user) {
       localStorage.setItem("LoggedInUser", JSON.stringify(user));
-      setLoginSuccess(true);
+
+      // Check whether this particular user has logged in before
+      const previousLogin = localStorage.getItem(`previousLogin_${user.email}`);
+
+      if (previousLogin === "true") {
+        // Returning user
+        setLoginSuccess(true);
+      } else {
+        // First successful login
+        setLoginSuccess(false);
+        toast.success(`Welcome ${user.name}!`);
+      }
+
+      // Save this user's login history
+      localStorage.setItem(`previousLogin_${user.email}`, "true");
+
       setUser(user);
       navigate("/");
     } else {
