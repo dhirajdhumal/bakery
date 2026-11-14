@@ -55,7 +55,7 @@ const Navbar = () => {
         <div
           className={`collapse navbar-collapse text-center justify-content-end ${isMenuOpen ? "show" : "collapse"}`}
         >
-          <div className="navbar-nav d-flex flex-lg-row align-items-center text-center gap-lg-3 fs-5 gap-2 mt-lg-0 p-2 p-lg-0 mt-1 collapse-menu">
+          <div className="navbar-nav d-flex flex-lg-row align-items-center text-center gap-lg-4 fs-5 gap-2 mt-lg-0 p-2 p-lg-0 mt-1 collapse-menu">
             <Link
               className="text-decoration-none nav-items"
               to={"/"}
