@@ -22,7 +22,7 @@ const OrderDetails = () => {
     return (sum += items.quantity * items.price);
   }, 0);
 
-  const downloadInvoice = () => {
+  const downloadInvoice = async () => {
     if (!orderDetails) {
       toast.error("Order details not found!");
       return;
@@ -30,15 +30,49 @@ const OrderDetails = () => {
 
     const doc = new jsPDF();
 
-    // Page dimensions
     const pageWidth = doc.internal.pageSize.getWidth();
-
-    // Colors
+    const pageHeight = doc.internal.pageSize.getHeight();
 
     const headingColor = [92, 55, 35];
     const textColor = [60, 60, 60];
 
-    // Background color for the first page
+    // Load bakery logo
+    const logo = new Image();
+    logo.src = "/images/Bakery Logo.png";
+
+    try {
+      await new Promise((resolve, reject) => {
+        logo.onload = resolve;
+        logo.onerror = reject;
+      });
+    } catch (error) {
+      toast.error("Unable to load bakery logo!");
+      return;
+    }
+
+    // Function to add a faded logo watermark
+    const addWatermark = () => {
+      doc.saveGraphicsState();
+
+      doc.setGState(new doc.GState({ opacity: 0.05 }));
+
+      const logoWidth = 200;
+      const logoHeight = 200;
+
+      doc.addImage(
+        logo,
+        "PNG",
+        (pageWidth - logoWidth) / 2,
+        (pageHeight - logoHeight) / 2,
+        logoWidth,
+        logoHeight,
+      );
+
+      doc.restoreGraphicsState();
+    };
+
+    // Add watermark to the first page
+    addWatermark();
 
     // Invoice heading
     doc.setTextColor(...headingColor);
@@ -51,28 +85,22 @@ const OrderDetails = () => {
     doc.setTextColor(...textColor);
 
     doc.text(`Order ID: ${orderDetails.orderId}`, 20, 40);
-
     doc.text(`Customer Name: ${orderDetails.userName || "Customer"}`, 20, 46);
-
     doc.text(`Customer Email: ${orderDetails.userEmail || "Email"}`, 20, 52);
-
     doc.text(
       `Customer Address: ${orderDetails.userAddress || "Address"}`,
       20,
       58,
     );
-
     doc.text(`Customer Mobile: ${orderDetails.userMobile || "Mobile"}`, 20, 64);
-
-    doc.text(`Payment Method: ${orderDetails.paymentMode }`, 20, 70)
-
+    doc.text(`Payment Method: ${orderDetails.paymentMode}`, 20, 70);
     doc.text(
       `Order Date: ${new Date(orderDetails.orderDate).toLocaleDateString("en-IN")}`,
       20,
       76,
     );
 
-    // Table data generated dynamically from order items
+    // Table rows
     const tableRows = orderDetails.items.map((item, index) => [
       index + 1,
       item.title,
@@ -81,7 +109,7 @@ const OrderDetails = () => {
       `Rs. ${(Number(item.price) * Number(item.quantity)).toFixed(2)}`,
     ]);
 
-    // Calculate subtotal
+    // Calculate totals
     const subtotal = orderDetails.items.reduce(
       (sum, item) => sum + Number(item.price) * Number(item.quantity),
       0,
@@ -128,27 +156,24 @@ const OrderDetails = () => {
         bottom: 20,
       },
 
-      didDrawPage: () => {
-        // Apply the background to every generated page.
-        // Draw it behind the existing content.
-        const pageNumber = doc.internal.getCurrentPageInfo().pageNumber;
-
-        // Backgrounds for additional pages are handled below
-        // by the page-background helper after table generation.
+      // Add watermark to additional table pages
+      didDrawPage: (data) => {
+        if (data.pageNumber > 1) {
+          addWatermark();
+        }
       },
     });
 
-    // Get the ending position of the table
+    // Summary position
     let finalY = doc.lastAutoTable.finalY + 12;
-
-    // Add summary, moving it to a new page if necessary
-    const pageHeight = doc.internal.pageSize.getHeight();
 
     if (finalY + 35 > pageHeight - 15) {
       doc.addPage();
+      addWatermark();
       finalY = 25;
     }
 
+    // Invoice summary
     doc.setFont("helvetica", "normal");
     doc.setFontSize(11);
     doc.setTextColor(...textColor);
@@ -165,8 +190,9 @@ const OrderDetails = () => {
     doc.setTextColor(...headingColor);
 
     doc.text(`Grand Total: Rs. ${grandTotal.toFixed(2)}`, 130, finalY + 22);
+    
 
-    // Save the PDF
+    // Save invoice
     doc.save(`Invoice-${orderDetails.orderId}.pdf`);
 
     toast.success("Invoice downloaded successfully!");
@@ -310,10 +336,7 @@ const OrderDetails = () => {
                         style={{ backgroundColor: "#eaf4ea" }}
                       >
                         <div className="d-flex justify-content-between">
-                          <p className="headingColor fw-bold">
-                            Payment
-                            Status
-                          </p>
+                          <p className="headingColor fw-bold">Payment Status</p>
                           {orderDetails.paymentMode === "Cash on Delivery" ? (
                             <p
                               className="px-2 rounded fw-bold paid bg-warning headingColor"
@@ -321,8 +344,9 @@ const OrderDetails = () => {
                                 maxWidth: "100px",
                               }}
                             >
-                              <i class="bi bi-patch-exclamation-fill me-1">Pending</i>
-                              
+                              <i class="bi bi-patch-exclamation-fill me-1">
+                                Pending
+                              </i>
                             </p>
                           ) : (
                             <p
@@ -339,13 +363,17 @@ const OrderDetails = () => {
 
                         <div>
                           <p className="headingColor m-0 fw-bold">
-                            Payment
-                            Method
+                            Payment Method
                           </p>
                           <p className="text-muted m-0">
-                            {orderDetails.paymentMode === "Cash on Delivery"
-                              ? <i class="bi bi-wallet2"> Cash on Delivery</i>
-                              : <i class="bi bi-credit-card-2-front"> {orderDetails.paymentMode}</i>}
+                            {orderDetails.paymentMode === "Cash on Delivery" ? (
+                              <i class="bi bi-wallet2"> Cash on Delivery</i>
+                            ) : (
+                              <i class="bi bi-credit-card-2-front">
+                                {" "}
+                                {orderDetails.paymentMode}
+                              </i>
+                            )}
                           </p>
                         </div>
                       </div>
