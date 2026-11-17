@@ -138,7 +138,7 @@ const Navbar = () => {
             {user ? (
               <>
                 <button
-                  className="btn btn-danger px-2 fs-5"
+                  className="btn add-to-cart px-2 fs-5"
                   onClick={() => {
                     handleLogout();
                     setIsMenuOpen(false);
