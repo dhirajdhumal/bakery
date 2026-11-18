@@ -25,7 +25,7 @@ const Home = () => {
   return (
     <>
       <div className="text-center d-flex flex-column justify-content-center align-items-center background-img">
-        <h1 className='fw-bold fs-2'>WELCOME TO Dhiraj CAKERY</h1>
+        <h1 className='fw-bold fs-2'>WELCOME TO BAKERY CAKERY</h1>
         <h2 className='text-shadow'>Freshly Baked, Made With Love ❤️</h2>
 
         <p> Delicious cakes, pastries and sweet treats
